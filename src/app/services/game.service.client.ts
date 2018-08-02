@@ -8,14 +8,17 @@ export class GameService {
 
   baseUrl = environment.baseUrl;
 
-  constructor(private _http: Http) {
+  constructor(private http: Http) {
   }
 
 
   getGameBoard(gameId) {
     const url = this.baseUrl + '/api/game/' + gameId;
-    const gameBoard = [3, 1, 3];
-    return gameBoard;
+    return this.http.get(url).map((response: Response) => {
+      return response.json();
+    });
+    // const gameBoard = [3, 1, 3];
+    // return gameBoard;
   }
 }
 

@@ -13,6 +13,8 @@ export class BoardComponent implements OnInit {
   constructor(private gs: GameService) {}
 
   ngOnInit() {
-    this.gameNumbers = this.gs.getGameBoard(20);
+    this.gs.getGameBoard(30).subscribe((numbers: any) => {
+      this.gameNumbers = numbers;
+    });
   }
 }
