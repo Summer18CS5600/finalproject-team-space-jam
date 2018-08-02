@@ -18,9 +18,11 @@ import {WidgetNewComponent} from './components/widget/widget-new/widget-new.comp
 import {WidgetEditComponent} from './components/widget/widget-edit/widget-edit.component';
 import {AuthGuard} from './services/auth-gaurd.service';
 import {FlickrImageSearchComponent} from './components/widget/widget-edit/widget-image/flickr-image-search/flickr-image-search.component';
+import {PidComponent} from './components/pid/pid.component';
+import {GameComponent} from './components/game/game/game.component';
 
 const APP_ROUTES: Routes = [
-  {path: '', component : LoginComponent},
+  {path: '', component : GameComponent},
   {path: 'login', component : LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},

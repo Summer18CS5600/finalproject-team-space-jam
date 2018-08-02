@@ -1,0 +1,16 @@
+<form (ngSubmit) = "enterGame()" #f="ngForm">
+  <input placeholder="pid"
+         name="pid"
+         type="text"
+         class="form-control"
+         required
+         [(ngModel)]="pid"/>
+
+  <input placeholder="gameid"
+         name="gameid"
+         type="text"
+         class="form-control"
+         required
+         [(ngModel)]="gameid"/>
+
+</form>

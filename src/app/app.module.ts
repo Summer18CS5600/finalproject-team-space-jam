@@ -34,6 +34,12 @@ import {SortableDirective} from './components/widget/widget-list/sortable.direct
 import {OrderByPipe} from './components/widget/widget-list/order-by-pipe.pipe';
 import { FlickrImageSearchComponent } from './components/widget/widget-edit/widget-image/flickr-image-search/flickr-image-search.component';
 import {FlickrService} from './services/flickr.service.client';
+import { PidComponent } from './components/pid/pid.component';
+import { GameComponent } from './components/game/game/game.component';
+import { BoardComponent } from './components/game/board/board.component';
+import { CacheComponent } from './components/game/cache/cache.component';
+import { NumbersNeededComponent } from './components/game/numbers-needed/numbers-needed.component';
+import {GameService} from './services/game.service.client';
 
 // add client side services to providers
 
@@ -61,7 +67,12 @@ import {FlickrService} from './services/flickr.service.client';
     SafePipe,
     SortableDirective,
     OrderByPipe,
-    FlickrImageSearchComponent
+    FlickrImageSearchComponent,
+    PidComponent,
+    GameComponent,
+    BoardComponent,
+    CacheComponent,
+    NumbersNeededComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +81,7 @@ import {FlickrService} from './services/flickr.service.client';
     Routing,
     QuillEditorModule
   ],
-  providers: [UserService, WebsiteService, PageService, WidgetService, AuthGuard, SharedService, FlickrService],
+  providers: [UserService, WebsiteService, PageService, WidgetService, AuthGuard, SharedService, FlickrService, GameService],
   bootstrap: [AppComponent]
 })
 
