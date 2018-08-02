@@ -1,0 +1,15 @@
+language: node_js
+sudo: false
+node_js:
+- '6'
+install:
+- npm install
+script:
+- ng build --env=prod
+deploy:
+  provider: heroku
+  app: web-app-maker-angular-4
+  local_dir: dist
+  api_key:
+    secure: sdc/sQYwJSv037gq7veXl+7n9vkIbHuOnSmTOSQhj9naEbdExr/G0O9o863t75NX8QyeqZBPq8yTSzdvMYqfS0woW+4jQHYP56wF2J5Vr1AIPvm1fZnyi3/vrAerY01w6Q8jhB5lCWQj3KCd7L+rwROSvSb8x3GyRtuHAFH/+ahXsm4PcOeRsfyE7C5e4RyrYvw/FTgQw/3l6QoGqZSplgriDgsQR1lJIBu93wrZDRo5O6Mc1SM5wbgSSBM1xie2+qooFWKc/4Euh70TssZ/4Yq0HEp27VN2d0x68Amc4B+BUZVPskdSc0Y4/8orHnGKGN3aXbUPaSAvWMxxRSET7nHouhjw3QMKVbydL2s1EIG7gBIrSQ5uoqLiKuTHDFplXd2RLu+zOnh2R5qFULMQzYg0AyDx/NgpvXlxWz26cHjMq0jYjP3niNbiUWjzZ7o29pf5KiloQm7LQYCkEddBlA8Fe5KZ64tMD2zObOZVkh1p+th9SUjPDv0tJdyrIVfAwRX5CPsrJpjtBOlMgfbZkyTlSIm90WnSZWv+Ssa1JRPcOS0lBTAMqJ6CrOXjg2ilDUp8Mh0vGEAmG0MnSSzEAFgPg7e5JUdN4OWrrj9qH2fvvOKNT/TMRfT3VBng0DLBTvBj/4IxG3T2/6nMNnmZ5/V8XODl9ozjhyMBSJYvHYQ=
+  on: heroku-deploy
