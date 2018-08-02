@@ -1,7 +1,3 @@
-/**
- * Created by sesha on 6/2/17.
- */
-
 // Get dependencies
 const express = require('express');
 const path = require('path');
