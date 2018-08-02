@@ -36,6 +36,7 @@
     "ng2-ckeditor": "^1.1.9",
     "ng2-quill-editor": "^2.0.0",
     "ngx-quill-editor": "^2.2.1",
+    "npm": "^6.2.0",
     "parse-glob": "^3.0.4",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
