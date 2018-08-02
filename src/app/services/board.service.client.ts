@@ -19,8 +19,8 @@ export class GameService {
     });
   }
 
-  initializeBoard(gameId, exampleBoard) {
-    const url = this.baseUrl + '/api/game/' + gameId;
+  initializeBoard(exampleBoard) {
+    const url = this.baseUrl + '/api/game/';
     return this.http.post(url, exampleBoard).map((response: Response) => {
       return response.json();
     });
