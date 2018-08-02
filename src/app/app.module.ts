@@ -81,7 +81,14 @@ import {GameService} from './services/game.service.client';
     Routing,
     QuillEditorModule
   ],
-  providers: [UserService, WebsiteService, PageService, WidgetService, AuthGuard, SharedService, FlickrService, GameService],
+  providers: [UserService,
+    WebsiteService,
+    PageService,
+    WidgetService,
+    AuthGuard,
+    SharedService,
+    FlickrService,
+    GameService],
   bootstrap: [AppComponent]
 })
 

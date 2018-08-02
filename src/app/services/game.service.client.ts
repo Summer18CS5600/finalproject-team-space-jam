@@ -17,8 +17,13 @@ export class GameService {
     return this.http.get(url).map((response: Response) => {
       return response.json();
     });
-    // const gameBoard = [3, 1, 3];
-    // return gameBoard;
+  }
+
+  initializeBoard(gameId, exampleBoard) {
+    const url = this.baseUrl + '/api/game/' + gameId;
+    return this.http.post(url, exampleBoard).map((response: Response) => {
+      return response.json();
+    });
   }
 }
 

@@ -14,7 +14,6 @@ module.exports = function () {
   return api;
 
   function initializeBoard(board) {
-    board.numbers = []
     // I excluded the ID, we can make it an autoincrement in MongoDB hopefully
     return BoardModel.create(board);
   }

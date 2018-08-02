@@ -3,7 +3,7 @@
 
 module.exports= function(app, models){
   var pageModel = models.pageModel;
-
+  var boardModel = models.boardModel;
 
   var pages = [
     { "_id": "321", "name": "Post 1", "websiteId": "456" },
@@ -12,6 +12,7 @@ module.exports= function(app, models){
   ];
 
   app.get("/api/game/:gameId",findGame);
+  app.post("/api/game/:gameId",initializeBoard);
 
   app.post("/api/website/:websiteId/page", createPage);
   app.get("/api/page/:pageId",findPageById);
@@ -21,6 +22,17 @@ module.exports= function(app, models){
   function findGame(req, res) {
     var numbers = [3, 2, 6, 9];
     res.json(numbers);
+  }
+
+  function initializeBoard(req, res) {
+    var board = req.body;
+    boardModel.initializeBoard(board).then(function (board) {
+      res.json(board);
+    });
+
+    // before mongo:
+    // board.numbers = [9, 3, 2, 5];
+
   }
 
   function createPage(req, res) {

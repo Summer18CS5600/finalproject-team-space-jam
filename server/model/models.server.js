@@ -8,9 +8,11 @@ module.exports  = function () {
     // var mongoose = require('mongoose');
     // mongoose.connect('mongodb://localhost/webdev-assignment');
     //
-    
-    
+
+
     var models = {
+        boardModel: require("./board/board.model.server"),
+
         userModel: require("./user/user.model.server")(),
         websiteModel: require("./website/website.model.server")(),
         pageModel: require("./page/page.model.server")(),
