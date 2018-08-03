@@ -1,7 +1,8 @@
 board.component
 
 <div *ngFor="let gameNumber of gameNumbers">
-  {{gameNumber}}
+  <!--{{gameNumber['value']}}-->
 </div>
 
 <a (click)="initializeBoard(30)">Initialize Board</a>
+<a (click)="createTable()">Create Board</a>
