@@ -163,7 +163,7 @@ var Routing = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "td {\r\n  background-color: black;\r\n\r\n\r\n}\r\ntr {\r\n  background-color: black;\r\n\r\n\r\n}\r\n"
 
 /***/ }),
 
@@ -174,7 +174,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "board.component\n\n<div *ngFor=\"let gameNumber of gameNumbers\">\n  {{gameNumber}}\n</div>\n\n<a (click)=\"initializeBoard(30)\">Initialize Board</a>\n"
+module.exports = "board.component\r\n\r\n<div *ngFor=\"let gameNumber of gameNumbers\">\r\n  <!--{{gameNumber['value']}}-->\r\n</div>\r\n\r\n<a (click)=\"initializeBoard(30)\">Initialize Board</a>\r\n<a (click)=\"createTable()\">Create Board</a>\r\n"
 
 /***/ }),
 
@@ -214,21 +214,79 @@ var BoardComponent = /** @class */ (function () {
         // });
     };
     BoardComponent.prototype.initializeBoard = function (gameId) {
+        var _this = this;
         console.log('initializing');
         // Make a board.
+        var nums = [];
+        var i = 0;
+        var cacheLine = 0;
+        var cacheCounter = 0;
+        for (i = 0; i < 100; i++) {
+            if (cacheCounter > 24) {
+                cacheLine += 1;
+                cacheCounter = 0;
+            }
+            nums.push({ position: 99 - i, value: i, cacheLine: cacheLine, hidden: true, locked: false });
+            cacheCounter += 1;
+        }
         this.exampleBoard = { id: gameId,
-            numbers: [
-                { 0: 6, hidden: true, locked: false },
-                { 1: 7, hidden: true, locked: false },
-                { 2: 8, hidden: true, locked: false },
-                { 3: 9, hidden: true, locked: false },
-                { 4: 10, hidden: true, locked: false },
-                { 5: 11, hidden: true, locked: false }
-            ] };
+            numbers: nums
+        };
         // Send the board to the client api
         this.boardService.initializeBoard(gameId, this.exampleBoard).subscribe(function (game) {
             console.log(game);
+            _this.gameNumbers = game.numbers;
+            console.log(_this.gameNumbers);
         });
+    };
+    BoardComponent.prototype.findThisNumber = function (position) {
+        console.log("entering find This number");
+        for (var i = 0; i < this.gameNumbers.length; i++) {
+            if (this.gameNumbers[i]['position'] == position) {
+                return this.gameNumbers[i]['value'];
+            }
+        }
+    };
+    BoardComponent.prototype.createTable = function () {
+        var body = document.getElementsByTagName('body')[0];
+        var tbl = document.createElement('table');
+        tbl.style.width = '50%';
+        tbl.setAttribute('border', '1');
+        var tbdy = document.createElement('tbody');
+        for (var i = 0; i < 10; i++) {
+            var tr = document.createElement('tr');
+            for (var j = 0; j < 10; j++) {
+                // console.log('J is now: ' + j);
+                if (i == 10 && j == 10) {
+                    break;
+                }
+                else {
+                    var td = document.createElement('td');
+                    var pos = null;
+                    if (i == 0) {
+                        pos = j;
+                    }
+                    else {
+                        pos = i * 10 + j;
+                    }
+                    console.log('the pos ' + pos);
+                    var data = this.findThisNumber(pos);
+                    td.appendChild(document.createTextNode(data));
+                    td.style.backgroundColor = '#000000';
+                    td.style.textAlign = 'center';
+                    td.style.webkitTextFillColor = '#000000';
+                    td.addEventListener("click", this.tileClick);
+                    tr.appendChild(td);
+                }
+            }
+            tbdy.appendChild(tr);
+        }
+        tbl.appendChild(tbdy);
+        body.appendChild(tbl);
+    };
+    BoardComponent.prototype.tileClick = function (e) {
+        e.target.style.backgroundColor = 'white';
+        console.log("You clicked on " + e);
     };
     BoardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -351,7 +409,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/hannam/CS5600/finalproject-team-space-jam/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Jenny\OneDrive\Summer 2018\Computer Systems\Cache_Simulator_JAM\finalproject-team-space-jam\src\main.ts */"./src/main.ts");
 
 
 /***/ })
