@@ -1,28 +1,16 @@
+var mongoose = require('mongoose');
+var BoardSchema = require("./board.schema.server");
+var BoardModel = mongoose.model("BoardModel", BoardSchema);
 
-// this API for the database
-//encapsulate all CRUD operations in this
-//Only database operations happen here
-module.exports = function () {
+//are bound to the functions below. this is essentially defining the api.
+BoardModel.createBoard = createBoard;
 
-  var mongoose = require ("mongoose");
-  var BoardSchema = require("./game.schema.server")();
-  var BoardModel =  mongoose.model("Board", BoardSchema); //mongo plurarizes
+module.exports = BoardModel;
 
-  var api = {
-    initializeBoard: initalizeBoard,
-  };
-  return api;
-
-  function initializeBoard(board) {
-    // I excluded the ID, we can make it an autoincrement in MongoDB hopefully
-    return BoardModel.create(board);
-  }
-
-  function addNumber() {
-
-  }
-
-  // function updateBoard() {}
-
-
-};
+//call the db specific functions.
+function createBoard(board) {
+  console.log("in model");
+  console.log(board);
+  var newBoard = board;
+  return BoardModel.create(newBoard);
+}

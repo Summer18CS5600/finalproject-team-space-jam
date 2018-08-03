@@ -13,7 +13,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(cookieParser());
-app.use(session({ secret: process.env.SESSION_SECRET })); //
+app.use(session({
+  secret: 'ablk',
+  resave: true,
+  saveUninitialized: true
+})); //process.env.SESSION_SECRET
 //Passport set up after cookie and session
 app.use(passport.initialize());
 app.use(passport.session());

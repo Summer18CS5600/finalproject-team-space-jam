@@ -13,14 +13,14 @@ export class BoardService {
 
 
   getGameBoard(gameId) {
-    const url = this.baseUrl + '/api/game/' + gameId;
+    const url = this.baseUrl + '/api/a';
     return this.http.get(url).map((response: Response) => {
       return response.json();
     });
   }
 
   initializeBoard(gameId, exampleBoard) {
-    const url = this.baseUrl + '/api/game/' + gameId;
+    const url = this.baseUrl + '/api/game/';
     return this.http.post(url, exampleBoard).map((response: Response) => {
       return response.json();
     });
