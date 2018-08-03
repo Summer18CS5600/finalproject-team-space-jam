@@ -20,8 +20,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+            <state relative-caret-position="427">
+              <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -116,6 +116,11 @@
               <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
               <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -180,12 +185,12 @@
       <workItem from="1533305631504" duration="377000" />
       <workItem from="1533311553349" duration="3221000" />
       <workItem from="1533314992206" duration="653000" />
-      <workItem from="1533325780995" duration="222000" />
+      <workItem from="1533325780995" duration="547000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21218000" />
+    <option name="totallyTimeSpent" value="21543000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="32" width="1920" height="1048" extended-state="6" />
@@ -273,8 +278,8 @@
     <entry file="file://$PROJECT_DIR$/finalproj/src/app/app.component.ts" />
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+        <state relative-caret-position="427">
+          <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
         </state>
       </provider>
     </entry>
