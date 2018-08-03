@@ -20,7 +20,7 @@ export class BoardService {
   }
 
   initializeBoard(gameId, exampleBoard) {
-    const url = this.baseUrl + '/api/game/';
+    const url = this.baseUrl + '/api/game/' + gameId;
     return this.http.post(url, exampleBoard).map((response: Response) => {
       return response.json();
     });

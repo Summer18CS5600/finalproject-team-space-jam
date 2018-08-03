@@ -7,7 +7,7 @@ module.exports= function(app){
   console.log("here at least");
   app.get("/api/a",findGame);
   app.get("/api/game/:gameId",findGame);
-  app.post("/api/game/", createBoard);
+  app.post("/api/game/:gameId", createBoard);
 
   function findGame(req, res) {
     console.log("in the game");
