@@ -278,7 +278,7 @@ var BoardService = /** @class */ (function () {
         this.baseUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseUrl;
     }
     BoardService.prototype.getGameBoard = function (gameId) {
-        var url = this.baseUrl + '/api/game/' + gameId;
+        var url = this.baseUrl + '/api/a';
         return this.http.get(url).map(function (response) {
             return response.json();
         });
@@ -351,7 +351,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/aj/code/finalproject-team-space-jam/finalproj/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/aj/code/finalproject-team-space-jam/src/main.ts */"./src/main.ts");
 
 
 /***/ })

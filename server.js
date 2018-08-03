@@ -25,7 +25,7 @@ app.use(passport.session());
 
 // CORS
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:4200"); // change to *
+  res.header("Access-Control-Allow-Origin", "*"); // change to http://localhost:4200
   res.header("Access-Control-Allow-Headers", "Origin, x-requested-with, Content-Type, Accept, authorization, client-security-token, Accept-Encoding");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   res.header("Access-Control-Allow-Credentials", "true");
