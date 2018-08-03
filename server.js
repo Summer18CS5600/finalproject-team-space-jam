@@ -1,79 +1,48 @@
-// Get dependencies
+
+// Get the dependencies
 const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
 const path = require('path');
 const http = require('http');
-const bodyParser = require('body-parser');
-const app = express();
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const passport = require('passport');
 
-// loading authentication modules
-const passport      = require('passport');
-const cookieParser  = require('cookie-parser');
-const session       = require('express-session');
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'dist')));
+app.use(cookieParser());
 app.use(session({
-  secret: 'this is the secret',
+  secret: 'ablk',
   resave: true,
   saveUninitialized: true
-}));
-
-app.use(cookieParser());
+})); //process.env.SESSION_SECRET
+//Passport set up after cookie and session
 app.use(passport.initialize());
 app.use(passport.session());
 
-/* Mongodb    */
-
-// mongodb://<dbuser>:<dbpassword>@ds113505.mlab.com:13505/webdev
-// var connectionString = 'mongodb://127.0.0.1:27017/taportal';
-var connectionString = 'mongodb://webappmaker:webappmaker@ds163181.mlab.com:63181/webappmaker';
-var mongoose = require("mongoose");
-mongoose.connect( connectionString);
-
-// Parsers for POST data
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-
-// Point static path to dist -- For building
-app.use(express.static(path.join(__dirname, 'dist')));
 
 // CORS
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:4200");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Origin", "http://localhost:4200"); // change to *
+  res.header("Access-Control-Allow-Headers", "Origin, x-requested-with, Content-Type, Accept, authorization, client-security-token, Accept-Encoding");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   res.header("Access-Control-Allow-Credentials", "true");
   next();
 });
 
-// For Build: When we build, we serve this for dist
-const api = require('./server/routes/api');
 
-// Set our api routes
-app.use('/api', api);
-
-
-// Get port from environment and store in Express.
-const port = '9000' ;
+const port = process.env.PORT || '3100';
 app.set('port', port);
-
-// Create HTTP server
 const server = http.createServer(app);
 
+require("./server/app")(app);
+server.listen( port );
 
-// Server side API
-var serverSide = require('./server/app');
-serverSide(app);
-
-
-
-// For Build: Catch all other routes and return the index file
-app.use('*', function (req, res) {
-  const index = path.join(__dirname, 'dist', 'index.html');
-  res.sendFile(index);
+// For Build: Catch all other routes and return the index file -- BUILDING
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'dist/finalproj/index.html'));
 });
 
 
-var PPORT = process.env.PORT || port;
-
-//Listen on provided port, on all network interfaces.
-//server.listen(process.env.PORT , () => console.log(`API running on localhost:${port}`)); //-- working on heroku
-server.listen(PPORT , () => console.log(`API running on localhost:${port}`)); //-- working on LocalHost
