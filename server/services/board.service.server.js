@@ -10,24 +10,24 @@ module.exports= function(app){
   app.post("/api/game/:boardId/accessMemory", accessMemory);
 
   function findGame(req, res) {
-    console.log("looking for game in server side");
+    //console.log("looking for game in server side");
     boardModel.findBoard(req.params['boardId']).then(function (board) {
-      console.log(board);
+      //console.log(board);
       res.json(board);
     });
   }
 
   function createBoard(req, res) {
-    console.log("SERVER: creating board...");
+    //console.log("SERVER: creating board...");
     var nums = req.body.numbers;
     const board = {
       boardId: req.params['boardId'],
       numbers: nums
     };
 
-    console.log(board);
+    //console.log(board);
     boardModel.createBoard(board).then(function (board) {
-      console.log('SERVER: board created, sending back to client...');
+      //console.log('SERVER: board created, sending back to client...');
       res.json(board);
     })
   }
@@ -46,7 +46,7 @@ module.exports= function(app){
       // Find the cacheline for this specific number that was accessed.
       for (let i = 0; i < boardToBeUpdated.numbers.length; i++) {
         if (boardToBeUpdated.numbers[i].value == v) {
-          console.log("SERVER: number found: " + boardToBeUpdated.numbers[i].value + " in cacheLine " + boardToBeUpdated.numbers[i].cacheLine);
+          //console.log("SERVER: number found: " + boardToBeUpdated.numbers[i].value + " in cacheLine " + boardToBeUpdated.numbers[i].cacheLine);
           theCLine = boardToBeUpdated.numbers[i].cacheLine;
           break;
         }
