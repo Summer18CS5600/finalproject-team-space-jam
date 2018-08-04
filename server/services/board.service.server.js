@@ -34,9 +34,9 @@ module.exports= function(app){
   }
 
   function accessMemory(req, res) {
-    var value = req.body.val;
+    var value = req.body.value;
     console.log("in server accessing memory: value is - " + value);
-    boardModel.accessMemory(req.params['boardId'], value).then(function (board) {
+    boardModel.accessMemory(req.params['boardId'], req.body.value).then(function (board) {
       console.log("getting back from db");
       res.json(board);
     })

@@ -163,11 +163,7 @@ var Routing = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
 module.exports = "td {\n  background-color: black;\n\n\n}\ntr {\n  background-color: black;\n\n\n}\n"
-=======
-module.exports = "td {\r\n  background-color: black;\r\n\r\n\r\n}\r\ntr {\r\n  background-color: black;\r\n\r\n\r\n}\r\n"
->>>>>>> 3227773b1693f353a4db2aa57ce61ca8c44e3817
 
 /***/ }),
 
@@ -178,11 +174,7 @@ module.exports = "td {\r\n  background-color: black;\r\n\r\n\r\n}\r\ntr {\r\n  b
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
 module.exports = "board.component\n\n<div *ngFor=\"let gameNumber of gameNumbers\">\n  <!--{{gameNumber['value']}}-->\n</div>\n\n<a (click)=\"initializeBoard(30)\">Initialize Board</a>\n<a (click)=\"renderTable()\">Create Board</a>\n<a (click)=\"findBoard(30)\">Find a board test</a>\n"
-=======
-module.exports = "board.component\r\n\r\n<div *ngFor=\"let gameNumber of gameNumbers\">\r\n  <!--{{gameNumber['value']}}-->\r\n</div>\r\n\r\n<a (click)=\"initializeBoard(30)\">Initialize Board</a>\r\n<a (click)=\"renderTable()\">Create Board</a>\r\n<a (click)=\"findBoard(30)\">Find a board test</a>\r\n"
->>>>>>> 3227773b1693f353a4db2aa57ce61ca8c44e3817
 
 /***/ }),
 
@@ -223,15 +215,9 @@ var BoardComponent = /** @class */ (function () {
     };
     /**
      * Initializes a Game Board. Currently this is needed to be done before we can hit render for the first time.
-<<<<<<< HEAD
      * @param boardId
      */
     BoardComponent.prototype.initializeBoard = function (boardId) {
-=======
-     * @param gameId
-     */
-    BoardComponent.prototype.initializeBoard = function (gameId) {
->>>>>>> 3227773b1693f353a4db2aa57ce61ca8c44e3817
         var _this = this;
         this.boardId = boardId;
         console.log('initializing');
@@ -273,6 +259,7 @@ var BoardComponent = /** @class */ (function () {
     };
     BoardComponent.prototype.findBoard = function (boardId) {
         var _this = this;
+        this.boardId = boardId;
         console.log("looking for a board");
         this.boardService.findBoard(boardId).subscribe(function (board) {
             _this.gameNumbers = board.numbers;
@@ -285,6 +272,7 @@ var BoardComponent = /** @class */ (function () {
      * fetch the board from the db to render.
      */
     BoardComponent.prototype.renderTable = function () {
+        var _this = this;
         var body = document.getElementsByTagName('body')[0];
         var tbl = document.createElement('table');
         tbl.style.width = '50%';
@@ -320,6 +308,9 @@ var BoardComponent = /** @class */ (function () {
                     td.style.textAlign = 'center';
                     td.style.webkitTextFillColor = '#000000';
                     td.addEventListener("click", this.tileClick);
+                    td.addEventListener("click", function (e) {
+                        _this.accessMemory(e);
+                    });
                     tr.appendChild(td);
                 }
             }
@@ -333,18 +324,20 @@ var BoardComponent = /** @class */ (function () {
     * @param e represents the mouse event.
     */
     BoardComponent.prototype.tileClick = function (e) {
-        var _this = this;
         e.target.style.backgroundColor = 'white';
         console.log("You clicked on " + e.target.textContent);
         var currentNum = e.target.textContent;
         //var currentCacheLine = this.findThisNumbersCacheLine(currentNum);
         var currentCacheLine = null;
-<<<<<<< HEAD
-        this.boardService.accessMemory(this.boardId, e.target.textContent).subscribe(function (board) {
-            _this.gameNumbers = board.numbers;
+    };
+    BoardComponent.prototype.accessMemory = function (e) {
+        var _this = this;
+        var value = e.target.textContent;
+        console.log("umm.." + value);
+        this.boardService.accessMemory(this.boardId, value).subscribe(function (board) {
+            _this.gameNumbers = board.numbers; // This should get removed once we put in boardId (probably)
+            console.log(_this.gameNumbers);
         });
-=======
->>>>>>> 3227773b1693f353a4db2aa57ce61ca8c44e3817
     };
     BoardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -393,13 +386,8 @@ var BoardService = /** @class */ (function () {
         this.http = http;
         this.baseUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseUrl;
     }
-<<<<<<< HEAD
     BoardService.prototype.findBoard = function (boardId) {
         var url = this.baseUrl + '/api/game/' + boardId;
-=======
-    BoardService.prototype.findBoard = function (gameId) {
-        var url = this.baseUrl + '/api/game/' + gameId;
->>>>>>> 3227773b1693f353a4db2aa57ce61ca8c44e3817
         return this.http.get(url).map(function (response) {
             return response.json();
         });
@@ -410,9 +398,10 @@ var BoardService = /** @class */ (function () {
             return response.json();
         });
     };
-    BoardService.prototype.accessMemory = function (boardId, value) {
+    BoardService.prototype.accessMemory = function (boardId, val) {
+        console.log("in client service. value is : " + val);
         var url = this.baseUrl + '/api/game/' + boardId + '/accessMemory';
-        return this.http.post(url, value).map(function (response) {
+        return this.http.post(url, val).map(function (response) {
             return response.json();
         });
     };

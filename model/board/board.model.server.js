@@ -24,4 +24,6 @@ function findBoard(boardId) {
 
 function accessMemory(boardId, value) {
   console.log("in model access memory" + boardId + " : " + value);
+
+  return BoardModel.findOne({boardId: boardId});
 }
