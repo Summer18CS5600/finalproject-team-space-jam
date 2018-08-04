@@ -29,7 +29,7 @@ export class BoardComponent implements OnInit {
     let cacheLine = 0;
     let cacheCounter = 0;
     for (i = 0; i < 100; i++) {
-      if (cacheCounter > 24) {
+      if (cacheCounter > 3) {
         cacheLine += 1;
         cacheCounter = 0;
       }
@@ -48,6 +48,11 @@ export class BoardComponent implements OnInit {
     });
   }
 
+  /**
+   * Find the number who's position equals the given parameter.
+   * @param position
+   * @returns {any}
+   */
   findThisNumber(position) {
     console.log("entering find This number");
     for (var i = 0; i < this.gameNumbers.length; i++) {
@@ -57,6 +62,26 @@ export class BoardComponent implements OnInit {
     }
   }
 
+  ///// THIS WASN'T WORKING BEING CALLED INSIDE TILECLICK()
+  // /**
+  //  * Given a number, find the matching number and retrieve it's cache line. This is a helper function so we can
+  //  * find other numbers in the same cache line for highlighting.
+  //  * @param num represents the selected number from the board.
+  //  */
+  // findThisNumbersCacheLine(num) {
+  //   console.log("entering find a cache line");
+  //   for (var i = 0; i < this.gameNumbers.length; i++) {
+  //     if (this.gameNumbers[i]['value'] == num) {
+  //       return this.gameNumbers[i]['cacheLine'];
+  //     }
+  //   }
+  //
+  //
+  // }
+
+  /**
+   * Creates (HTML-wise) and Renders the table to the screen.
+   */
   createTable() {
     var body = document.getElementsByTagName('body')[0];
     var tbl = document.createElement('table');
@@ -93,12 +118,38 @@ export class BoardComponent implements OnInit {
     body.appendChild(tbl)
   }
 
+   /**
+   * Represents what happens when we click a tile. Currenty used to highlight the tile by changing the background color.
+   * @param e represents the mouse event.
+   */
   tileClick(e) {
     e.target.style.backgroundColor = 'white';
-    console.log("You clicked on " + e);
+    console.log("You clicked on " + e.target.textContent);
+    var currentNum = e.target.textContent;
+     //var currentCacheLine = this.findThisNumbersCacheLine(currentNum);
+     var currentCacheLine = null;
+
+     console.log("entering find a cache line");
+     for (var i = 0; i < 100; i++) {
+       console.log("Hi Why won't this work below here anymore? I wonder if there's something special about the scope" +
+         "of being insdie a function");
+       console.log(this);
+       console.log(gameNumbers);
+       console.log(this.gameNumbers[5]);
+       if (this.gameNumbers[i]['value'] == currentNum) {
+         currentCacheLine = this.gameNumbers[i]['cacheLine'];
+       }
+     }
+    console.log("The Cache Line is: " + currentCacheLine);
+    for (var i = 0; i < 100; i++) {
+      if (this.gameNumbers[i]['cacheLine']) {
+        console.log("We should highlight " + this.gameNumbers[i]['value']);
+      }
+    }
 
 
   }
+
 
 
 
