@@ -185,7 +185,7 @@ export class BoardComponent implements OnInit {
    * @param e represents the mouse event.
    */
   tileClick(e) {
-    e.target.style.backgroundColor = 'white';
+    // e.target.style.backgroundColor = 'white'; This shouldn't be necessary once we implement rendering every 'x' seconds.
     console.log("You clicked on " + e.target.textContent);
     var currentNum = e.target.textContent;
      //var currentCacheLine = this.findThisNumbersCacheLine(currentNum);
@@ -203,6 +203,8 @@ export class BoardComponent implements OnInit {
     })
 
   }
+
+
 
 
 
