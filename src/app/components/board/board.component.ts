@@ -20,6 +20,7 @@ export class BoardComponent implements OnInit {
   tbl: any;
   body: any;
   startedRefresh: boolean;
+  bNum: number;
 
   constructor(private router: Router, private boardService: BoardService) {}
 
