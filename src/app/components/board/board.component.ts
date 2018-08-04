@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import {Router} from '@angular/router';
 import {BoardService} from '../../services/board.service.client';
-import {$} from "protractor";
 
 @Component({
   selector: 'app-board',
@@ -11,8 +10,10 @@ import {$} from "protractor";
 })
 export class BoardComponent implements OnInit {
 
+  boardId: any;
   gameNumbers: number[];
   exampleBoard: any;
+
   constructor(private router: Router, private boardService: BoardService) {}
 
   ngOnInit() {
@@ -23,9 +24,10 @@ export class BoardComponent implements OnInit {
 
   /**
    * Initializes a Game Board. Currently this is needed to be done before we can hit render for the first time.
-   * @param gameId
+   * @param boardId
    */
-  initializeBoard(gameId) {
+  initializeBoard(boardId) {
+    this.boardId = boardId;
     console.log('initializing');
     // Make a board.
     const nums = [];
@@ -40,11 +42,11 @@ export class BoardComponent implements OnInit {
       nums.push({position: 99-i, value: i, cacheLine: cacheLine, hidden: true, locked: false});
       cacheCounter += 1;
     }
-    this.exampleBoard = {id: gameId,
+    this.exampleBoard = {id: boardId,
       numbers: nums
     };
     // Send the board to the client api
-    this.boardService.initializeBoard(gameId, this.exampleBoard).subscribe((game: any) => {
+    this.boardService.initializeBoard(boardId, this.exampleBoard).subscribe((game: any) => {
       console.log(game);
       this.gameNumbers = game.numbers; // This should get removed once we put in boardId (probably)
       console.log(this.gameNumbers);
@@ -66,6 +68,7 @@ export class BoardComponent implements OnInit {
   }
 
   findBoard(boardId) {
+    this.boardId = boardId;
     console.log("looking for a board");
     this.boardService.findBoard(boardId).subscribe((board: any) => {
       this.gameNumbers = board.numbers;
@@ -110,6 +113,9 @@ export class BoardComponent implements OnInit {
           td.style.textAlign = 'center';
           td.style.webkitTextFillColor = '#000000';
           td.addEventListener("click", this.tileClick);
+          td.addEventListener("click", (e) => {
+            this.accessMemory(e);
+          });
           tr.appendChild(td);
         }
       }
@@ -129,6 +135,17 @@ export class BoardComponent implements OnInit {
     var currentNum = e.target.textContent;
      //var currentCacheLine = this.findThisNumbersCacheLine(currentNum);
      var currentCacheLine = null;
+  }
+
+
+  accessMemory(e) {
+    var value = e.target.textContent;
+    console.log("umm.." + value);
+
+    this.boardService.accessMemory(this.boardId, value).subscribe((board: any) => {
+      this.gameNumbers = board.numbers; // This should get removed once we put in boardId (probably)
+      console.log(this.gameNumbers)
+    })
 
   }
 

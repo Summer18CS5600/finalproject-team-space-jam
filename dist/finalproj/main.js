@@ -163,7 +163,11 @@ var Routing = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
+module.exports = "td {\n  background-color: black;\n\n\n}\ntr {\n  background-color: black;\n\n\n}\n"
+=======
 module.exports = "td {\r\n  background-color: black;\r\n\r\n\r\n}\r\ntr {\r\n  background-color: black;\r\n\r\n\r\n}\r\n"
+>>>>>>> 3227773b1693f353a4db2aa57ce61ca8c44e3817
 
 /***/ }),
 
@@ -174,7 +178,11 @@ module.exports = "td {\r\n  background-color: black;\r\n\r\n\r\n}\r\ntr {\r\n  b
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
+module.exports = "board.component\n\n<div *ngFor=\"let gameNumber of gameNumbers\">\n  <!--{{gameNumber['value']}}-->\n</div>\n\n<a (click)=\"initializeBoard(30)\">Initialize Board</a>\n<a (click)=\"renderTable()\">Create Board</a>\n<a (click)=\"findBoard(30)\">Find a board test</a>\n"
+=======
 module.exports = "board.component\r\n\r\n<div *ngFor=\"let gameNumber of gameNumbers\">\r\n  <!--{{gameNumber['value']}}-->\r\n</div>\r\n\r\n<a (click)=\"initializeBoard(30)\">Initialize Board</a>\r\n<a (click)=\"renderTable()\">Create Board</a>\r\n<a (click)=\"findBoard(30)\">Find a board test</a>\r\n"
+>>>>>>> 3227773b1693f353a4db2aa57ce61ca8c44e3817
 
 /***/ }),
 
@@ -215,10 +223,17 @@ var BoardComponent = /** @class */ (function () {
     };
     /**
      * Initializes a Game Board. Currently this is needed to be done before we can hit render for the first time.
+<<<<<<< HEAD
+     * @param boardId
+     */
+    BoardComponent.prototype.initializeBoard = function (boardId) {
+=======
      * @param gameId
      */
     BoardComponent.prototype.initializeBoard = function (gameId) {
+>>>>>>> 3227773b1693f353a4db2aa57ce61ca8c44e3817
         var _this = this;
+        this.boardId = boardId;
         console.log('initializing');
         // Make a board.
         var nums = [];
@@ -233,11 +248,11 @@ var BoardComponent = /** @class */ (function () {
             nums.push({ position: 99 - i, value: i, cacheLine: cacheLine, hidden: true, locked: false });
             cacheCounter += 1;
         }
-        this.exampleBoard = { id: gameId,
+        this.exampleBoard = { id: boardId,
             numbers: nums
         };
         // Send the board to the client api
-        this.boardService.initializeBoard(gameId, this.exampleBoard).subscribe(function (game) {
+        this.boardService.initializeBoard(boardId, this.exampleBoard).subscribe(function (game) {
             console.log(game);
             _this.gameNumbers = game.numbers; // This should get removed once we put in boardId (probably)
             console.log(_this.gameNumbers);
@@ -318,11 +333,18 @@ var BoardComponent = /** @class */ (function () {
     * @param e represents the mouse event.
     */
     BoardComponent.prototype.tileClick = function (e) {
+        var _this = this;
         e.target.style.backgroundColor = 'white';
         console.log("You clicked on " + e.target.textContent);
         var currentNum = e.target.textContent;
         //var currentCacheLine = this.findThisNumbersCacheLine(currentNum);
         var currentCacheLine = null;
+<<<<<<< HEAD
+        this.boardService.accessMemory(this.boardId, e.target.textContent).subscribe(function (board) {
+            _this.gameNumbers = board.numbers;
+        });
+=======
+>>>>>>> 3227773b1693f353a4db2aa57ce61ca8c44e3817
     };
     BoardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -371,15 +393,26 @@ var BoardService = /** @class */ (function () {
         this.http = http;
         this.baseUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseUrl;
     }
+<<<<<<< HEAD
+    BoardService.prototype.findBoard = function (boardId) {
+        var url = this.baseUrl + '/api/game/' + boardId;
+=======
     BoardService.prototype.findBoard = function (gameId) {
         var url = this.baseUrl + '/api/game/' + gameId;
+>>>>>>> 3227773b1693f353a4db2aa57ce61ca8c44e3817
         return this.http.get(url).map(function (response) {
             return response.json();
         });
     };
-    BoardService.prototype.initializeBoard = function (gameId, exampleBoard) {
-        var url = this.baseUrl + '/api/game/' + gameId;
+    BoardService.prototype.initializeBoard = function (boardId, exampleBoard) {
+        var url = this.baseUrl + '/api/game/' + boardId;
         return this.http.post(url, exampleBoard).map(function (response) {
+            return response.json();
+        });
+    };
+    BoardService.prototype.accessMemory = function (boardId, value) {
+        var url = this.baseUrl + '/api/game/' + boardId + '/accessMemory';
+        return this.http.post(url, value).map(function (response) {
             return response.json();
         });
     };
@@ -445,7 +478,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Jenny\OneDrive\Summer 2018\Computer Systems\Cache_Simulator_JAM\finalproject-team-space-jam\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/aj/code/finalproject-team-space-jam/src/main.ts */"./src/main.ts");
 
 
 /***/ })

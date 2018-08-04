@@ -12,16 +12,24 @@ export class BoardService {
   }
 
 
-  findBoard(gameId) {
-    const url = this.baseUrl + '/api/game/' + gameId;
+  findBoard(boardId) {
+    const url = this.baseUrl + '/api/game/' + boardId;
     return this.http.get(url).map((response: Response) => {
       return response.json();
     });
   }
 
-  initializeBoard(gameId, exampleBoard) {
-    const url = this.baseUrl + '/api/game/' + gameId;
+  initializeBoard(boardId, exampleBoard) {
+    const url = this.baseUrl + '/api/game/' + boardId;
     return this.http.post(url, exampleBoard).map((response: Response) => {
+      return response.json();
+    });
+  }
+
+  accessMemory(boardId, val) {
+    console.log("in client service. value is : " + val);
+    const url = this.baseUrl + '/api/game/' + boardId + '/accessMemory';
+    return this.http.post(url, val).map((response: Response) => {
       return response.json();
     });
   }
