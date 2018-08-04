@@ -7,6 +7,7 @@ module.exports= function(app){
   console.log("here at least");
   app.get("/api/game/:boardId",findGame);
   app.post("/api/game/:boardId", createBoard);
+  app.post("/api/game/:boardId/accessMemory", accessMemory);
 
   function findGame(req, res) {
     console.log("looking for game in server side");
@@ -30,15 +31,18 @@ module.exports= function(app){
       console.log('hello punk');
       res.json(board);
     })
-    // boardModel.initializeBoard(board).then(function (board) {
-    //   console.log("hello")
-    //   res.json(board);
-    // });
-
-    // before mongo:
-    // board.numbers = [9, 3, 2, 5];
-
   }
+
+  function accessMemory(req, res) {
+    var value = req.body.val;
+    console.log("in server accessing memory: value is - " + value);
+    boardModel.accessMemory(req.params['boardId'], value).then(function (board) {
+      console.log("getting back from db");
+      res.json(board);
+    })
+  }
+
+
 
 
 
