@@ -12,8 +12,8 @@ export class BoardService {
   }
 
 
-  getGameBoard(gameId) {
-    const url = this.baseUrl + '/api/a';
+  findBoard(gameId) {
+    const url = this.baseUrl + '/api/game/' + gameId;
     return this.http.get(url).map((response: Response) => {
       return response.json();
     });
