@@ -43,7 +43,7 @@ export class BoardComponent implements OnInit {
       this.refresh();
       this.interval = setInterval(() => {
         this.refresh();
-      }, 5000);
+      }, 1000);
     }
   }
 
