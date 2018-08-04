@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 
 import {Router} from '@angular/router';
 import {BoardService} from '../../services/board.service.client';
 import {Observable, Subscription} from "rxjs/Rx";
+import {NgForm} from "@angular/forms";
+import {isUndefined} from "util";
 
 @Component({
   selector: 'app-board',
@@ -10,6 +12,7 @@ import {Observable, Subscription} from "rxjs/Rx";
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
+  @ViewChild('f') boardInputForm: NgForm;
   private subscription: Subscription = new Subscription();
   boardId: any;
   gameNumbers: number[];
@@ -20,6 +23,7 @@ export class BoardComponent implements OnInit {
   tbl: any;
   body: any;
   startedRefresh: boolean;
+  bNum: number;
 
   constructor(private router: Router, private boardService: BoardService) {}
 
@@ -28,14 +32,19 @@ export class BoardComponent implements OnInit {
     this.startedRefresh = false;
     this.body = document.getElementsByTagName('body')[0];
     this.time = 0;
-    // this.refresh();
-    // console.log(this.boardId);
-
-    // this.gs.getGameBoard(30).subscribe((numbers: any) => {
-    //   this.gameNumbers = numbers;
-    // });
   }
 
+  /* Get user input for board number and use that to initialize and render the table */
+  boardInput(num: number) {
+    this.bNum = num;
+    this.boardId = num;
+    console.log("NUM: ", num);
+    console.log("bNUm: ", this.bNum);
+    this.initializeBoard(this.bNum);
+    this.renderTable();
+  }
+
+  /* Being the refresh for the page */
   startRefresh() {
     this.startedRefresh = true;
     if(this.boardId != null) {
@@ -59,20 +68,8 @@ export class BoardComponent implements OnInit {
         // this.body.removeChild(this.tbl);
         this.renderTable();
       });
-    //this.subscribeToData();
-    // this.subscription.add(this.boardService.findBoard(this.boardId)
-    //   .subscribe(data => {
-    //       this.data = data;
-    //       this.subscribeToData();
-    //   }));
   }
 
-  // subscribeToData() {
-  //   this.subscription.add(
-  //       Observable.timer(1000)
-  //         .subscribe(() => this.refresh())
-  //   );
-  // }
   /**
    * Initializes a Game Board. Currently this is needed to be done before we can hit render for the first time.
    * @param boardId

@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a493ced6-ec7b-4e39-ba47-4f7a2b238cfe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/services/cacheset.service.server.js" afterPath="$PROJECT_DIR$/server/services/cacheset.service.server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/services/board.service.server.js" afterPath="$PROJECT_DIR$/server/services/board.service.server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/board/board.component.html" afterPath="$PROJECT_DIR$/src/app/components/board/board.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/board/board.component.ts" afterPath="$PROJECT_DIR$/src/app/components/board/board.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/services/board.service.client.ts" afterPath="$PROJECT_DIR$/src/app/services/board.service.client.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,9 +23,39 @@
       <file leaf-file-name="board.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-              <folding />
+            <state relative-caret-position="390">
+              <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+              <folding>
+                <marker date="1533412574000" expanded="false" signature="7:8" ph="..." />
+                <marker date="1533412574000" expanded="true" signature="2046:6328" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="2049:2190" ph="/** Initializes a Game Board. Currently this is needed to be done before we can hit render for the first time. ...*/" />
+                <marker date="1533412574000" expanded="true" signature="2218:3005" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="2417:2633" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="2447:2506" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="2658:2697" ph="{&quot;id&quot;: boardId...}" />
+                <marker date="1533412574000" expanded="true" signature="2830:2999" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="3009:3199" ph="/** Find the number who's position equals the given parameter. ...*/" />
+                <marker date="1533412574000" expanded="true" signature="3227:3499" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="3329:3495" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="3522:3712" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="3715:3930" ph="/** Creates (HTML-wise) and Renders the table to the screen. ...*/" />
+                <marker date="1533412574000" expanded="true" signature="3948:5445" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="3988:4022" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="4228:5372" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="4310:5338" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="4388:4416" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="4422:5330" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="4522:4556" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="4562:4605" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="4616:4709" ph="//..." />
+                <marker date="1533412574000" expanded="true" signature="4915:4978" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="4984:5045" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="5241:5288" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="5450:5623" ph="/** Represents what happens when we click a tile. Currently used to highlight the tile by changing the background color. ...*/" />
+                <marker date="1533412574000" expanded="true" signature="5639:5977" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="5998:6320" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="6170:6314" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,7 +107,14 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1533412574000" expanded="true" signature="1394:1396" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="1394:1401" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="1405:1568" ph="/**   Updates the database by changing every number(object) to not-hidden and (not-yet: locked). ...*/" />
+                <marker date="1533412574000" expanded="true" signature="1633:1727" ph="//..." />
+                <marker date="1533412574000" expanded="true" signature="2030:2324" ph="{...}" />
+                <marker date="1533412574000" expanded="true" signature="2084:2316" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -205,81 +246,6 @@
               <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
               <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="board" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="cacheset" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="board" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="cacheset" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -345,19 +311,18 @@
       <workItem from="1533314992206" duration="653000" />
       <workItem from="1533325780995" duration="547000" />
       <workItem from="1533328490433" duration="18511000" />
-      <workItem from="1533405265578" duration="7196000" />
+      <workItem from="1533405265578" duration="7256000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19143000" />
+    <option name="totallyTimeSpent" value="19203000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -442,7 +407,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-          <folding />
+          <folding>
+            <marker date="1533412574000" expanded="false" signature="7:8" ph="..." />
+            <marker date="1533412574000" expanded="true" signature="2046:6328" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2049:2190" ph="/** Initializes a Game Board. Currently this is needed to be done before we can hit render for the first time. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="2218:3005" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2417:2633" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2447:2506" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2658:2697" ph="{&quot;id&quot;: boardId...}" />
+            <marker date="1533412574000" expanded="true" signature="2830:2999" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3009:3199" ph="/** Find the number who's position equals the given parameter. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="3227:3499" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3329:3495" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3522:3712" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3715:3930" ph="/** Creates (HTML-wise) and Renders the table to the screen. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="3948:5445" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3988:4022" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4228:5372" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4310:5338" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4388:4416" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4422:5330" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4522:4556" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4562:4605" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4616:4709" ph="//..." />
+            <marker date="1533412574000" expanded="true" signature="4915:4978" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4984:5045" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="5241:5288" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="5450:5623" ph="/** Represents what happens when we click a tile. Currently used to highlight the tile by changing the background color. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="5639:5977" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="5998:6320" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="6170:6314" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -467,7 +462,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-          <folding />
+          <folding>
+            <marker date="1533412574000" expanded="true" signature="1394:1396" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="1394:1401" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="1405:1568" ph="/**   Updates the database by changing every number(object) to not-hidden and (not-yet: locked). ...*/" />
+            <marker date="1533412574000" expanded="true" signature="1633:1727" ph="//..." />
+            <marker date="1533412574000" expanded="true" signature="2030:2324" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2084:2316" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -486,7 +488,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="51" column="26" lean-forward="false" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
-          <folding />
+          <folding>
+            <marker date="1533412574000" expanded="false" signature="7:8" ph="..." />
+            <marker date="1533412574000" expanded="true" signature="2046:6328" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2049:2190" ph="/** Initializes a Game Board. Currently this is needed to be done before we can hit render for the first time. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="2218:3005" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2417:2633" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2447:2506" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2658:2697" ph="{&quot;id&quot;: boardId...}" />
+            <marker date="1533412574000" expanded="true" signature="2830:2999" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3009:3199" ph="/** Find the number who's position equals the given parameter. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="3227:3499" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3329:3495" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3522:3712" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3715:3930" ph="/** Creates (HTML-wise) and Renders the table to the screen. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="3948:5445" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3988:4022" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4228:5372" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4310:5338" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4388:4416" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4422:5330" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4522:4556" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4562:4605" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4616:4709" ph="//..." />
+            <marker date="1533412574000" expanded="true" signature="4915:4978" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4984:5045" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="5241:5288" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="5450:5623" ph="/** Represents what happens when we click a tile. Currently used to highlight the tile by changing the background color. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="5639:5977" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="5998:6320" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="6170:6314" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -548,7 +580,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4756">
           <caret line="168" column="36" lean-forward="false" selection-start-line="168" selection-start-column="36" selection-end-line="168" selection-end-column="36" />
-          <folding />
+          <folding>
+            <marker date="1533412574000" expanded="false" signature="7:8" ph="..." />
+            <marker date="1533412574000" expanded="true" signature="2046:6328" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2049:2190" ph="/** Initializes a Game Board. Currently this is needed to be done before we can hit render for the first time. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="2218:3005" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2417:2633" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2447:2506" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2658:2697" ph="{&quot;id&quot;: boardId...}" />
+            <marker date="1533412574000" expanded="true" signature="2830:2999" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3009:3199" ph="/** Find the number who's position equals the given parameter. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="3227:3499" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3329:3495" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3522:3712" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3715:3930" ph="/** Creates (HTML-wise) and Renders the table to the screen. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="3948:5445" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3988:4022" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4228:5372" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4310:5338" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4388:4416" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4422:5330" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4522:4556" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4562:4605" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4616:4709" ph="//..." />
+            <marker date="1533412574000" expanded="true" signature="4915:4978" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4984:5045" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="5241:5288" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="5450:5623" ph="/** Represents what happens when we click a tile. Currently used to highlight the tile by changing the background color. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="5639:5977" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="5998:6320" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="6170:6314" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -580,7 +642,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1392">
           <caret line="52" column="9" lean-forward="true" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
-          <folding />
+          <folding>
+            <marker date="1533412574000" expanded="false" signature="7:8" ph="..." />
+            <marker date="1533412574000" expanded="true" signature="2046:6328" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2049:2190" ph="/** Initializes a Game Board. Currently this is needed to be done before we can hit render for the first time. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="2218:3005" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2417:2633" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2447:2506" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2658:2697" ph="{&quot;id&quot;: boardId...}" />
+            <marker date="1533412574000" expanded="true" signature="2830:2999" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3009:3199" ph="/** Find the number who's position equals the given parameter. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="3227:3499" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3329:3495" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3522:3712" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3715:3930" ph="/** Creates (HTML-wise) and Renders the table to the screen. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="3948:5445" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3988:4022" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4228:5372" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4310:5338" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4388:4416" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4422:5330" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4522:4556" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4562:4605" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4616:4709" ph="//..." />
+            <marker date="1533412574000" expanded="true" signature="4915:4978" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4984:5045" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="5241:5288" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="5450:5623" ph="/** Represents what happens when we click a tile. Currently used to highlight the tile by changing the background color. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="5639:5977" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="5998:6320" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="6170:6314" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -655,9 +747,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="390">
+          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+          <folding>
+            <marker date="1533412574000" expanded="false" signature="7:8" ph="..." />
+            <marker date="1533412574000" expanded="true" signature="2046:6328" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2049:2190" ph="/** Initializes a Game Board. Currently this is needed to be done before we can hit render for the first time. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="2218:3005" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2417:2633" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2447:2506" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2658:2697" ph="{&quot;id&quot;: boardId...}" />
+            <marker date="1533412574000" expanded="true" signature="2830:2999" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3009:3199" ph="/** Find the number who's position equals the given parameter. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="3227:3499" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3329:3495" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3522:3712" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3715:3930" ph="/** Creates (HTML-wise) and Renders the table to the screen. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="3948:5445" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="3988:4022" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4228:5372" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4310:5338" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4388:4416" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4422:5330" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4522:4556" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4562:4605" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4616:4709" ph="//..." />
+            <marker date="1533412574000" expanded="true" signature="4915:4978" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="4984:5045" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="5241:5288" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="5450:5623" ph="/** Represents what happens when we click a tile. Currently used to highlight the tile by changing the background color. ...*/" />
+            <marker date="1533412574000" expanded="true" signature="5639:5977" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="5998:6320" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="6170:6314" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -707,7 +829,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1533412574000" expanded="true" signature="1394:1396" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="1394:1401" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="1405:1568" ph="/**   Updates the database by changing every number(object) to not-hidden and (not-yet: locked). ...*/" />
+            <marker date="1533412574000" expanded="true" signature="1633:1727" ph="//..." />
+            <marker date="1533412574000" expanded="true" signature="2030:2324" ph="{...}" />
+            <marker date="1533412574000" expanded="true" signature="2084:2316" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

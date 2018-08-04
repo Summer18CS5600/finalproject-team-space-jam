@@ -10,8 +10,6 @@ export class BoardService {
 
   constructor(private http: Http) {
   }
-
-
   findBoard(boardId) {
     const url = this.baseUrl + '/api/game/' + boardId;
     return this.http.get(url).map((response: Response) => {

@@ -16,18 +16,33 @@ module.exports= function(app){
     });
   }
 
+  /* Look to see if the board is already in the database, else, create it */
   function createBoard(req, res) {
     console.log("SERVER: creating board...");
     var nums = req.body.numbers;
+    var bID = req.params['boardId'];
     const board = {
-      boardId: req.params['boardId'],
+      boardId: bID,
       numbers: nums
     };
 
-    boardModel.createBoard(board).then(function (board) {
-      console.log('SERVER: board created, sending back to client...');
-      res.json(board);
-    })
+    boardModel.findBoard(bID)
+      .then(function (board1) {
+        if(board1 != null) {
+          console.log("FOUND A BOARD!");
+          res.json(board1);
+        } else {
+          boardModel.createBoard(board)
+            .then(function (board2) {
+              console.log("DIDN'T FIND A BOARD CREATED ONE INSTEAD");
+              res.json(board2);
+            });
+        }
+      });
+    // boardModel.createBoard(board).then(function (board) {
+    //   console.log('SERVER: board created, sending back to client...');
+    //   res.json(board);
+    // })
   }
 
   /**

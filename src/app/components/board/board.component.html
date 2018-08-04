@@ -4,6 +4,22 @@ board.component
   <!--{{gameNumber['value']}}-->
 </div>
 
-<a (click)="initializeBoard(31)">Initialize Board</a>
-<a (click)="renderTable()">Create Board</a>
-<a (click)="findBoard(31)">Find a board test</a>
+<!--<a (click)="initializeBoard(31)">Initialize Board</a>-->
+<!--<a (click)="renderTable()">Create Board</a>-->
+<!--<a (click)="findBoard(31)">Find a board test</a>-->
+<form (ngSubmit)="boardInput(bNum.value)" #f="ngForm">
+  Input Board Number:
+  <input
+    name="bNum"
+    id="bNum"
+    type="text"
+    placeholder="31"
+    class="form-control"
+    ngModel
+    required
+    #bNum="ngModel"
+  />
+  <input (click)="boardInput(bNum.value)"
+           class="button"
+           type="submit"/>
+</form>
