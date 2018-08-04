@@ -57,6 +57,13 @@ export class BoardComponent implements OnInit {
     }
   }
 
+  findBoard(boardId) {
+    console.log("looking for a board");
+    this.boardService.findBoard(boardId).subscribe((board: any) => {
+      this.gameNumbers = board.numbers;
+    });
+  }
+
   createTable() {
     var body = document.getElementsByTagName('body')[0];
     var tbl = document.createElement('table');
