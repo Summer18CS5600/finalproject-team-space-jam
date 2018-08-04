@@ -4,7 +4,7 @@
 module.exports= function(app){
   var boardModel = require("../../model/board/board.model.server");
 
-  console.log("here at least");
+  console.log("Server started...");
   app.get("/api/game/:boardId",findGame);
   app.post("/api/game/:boardId", createBoard);
   app.post("/api/game/:boardId/accessMemory", accessMemory);
@@ -18,9 +18,8 @@ module.exports= function(app){
   }
 
   function createBoard(req, res) {
-    console.log("in server...");
+    console.log("SERVER: creating board...");
     var nums = req.body.numbers;
-    console.log(nums);
     const board = {
       boardId: req.params['boardId'],
       numbers: nums
@@ -28,17 +27,43 @@ module.exports= function(app){
 
     console.log(board);
     boardModel.createBoard(board).then(function (board) {
-      console.log('hello punk');
+      console.log('SERVER: board created, sending back to client...');
       res.json(board);
     })
   }
 
+  /**
+   *   Updates the database by changing every number(object) to not-hidden and (not-yet: locked).
+   *   (and everything in the cacheline to not-hidden).
+   */
   function accessMemory(req, res) {
-    var value = req.body.value;
-    console.log("in server accessing memory: value is - " + value);
-    boardModel.accessMemory(req.params['boardId'], req.body.value).then(function (board) {
-      console.log("getting back from db");
-      res.json(board);
+    let v = req.body.value; // the value to be updated.
+    // console.log("in server accessing memory: value is - " + v);
+    let theCLine; // the cache line of the number accessed.
+
+    // Find the board
+    boardModel.findBoard(req.params['boardId']).then(function (boardToBeUpdated) {
+      // Find the cacheline for this specific number that was accessed.
+      for (let i = 0; i < boardToBeUpdated.numbers.length; i++) {
+        if (boardToBeUpdated.numbers[i].value == v) {
+          console.log("SERVER: number found: " + boardToBeUpdated.numbers[i].value + " in cacheLine " + boardToBeUpdated.numbers[i].cacheLine);
+          theCLine = boardToBeUpdated.numbers[i].cacheLine;
+          break;
+        }
+      }
+
+      // Update the hidden fields.
+      for (let i = 0; i < boardToBeUpdated.numbers.length; i++) {
+        if (boardToBeUpdated.numbers[i].cacheLine == theCLine) {
+          boardToBeUpdated.numbers[i].hidden = false;
+        }
+      }
+
+      // Update the board in the database and send back to client.
+      boardModel.updateBoard(req.params['boardId'], boardToBeUpdated).then(function (updatedBoard) {
+        res.json(updatedBoard);
+      });
+
     })
   }
 

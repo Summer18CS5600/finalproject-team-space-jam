@@ -27,7 +27,7 @@ export class BoardService {
   }
 
   accessMemory(boardId, val) {
-    console.log("in client service. value is : " + val);
+    console.log("in client service. value is : " + val.value);
     const url = this.baseUrl + '/api/game/' + boardId + '/accessMemory';
     return this.http.post(url, val).map((response: Response) => {
       return response.json();

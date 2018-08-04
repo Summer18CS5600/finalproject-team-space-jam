@@ -179,7 +179,7 @@ export class BoardComponent implements OnInit {
 
   accessMemory(e) {
     var value = {value: e.target.textContent};
-    console.log("umm.." + value);
+    console.log("umm.." + value.value);
 
     this.boardService.accessMemory(this.boardId, value).subscribe((board: any) => {
       this.gameNumbers = board.numbers; // This should get removed once we put in boardId (probably)
