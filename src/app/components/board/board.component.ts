@@ -21,6 +21,10 @@ export class BoardComponent implements OnInit {
     // });
   }
 
+  /**
+   * Initializes a Game Board. Currently this is needed to be done before we can hit render for the first time.
+   * @param gameId
+   */
   initializeBoard(gameId) {
     console.log('initializing');
     // Make a board.
@@ -29,7 +33,7 @@ export class BoardComponent implements OnInit {
     let cacheLine = 0;
     let cacheCounter = 0;
     for (i = 0; i < 100; i++) {
-      if (cacheCounter > 24) {
+      if (cacheCounter > 3) {
         cacheLine += 1;
         cacheCounter = 0;
       }
@@ -39,25 +43,42 @@ export class BoardComponent implements OnInit {
     this.exampleBoard = {id: gameId,
       numbers: nums
     };
-
     // Send the board to the client api
     this.boardService.initializeBoard(gameId, this.exampleBoard).subscribe((game: any) => {
       console.log(game);
-      this.gameNumbers = game.numbers;
+      this.gameNumbers = game.numbers; // This should get removed once we put in boardId (probably)
       console.log(this.gameNumbers)
     });
   }
 
+  /**
+   * Find the number who's position equals the given parameter.
+   * @param position
+   * @returns the Value and Hidden Flag, may later expand to have it also include the cacheLine
+   */
   findThisNumber(position) {
     console.log("entering find This number");
     for (var i = 0; i < this.gameNumbers.length; i++) {
       if (this.gameNumbers[i]['position'] == position) {
-        return this.gameNumbers[i]['value'];
+        return {value: this.gameNumbers[i]['value'], hidden: this.gameNumbers[i]['hidden']};
       }
     }
   }
 
-  createTable() {
+  findBoard(boardId) {
+    console.log("looking for a board");
+    this.boardService.findBoard(boardId).subscribe((board: any) => {
+      this.gameNumbers = board.numbers;
+    });
+  }
+
+  /**
+   * Creates (HTML-wise) and Renders the table to the screen.
+   *
+   * Note: In the future, I'm thinking we should give this a boardId as a parameter, so it can
+   * fetch the board from the db to render.
+   */
+  renderTable() {
     var body = document.getElementsByTagName('body')[0];
     var tbl = document.createElement('table');
     tbl.style.width = '50%';
@@ -78,9 +99,15 @@ export class BoardComponent implements OnInit {
             pos = i*10 + j;
           }
           console.log('the pos ' + pos);
+          // Currently a dict with {value: x, hidden: bool}
           var data = this.findThisNumber(pos);
-          td.appendChild(document.createTextNode(data));
-          td.style.backgroundColor = '#000000';
+          td.appendChild(document.createTextNode(data['value']));
+          // Change the background color based on hidden bool
+          if (data['hidden']) {
+            td.style.backgroundColor = '#000000';
+          } else {
+            td.style.backgroundColor = 'white';
+          }
           td.style.textAlign = 'center';
           td.style.webkitTextFillColor = '#000000';
           td.addEventListener("click", this.tileClick);
@@ -93,12 +120,19 @@ export class BoardComponent implements OnInit {
     body.appendChild(tbl)
   }
 
+   /**
+   * Represents what happens when we click a tile. Currenty used to highlight the tile by changing the background color.
+   * @param e represents the mouse event.
+   */
   tileClick(e) {
     e.target.style.backgroundColor = 'white';
-    console.log("You clicked on " + e);
-
+    console.log("You clicked on " + e.target.textContent);
+    var currentNum = e.target.textContent;
+     //var currentCacheLine = this.findThisNumbersCacheLine(currentNum);
+     var currentCacheLine = null;
 
   }
+
 
 
 

@@ -5,14 +5,15 @@ module.exports= function(app){
   var boardModel = require("../../model/board/board.model.server");
 
   console.log("here at least");
-  app.get("/api/a",findGame);
-  app.get("/api/game/:gameId",findGame);
-  app.post("/api/game/:gameId", createBoard);
+  app.get("/api/game/:boardId",findGame);
+  app.post("/api/game/:boardId", createBoard);
 
   function findGame(req, res) {
-    console.log("in the game");
-    var numbers = [3, 4, 6, 9];
-    res.json(numbers);
+    console.log("looking for game in server side");
+    boardModel.findBoard(req.params['boardId']).then(function (board) {
+      console.log(board);
+      res.json(board);
+    });
   }
 
   function createBoard(req, res) {
@@ -20,7 +21,7 @@ module.exports= function(app){
     var nums = req.body.numbers;
     console.log(nums);
     const board = {
-      boardId: 1,
+      boardId: req.params['boardId'],
       numbers: nums
     };
 

@@ -4,6 +4,7 @@ var BoardModel = mongoose.model("BoardModel", BoardSchema);
 
 //are bound to the functions below. this is essentially defining the api.
 BoardModel.createBoard = createBoard;
+BoardModel.findBoard = findBoard;
 
 module.exports = BoardModel;
 
@@ -13,4 +14,9 @@ function createBoard(board) {
   console.log(board);
   var newBoard = board;
   return BoardModel.create(newBoard);
+}
+
+function findBoard(boardId) {
+  console.log("in model finding board: " + boardId);
+  return BoardModel.findOne({boardId: boardId});
 }
