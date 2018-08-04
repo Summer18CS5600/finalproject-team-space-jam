@@ -139,7 +139,7 @@ export class BoardComponent implements OnInit {
 
 
   accessMemory(e) {
-    var value = e.target.textContent;
+    var value = {value: e.target.textContent};
     console.log("umm.." + value);
 
     this.boardService.accessMemory(this.boardId, value).subscribe((board: any) => {
