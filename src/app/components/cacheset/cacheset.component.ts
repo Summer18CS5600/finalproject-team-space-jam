@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {CacheSetService} from "../../services/cacheset.service.client";
 
 @Component({
   selector: 'app-cacheset',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CachesetComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private router: Router, private cacheSetService: CacheSetService) {}
 
   ngOnInit() {
+
+
   }
 
 }
