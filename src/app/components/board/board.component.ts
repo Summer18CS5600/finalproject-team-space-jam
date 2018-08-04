@@ -74,7 +74,6 @@ export class BoardComponent implements OnInit {
       this.gameNumbers = board.numbers;
     });
   }
-
   /**
    * Creates (HTML-wise) and Renders the table to the screen.
    *
@@ -123,7 +122,7 @@ export class BoardComponent implements OnInit {
       tbdy.appendChild(tr);
     }
     tbl.appendChild(tbdy);
-    body.appendChild(tbl)
+    body.appendChild(tbl);
   }
 
    /**
