@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {Router} from '@angular/router';
 import {BoardService} from '../../services/board.service.client';
+import {Observable, Subscription} from "rxjs/Rx";
 
 @Component({
   selector: 'app-board',
@@ -9,19 +10,56 @@ import {BoardService} from '../../services/board.service.client';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-
+  private subscription: Subscription = new Subscription();
   boardId: any;
   gameNumbers: number[];
   exampleBoard: any;
+  data: any;
+  interval: any;
+  time: number;
 
   constructor(private router: Router, private boardService: BoardService) {}
 
+  /* Refresh the gameBoard every 1 second*/
   ngOnInit() {
+      this.time = 0;
+     // this.refresh();
+    console.log(this.boardId);
+    if(this.boardId != null) {
+      console.log("INSIDE: ", this.boardId);
+      this.refresh();
+      this.interval = setInterval(() => {
+        this.refresh();
+      }, 1000);
+    }
     // this.gs.getGameBoard(30).subscribe((numbers: any) => {
     //   this.gameNumbers = numbers;
     // });
   }
 
+  /* Refresh the page, calling the findBoard function so that all players have updated gameBoards */
+  refresh() {
+    console.log("REFRESHING: ", this.time);
+    this.time = this.time + 5;
+    this.boardService.findBoard(this.boardId)
+      .subscribe((board : any) => {
+        console.log("ARE WE GETTING A BOARD?!");
+        this.gameNumbers = board.numbers;
+      });
+    //this.subscribeToData();
+    // this.subscription.add(this.boardService.findBoard(this.boardId)
+    //   .subscribe(data => {
+    //       this.data = data;
+    //       this.subscribeToData();
+    //   }));
+  }
+
+  // subscribeToData() {
+  //   this.subscription.add(
+  //       Observable.timer(1000)
+  //         .subscribe(() => this.refresh())
+  //   );
+  // }
   /**
    * Initializes a Game Board. Currently this is needed to be done before we can hit render for the first time.
    * @param boardId
@@ -123,6 +161,7 @@ export class BoardComponent implements OnInit {
     }
     tbl.appendChild(tbdy);
     body.appendChild(tbl);
+    this.ngOnInit();
   }
 
    /**
