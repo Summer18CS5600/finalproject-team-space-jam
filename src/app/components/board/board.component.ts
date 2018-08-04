@@ -17,24 +17,34 @@ export class BoardComponent implements OnInit {
   data: any;
   interval: any;
   time: number;
+  tbl: any;
+  body: any;
+  startedRefresh: boolean;
 
   constructor(private router: Router, private boardService: BoardService) {}
 
   /* Refresh the gameBoard every 1 second*/
   ngOnInit() {
-      this.time = 0;
-     // this.refresh();
-    console.log(this.boardId);
+    this.startedRefresh = false;
+    this.body = document.getElementsByTagName('body')[0];
+    this.time = 0;
+    // this.refresh();
+    // console.log(this.boardId);
+
+    // this.gs.getGameBoard(30).subscribe((numbers: any) => {
+    //   this.gameNumbers = numbers;
+    // });
+  }
+
+  startRefresh() {
+    this.startedRefresh = true;
     if(this.boardId != null) {
       console.log("INSIDE: ", this.boardId);
       this.refresh();
       this.interval = setInterval(() => {
         this.refresh();
-      }, 1000);
+      }, 5000);
     }
-    // this.gs.getGameBoard(30).subscribe((numbers: any) => {
-    //   this.gameNumbers = numbers;
-    // });
   }
 
   /* Refresh the page, calling the findBoard function so that all players have updated gameBoards */
@@ -43,8 +53,11 @@ export class BoardComponent implements OnInit {
     this.time = this.time + 5;
     this.boardService.findBoard(this.boardId)
       .subscribe((board : any) => {
-        console.log("ARE WE GETTING A BOARD?!");
+        // console.log("ARE WE GETTING A BOARD?!");
         this.gameNumbers = board.numbers;
+        this.tbl.remove();
+        // this.body.removeChild(this.tbl);
+        this.renderTable();
       });
     //this.subscribeToData();
     // this.subscription.add(this.boardService.findBoard(this.boardId)
@@ -118,11 +131,14 @@ export class BoardComponent implements OnInit {
    * Note: In the future, I'm thinking we should give this a boardId as a parameter, so it can
    * fetch the board from the db to render.
    */
+
   renderTable() {
-    var body = document.getElementsByTagName('body')[0];
-    var tbl = document.createElement('table');
-    tbl.style.width = '50%';
-    tbl.setAttribute('border', '1');
+    if (this.startedRefresh == false) {
+      this.startRefresh();
+    }
+    this.tbl = document.createElement('table');
+    this.tbl.style.width = '50%';
+    this.tbl.setAttribute('border', '1');
     var tbdy = document.createElement('tbody');
     for (var i = 0; i < 10; i++) {
       var tr = document.createElement('tr');
@@ -138,7 +154,7 @@ export class BoardComponent implements OnInit {
           } else {
             pos = i * 10 + j;
           }
-          console.log('the pos ' + pos);
+          // console.log('the pos ' + pos);
           // Currently a dict with {value: x, hidden: bool}
           var data = this.findThisNumber(pos);
           td.appendChild(document.createTextNode(data['value']));
@@ -159,9 +175,8 @@ export class BoardComponent implements OnInit {
       }
       tbdy.appendChild(tr);
     }
-    tbl.appendChild(tbdy);
-    body.appendChild(tbl);
-    this.ngOnInit();
+    this.tbl.appendChild(tbdy);
+    this.body.appendChild(this.tbl);
   }
 
    /**

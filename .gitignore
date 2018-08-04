@@ -9,6 +9,8 @@
 
 # IDEs and editors
 /.idea
+.idea/workspace.xml
+.idea/*
 .project
 .classpath
 .c9/

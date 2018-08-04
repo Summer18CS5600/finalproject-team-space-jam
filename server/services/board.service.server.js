@@ -12,7 +12,6 @@ module.exports= function(app){
   function findGame(req, res) {
     console.log("looking for game in server side");
     boardModel.findBoard(req.params['boardId']).then(function (board) {
-      console.log(board);
       res.json(board);
     });
   }
@@ -25,7 +24,6 @@ module.exports= function(app){
       numbers: nums
     };
 
-    console.log(board);
     boardModel.createBoard(board).then(function (board) {
       console.log('SERVER: board created, sending back to client...');
       res.json(board);
