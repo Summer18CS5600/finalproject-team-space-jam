@@ -49,7 +49,7 @@ export class BoardComponent implements OnInit {
     this.boardService.initializeBoard(boardId, this.exampleBoard).subscribe((game: any) => {
       console.log(game);
       this.gameNumbers = game.numbers; // This should get removed once we put in boardId (probably)
-      console.log(this.gameNumbers)
+      console.log(this.gameNumbers);
     });
   }
 
@@ -61,7 +61,7 @@ export class BoardComponent implements OnInit {
   findThisNumber(position) {
     console.log("entering find This number");
     for (var i = 0; i < this.gameNumbers.length; i++) {
-      if (this.gameNumbers[i]['position'] == position) {
+      if (this.gameNumbers[i]['position'] === position) {
         return {value: this.gameNumbers[i]['value'], hidden: this.gameNumbers[i]['hidden']};
       }
     }
@@ -90,15 +90,15 @@ export class BoardComponent implements OnInit {
       var tr = document.createElement('tr');
       for (var j = 0; j < 10; j++) {
         // console.log('J is now: ' + j);
-        if (i == 10 && j == 10) {
-          break
+        if (i === 10 && j === 10) {
+          break;
         } else {
           var td = document.createElement('td');
           var pos = null;
-          if (i == 0) {
+          if (i === 0) {
             pos = j;
           } else {
-            pos = i*10 + j;
+            pos = i * 10 + j;
           }
           console.log('the pos ' + pos);
           // Currently a dict with {value: x, hidden: bool}
@@ -116,7 +116,7 @@ export class BoardComponent implements OnInit {
           td.addEventListener("click", (e) => {
             this.accessMemory(e);
           });
-          tr.appendChild(td)
+          tr.appendChild(td);
         }
       }
       tbdy.appendChild(tr);
@@ -126,7 +126,7 @@ export class BoardComponent implements OnInit {
   }
 
    /**
-   * Represents what happens when we click a tile. Currenty used to highlight the tile by changing the background color.
+   * Represents what happens when we click a tile. Currently used to highlight the tile by changing the background color.
    * @param e represents the mouse event.
    */
   tileClick(e) {
