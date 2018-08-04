@@ -65,6 +65,13 @@ export class BoardComponent implements OnInit {
     }
   }
 
+  findBoard(boardId) {
+    console.log("looking for a board");
+    this.boardService.findBoard(boardId).subscribe((board: any) => {
+      this.gameNumbers = board.numbers;
+    });
+  }
+
   /**
    * Creates (HTML-wise) and Renders the table to the screen.
    *

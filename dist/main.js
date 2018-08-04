@@ -163,11 +163,7 @@ var Routing = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
-module.exports = "td {\n  background-color: black;\n\n\n}\ntr {\n  background-color: black;\n\n\n}\n"
-=======
 module.exports = "td {\r\n  background-color: black;\r\n\r\n\r\n}\r\ntr {\r\n  background-color: black;\r\n\r\n\r\n}\r\n"
->>>>>>> 05f37e8e61397318dc9119393615d1e4a80f29a8
 
 /***/ }),
 
@@ -178,11 +174,7 @@ module.exports = "td {\r\n  background-color: black;\r\n\r\n\r\n}\r\ntr {\r\n  b
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
-module.exports = "board.component\n\n<div *ngFor=\"let gameNumber of gameNumbers\">\n  <!--{{gameNumber['value']}}-->\n</div>\n\n<a (click)=\"initializeBoard(30)\">Initialize Board</a>\n<a (click)=\"createTable()\">Create Board</a>\n"
-=======
 module.exports = "board.component\r\n\r\n<div *ngFor=\"let gameNumber of gameNumbers\">\r\n  <!--{{gameNumber['value']}}-->\r\n</div>\r\n\r\n<a (click)=\"initializeBoard(30)\">Initialize Board</a>\r\n<a (click)=\"createTable()\">Create Board</a>\r\n"
->>>>>>> 05f37e8e61397318dc9119393615d1e4a80f29a8
 
 /***/ }),
 
@@ -230,11 +222,7 @@ var BoardComponent = /** @class */ (function () {
         var cacheLine = 0;
         var cacheCounter = 0;
         for (i = 0; i < 100; i++) {
-<<<<<<< HEAD
-            if (cacheCounter > 3) {
-=======
             if (cacheCounter > 24) {
->>>>>>> 05f37e8e61397318dc9119393615d1e4a80f29a8
                 cacheLine += 1;
                 cacheCounter = 0;
             }
@@ -251,14 +239,6 @@ var BoardComponent = /** @class */ (function () {
             console.log(_this.gameNumbers);
         });
     };
-<<<<<<< HEAD
-    /**
-     * Find the number who's position equals the given parameter.
-     * @param position
-     * @returns {any}
-     */
-=======
->>>>>>> 05f37e8e61397318dc9119393615d1e4a80f29a8
     BoardComponent.prototype.findThisNumber = function (position) {
         console.log("entering find This number");
         for (var i = 0; i < this.gameNumbers.length; i++) {
@@ -267,25 +247,6 @@ var BoardComponent = /** @class */ (function () {
             }
         }
     };
-<<<<<<< HEAD
-    /**
-     * Given a number, find the matching number and retrieve it's cache line. This is a helper function so we can
-     * find other numbers in the same cache line for highlighting.
-     * @param num represents the selected number from the board.
-     */
-    BoardComponent.prototype.findThisNumbersCacheLine = function (num) {
-        console.log("entering find a cache line");
-        for (var i = 0; i < this.gameNumbers.length; i++) {
-            if (this.gameNumbers[i]['value'] == num) {
-                return this.gameNumbers[i]['cacheLine'];
-            }
-        }
-    };
-    /**
-     * Creates (HTML-wise) and Renders the table to the screen.
-     */
-=======
->>>>>>> 05f37e8e61397318dc9119393615d1e4a80f29a8
     BoardComponent.prototype.createTable = function () {
         var body = document.getElementsByTagName('body')[0];
         var tbl = document.createElement('table');
@@ -323,26 +284,9 @@ var BoardComponent = /** @class */ (function () {
         tbl.appendChild(tbdy);
         body.appendChild(tbl);
     };
-<<<<<<< HEAD
-    /**
-    * Represents what happens when we click a tile. Currenty used to highlight the tile by changing the background color.
-    * @param e represents the mouse event.
-    */
-    BoardComponent.prototype.tileClick = function (e) {
-        e.target.style.backgroundColor = 'white';
-        console.log("You clicked on " + e.target.textContent);
-        var currentNum = e.target.textContent;
-        var currentCacheLine = this.findThisNumbersCacheLine(currentNum);
-        console.log("The Cache Line is: " + currentCacheLine);
-        for (var i = 0; i < this.gameNumbers.length; i++) {
-            if (this.gameNumbers[i]['cacheLine']) {
-            }
-        }
-=======
     BoardComponent.prototype.tileClick = function (e) {
         e.target.style.backgroundColor = 'white';
         console.log("You clicked on " + e);
->>>>>>> 05f37e8e61397318dc9119393615d1e4a80f29a8
     };
     BoardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
