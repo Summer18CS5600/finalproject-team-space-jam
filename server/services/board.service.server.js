@@ -1,7 +1,7 @@
 
 /* unlike angular, if w e ask by name, we cant get it */
 
-module.exports= function(app){
+module.exports = function(app){
   var boardModel = require("../../model/board/board.model.server");
 
   console.log("Server started...");
@@ -12,7 +12,6 @@ module.exports= function(app){
   function findGame(req, res) {
     //console.log("looking for game in server side");
     boardModel.findBoard(req.params['boardId']).then(function (board) {
-      //console.log(board);
       res.json(board);
     });
   }
@@ -24,8 +23,6 @@ module.exports= function(app){
       boardId: req.params['boardId'],
       numbers: nums
     };
-
-    //console.log(board);
     boardModel.createBoard(board).then(function (board) {
       //console.log('SERVER: board created, sending back to client...');
       res.json(board);
