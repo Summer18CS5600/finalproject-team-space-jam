@@ -172,7 +172,7 @@ var Routing = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "td {\r\n  background-color: black;\r\n\r\n\r\n}\r\ntr {\r\n  background-color: black;\r\n\r\n\r\n}\r\n"
+module.exports = "td {\n  background-color: black;\n\n\n}\ntr {\n  background-color: black;\n\n\n}\n"
 
 /***/ }),
 
@@ -183,7 +183,7 @@ module.exports = "td {\r\n  background-color: black;\r\n\r\n\r\n}\r\ntr {\r\n  b
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "board.component\r\n\r\n<div *ngFor=\"let gameNumber of gameNumbers\">\r\n  <!--{{gameNumber['value']}}-->\r\n</div>\r\n\r\n<!--<a (click)=\"initializeBoard(31)\">Initialize Board</a>-->\r\n<!--<a (click)=\"renderTable()\">Create Board</a>-->\r\n<!--<a (click)=\"findBoard(31)\">Find a board test</a>-->\r\n<form (ngSubmit)=\"boardInput(bNum.value)\" #f=\"ngForm\">\r\n  Input Board Number:\r\n  <input\r\n    name=\"bNum\"\r\n    id=\"bNum\"\r\n    type=\"text\"\r\n    placeholder=\"31\"\r\n    class=\"form-control\"\r\n    ngModel\r\n    required\r\n    #bNum=\"ngModel\"\r\n  />\r\n  <input\r\n           class=\"button\"\r\n           type=\"submit\"/>\r\n</form>\r\n<form>\r\n  Input Process ID:\r\n  <input\r\n    name=\"pid\"\r\n    id=\"pid\"\r\n    type=\"text\"\r\n    placeholder=\"23\"\r\n    class=\"form-control\"\r\n    ngModel\r\n    required\r\n    #pid=\"ngModel\"\r\n  />\r\n  <input (click)=\"getPid(pid.value)\"\r\n         class=\"button\"\r\n         type=\"submit\"\r\n  />\r\n</form>\r\n\r\n<div class=\"container-fluid\">\r\n  <div *ngIf=\"errorFlag\"\r\n       class=\"alert alert-danger\">\r\n    {{errorMessage}}\r\n  </div>\r\n</div>\r\n\r\n<h1>Your Cache Line to find and complete: </h1>\r\n<div *ngFor=\"let process of processCache\" style=\"border:solid; display: inline\">\r\n  <div *ngIf=\"process.found === 0; then thenBlock; else elseBlock\"></div>\r\n  <ng-template #thenBlock><span style=\"background: lightgreen;\"> {{process.value}}</span></ng-template>\r\n  <ng-template #elseBlock><span style=\"background: red\">{{process.value}}</span></ng-template>\r\n</div>\r\n<button\r\n  *ngIf=\"processCache != null\"\r\n  (click)=\"resetProcess()\"\r\n  class=\"button\"\r\n  type=\"submit\"\r\n> Reset Process </button>\r\n\r\n"
+module.exports = "board.component\n\n<div *ngFor=\"let gameNumber of gameNumbers\">\n  <!--{{gameNumber['value']}}-->\n</div>\n\n<!--<a (click)=\"initializeBoard(31)\">Initialize Board</a>-->\n<!--<a (click)=\"renderTable()\">Create Board</a>-->\n<!--<a (click)=\"findBoard(31)\">Find a board test</a>-->\n<form (ngSubmit)=\"boardInput(bNum.value)\" #f=\"ngForm\">\n  Input Board Number:\n  <input\n    name=\"bNum\"\n    id=\"bNum\"\n    type=\"text\"\n    placeholder=\"31\"\n    class=\"form-control\"\n    ngModel\n    required\n    #bNum=\"ngModel\"\n  />\n  <input\n           class=\"button\"\n           type=\"submit\"/>\n</form>\n<form>\n  Input Process ID:\n  <input\n    name=\"pid\"\n    id=\"pid\"\n    type=\"text\"\n    placeholder=\"23\"\n    class=\"form-control\"\n    ngModel\n    required\n    #pid=\"ngModel\"\n  />\n  <input (click)=\"getPid(pid.value)\"\n         class=\"button\"\n         type=\"submit\"\n  />\n</form>\n\n<div class=\"container-fluid\">\n  <div *ngIf=\"errorFlag\"\n       class=\"alert alert-danger\">\n    {{errorMessage}}\n  </div>\n</div>\n\n<h1>Your Cache Line to find and complete: </h1>\n<div *ngFor=\"let process of processCache\" style=\"border:solid; display: inline\">\n  <div *ngIf=\"process.found === 0; then thenBlock; else elseBlock\"></div>\n  <ng-template #thenBlock><span style=\"background: lightgreen;\"> {{process.value}}</span></ng-template>\n  <ng-template #elseBlock><span style=\"background: red\">{{process.value}}</span></ng-template>\n</div>\n<button\n  *ngIf=\"processCache != null\"\n  (click)=\"resetProcess()\"\n  class=\"button\"\n  type=\"submit\"\n> Reset Process </button>\n\n"
 
 /***/ }),
 
@@ -542,7 +542,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  cacheset works!\r\n</p>\r\n\r\n<h1> Cache </h1>\r\n"
+module.exports = "<p>\n  cacheset works!\n</p>\n\n<h1> Cache </h1>\n"
 
 /***/ }),
 
@@ -798,7 +798,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
 var environment = {
     production: false,
-    baseUrl: '' // http://localhost:3100
+    baseUrl: 'http://localhost:3100' //
 };
 
 
@@ -837,7 +837,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Jenny\OneDrive\Summer 2018\Computer Systems\Cache_Simulator_JAM\finalproject-team-space-jam\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/aj/code/finalproject-team-space-jam/src/main.ts */"./src/main.ts");
 
 
 /***/ })
