@@ -268,52 +268,52 @@ export class BoardComponent implements OnInit {
 
   }
 
-  resetProcess() {
-    var processToUpdate = {};
-    var count1 = 0;
-    var count2 = 0;
-    console.log('PROCESS LIST LEN', this.processCache.length);
-    for (let i = 0; i < this.processCache.length; i++) {
-      if (this.processCache[i]['found'] == 1) {
-        count1++;
-        processToUpdate = {value: this.processCache[i]['value'], found: 0};
-        console.log(processToUpdate);
-        this.processService.updateProcess(this.pid, processToUpdate)
-          .subscribe((status: any) => {
-            count2++;
-            console.log("HOW MANY TIMES", i);
-            console.log("STATUS", status);
-            // if(status) {
-            //   count++;
-            //   console.log("IN STATUS", count);
-            // }
-            console.log(count1);
-            console.log(count2);
-            if(count1 == count2) {
-              console.log(count1);
-              console.log(count2);
-              console.log("FINAL I", i);
-              this.processService.findProcessById(this.pid)
-                .subscribe((process: any) => {
-                  this.processCache = process.processCache;
-                });
-            }
-          });
-      }
-    }
-    //waits(5000);
-
-    // if(count >= 10) {
-    //   this.processService.findProcessById(this.pid)
-    //     .subscribe((process: any) => {
-    //       this.processCache = process.processCache;
-    //       //componentRefresh();
-    //       //this.startRefresh();
-    //       console.log(this.processCache);
-    //     });
-    // }
-    //console.log(this.processCache);
-  }
+  // resetProcess() {
+  //   var processToUpdate = {};
+  //   var count1 = 0;
+  //   var count2 = 0;
+  //   console.log('PROCESS LIST LEN', this.processCache.length);
+  //   for (let i = 0; i < this.processCache.length; i++) {
+  //     if (this.processCache[i]['found'] == 1) {
+  //       count1++;
+  //       processToUpdate = {value: this.processCache[i]['value'], found: 0};
+  //       console.log(processToUpdate);
+  //       this.processService.updateProcess(this.pid, processToUpdate)
+  //         .subscribe((status: any) => {
+  //           count2++;
+  //           console.log("HOW MANY TIMES", i);
+  //           console.log("STATUS", status);
+  //           // if(status) {
+  //           //   count++;
+  //           //   console.log("IN STATUS", count);
+  //           // }
+  //           console.log(count1);
+  //           console.log(count2);
+  //           if(count1 == count2) {
+  //             console.log(count1);
+  //             console.log(count2);
+  //             console.log("FINAL I", i);
+  //             this.processService.findProcessById(this.pid)
+  //               .subscribe((process: any) => {
+  //                 this.processCache = process.processCache;
+  //               });
+  //           }
+  //         });
+  //     }
+  //   }
+  //   //waits(5000);
+  //
+  //   // if(count >= 10) {
+  //   //   this.processService.findProcessById(this.pid)
+  //   //     .subscribe((process: any) => {
+  //   //       this.processCache = process.processCache;
+  //   //       //componentRefresh();
+  //   //       //this.startRefresh();
+  //   //       console.log(this.processCache);
+  //   //     });
+  //   // }
+  //   //console.log(this.processCache);
+  // }
 
 
 
