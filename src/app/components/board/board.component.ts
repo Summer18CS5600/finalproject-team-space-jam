@@ -44,7 +44,7 @@ export class BoardComponent implements OnInit {
     console.log("NUM: ", num);
     console.log("bNUm: ", this.bNum);
     this.initializeBoard(this.bNum);
-    this.renderTable();
+    // this.renderTable();
   }
 
   getPid(num: string) {
@@ -63,7 +63,6 @@ export class BoardComponent implements OnInit {
     this.startedRefresh = true;
     if(this.boardId != null) {
       console.log("INSIDE: ", this.boardId);
-      this.refresh();
       this.interval = setInterval(() => {
         this.refresh();
       }, 1000);
@@ -111,7 +110,8 @@ export class BoardComponent implements OnInit {
     this.boardService.initializeBoard(boardId, this.exampleBoard).subscribe((game: any) => {
       //console.log(game);
       this.gameNumbers = game.numbers; // This should get removed once we put in boardId (probably)
-     // console.log(this.gameNumbers);
+      console.log(this.gameNumbers);
+      this.renderTable();
     });
   }
 
@@ -144,9 +144,6 @@ export class BoardComponent implements OnInit {
    */
 
   renderTable() {
-    if (this.startedRefresh == false) {
-      this.startRefresh();
-    }
     this.tbl = document.createElement('table');
     this.tbl.style.width = '50%';
     this.tbl.setAttribute('border', '1');
@@ -199,6 +196,9 @@ export class BoardComponent implements OnInit {
     }
     this.tbl.appendChild(tbdy);
     this.body.appendChild(this.tbl);
+    if (this.startedRefresh == false) {
+      this.startRefresh();
+    }
   }
 
    /**
