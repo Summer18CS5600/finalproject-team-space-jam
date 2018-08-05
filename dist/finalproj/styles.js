@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\n"
+module.exports = "/* You can add global styles to this file, and also import other style files */\r\n"
 
 /***/ }),
 
@@ -539,7 +539,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/aj/code/finalproject-team-space-jam/src/styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! C:\Users\Jenny\OneDrive\Summer 2018\Computer Systems\Cache_Simulator_JAM\finalproject-team-space-jam\src\styles.css */"./src/styles.css");
 
 
 /***/ })

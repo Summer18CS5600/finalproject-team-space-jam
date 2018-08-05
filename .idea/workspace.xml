@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a493ced6-ec7b-4e39-ba47-4f7a2b238cfe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/services/testservice.service.server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/finalproj/main.js" afterPath="$PROJECT_DIR$/dist/finalproj/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/finalproj/main.js.map" afterPath="$PROJECT_DIR$/dist/finalproj/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/cacheset/cacheset.model.server.js" afterPath="$PROJECT_DIR$/model/cacheset/cacheset.model.server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/cacheset/cacheset.schema.server.js" afterPath="$PROJECT_DIR$/model/cacheset/cacheset.schema.server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/services/board.service.server.js" afterPath="$PROJECT_DIR$/server/services/board.service.server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/services/cacheset.service.server.js" afterPath="$PROJECT_DIR$/server/services/cacheset.service.server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/board/board.component.ts" afterPath="$PROJECT_DIR$/src/app/components/board/board.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/services/cacheset.service.client.ts" afterPath="$PROJECT_DIR$/src/app/services/cacheset.service.client.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/environments/environment.ts" afterPath="$PROJECT_DIR$/src/environments/environment.ts" />
-    </list>
+    <list default="true" id="a493ced6-ec7b-4e39-ba47-4f7a2b238cfe" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -30,8 +17,8 @@
       <file leaf-file-name="board.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="231">
+              <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -326,12 +313,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533481366226</updated>
-      <workItem from="1533481367571" duration="10176000" />
+      <workItem from="1533481367571" duration="10227000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26093000" />
+    <option name="totallyTimeSpent" value="26144000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="952" y="0" width="976" height="1038" extended-state="0" />
@@ -671,8 +658,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="231">
+          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
           </folding>
