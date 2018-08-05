@@ -18,8 +18,8 @@ var mongoose = require('mongoose');
  */
 var CacheSetSchema = mongoose.Schema ( {
   boardId: String,
-  totalAmountOfInteractions: Number,
-  setOfCacheLines: [{}]
+  setOfCacheLines: [],
+  totalOccurrences: Number
 }, {collection: "cacheSet" });
 
 module.exports = CacheSetSchema;

@@ -2,22 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a493ced6-ec7b-4e39-ba47-4f7a2b238cfe" name="Default" comment="">
-<<<<<<< HEAD
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/process/process.model.server.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/process/process.schema.server.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/services/process.service.server.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/services/process.service.client.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/services/testservice.service.server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/board/board.model.server.js" afterPath="$PROJECT_DIR$/model/board/board.model.server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/app.js" afterPath="$PROJECT_DIR$/server/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/finalproj/main.js" afterPath="$PROJECT_DIR$/dist/finalproj/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/finalproj/main.js.map" afterPath="$PROJECT_DIR$/dist/finalproj/main.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/cacheset/cacheset.model.server.js" afterPath="$PROJECT_DIR$/model/cacheset/cacheset.model.server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/cacheset/cacheset.schema.server.js" afterPath="$PROJECT_DIR$/model/cacheset/cacheset.schema.server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/services/board.service.server.js" afterPath="$PROJECT_DIR$/server/services/board.service.server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/board/board.component.html" afterPath="$PROJECT_DIR$/src/app/components/board/board.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/services/cacheset.service.server.js" afterPath="$PROJECT_DIR$/server/services/cacheset.service.server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/board/board.component.ts" afterPath="$PROJECT_DIR$/src/app/components/board/board.component.ts" />
-=======
-      <change beforePath="$PROJECT_DIR$/src/app/components/board/board.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/board/board.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/board/board.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/board/board.component.ts" afterDir="false" />
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/services/cacheset.service.client.ts" afterPath="$PROJECT_DIR$/src/app/services/cacheset.service.client.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/environments/environment.ts" afterPath="$PROJECT_DIR$/src/environments/environment.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,70 +26,56 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-<<<<<<< HEAD
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="process.service.server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/services/process.service.server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-484">
-              <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-              <folding />
-=======
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file leaf-file-name="board.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3878">
-              <caret line="42" column="36" lean-forward="true" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
+            <state relative-caret-position="189">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
       <file leaf-file-name="process.model.server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/process/process.model.server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="27" column="8" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+            <state relative-caret-position="-253">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-=======
-      <file leaf-file-name="board.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="board.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.ts">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/app.js">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="4607">
-              <caret line="224" column="10" lean-forward="false" selection-start-line="224" selection-start-column="10" selection-end-line="224" selection-end-column="10" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#0#59#0" expanded="true" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
-=======
-            <state relative-caret-position="319">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/test-mongodb/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="process.service.client.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/services/process.service.client.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="30" column="46" lean-forward="false" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+            <state relative-caret-position="798">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -101,45 +83,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="board.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="board.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#ng-template#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#ng-template#1;n#div#1;n#!!top" expanded="true" />
-              </folding>
-=======
-      <file leaf-file-name="board.schema.server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/board/board.schema.server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="board.service.server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/services/board.service.server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="4" column="35" selection-start-line="4" selection-end-line="5" />
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
+            <state relative-caret-position="537">
+              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="61" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-        <option value="TypeScript File" />
-      </list>
-    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -155,6 +109,7 @@
       <find>startrefresh</find>
       <find>bNum</find>
       <find>console.log(&quot;NUM: &quot;, num);</find>
+      <find>looking for game</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -165,30 +120,26 @@
       <list>
         <option value="$PROJECT_DIR$/finalproject-team-space-jam/server.js" />
         <option value="$PROJECT_DIR$/finalproject-team-space-jam/server/test-mongodb/app.js" />
+        <option value="$PROJECT_DIR$/model/board/board.model.server.js" />
         <option value="$PROJECT_DIR$/src/app/app.routing.ts" />
+        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/app/services/board.service.client.ts" />
-        <option value="$PROJECT_DIR$/src/app/services/cacheset.service.client.ts" />
         <option value="$PROJECT_DIR$/model/cacheset/cacheset.model.server.js" />
         <option value="$PROJECT_DIR$/model/cacheset/cacheset.schema.server.js" />
-        <option value="$PROJECT_DIR$/server/services/cacheset.service.server.js" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/model/process/process.service.server.js" />
-        <option value="$PROJECT_DIR$/model/process/board.model.server.js" />
-        <option value="$PROJECT_DIR$/model/process/process.schema.server.js" />
-        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/server/services/board.service.server.js" />
-        <option value="$PROJECT_DIR$/model/board/board.model.server.js" />
-        <option value="$PROJECT_DIR$/server/app.js" />
-        <option value="$PROJECT_DIR$/src/app/services/process.service.client.ts" />
-        <option value="$PROJECT_DIR$/server/services/process.service.server.js" />
-        <option value="$PROJECT_DIR$/model/process/process.model.server.js" />
-=======
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
-        <option value="$PROJECT_DIR$/src/app/components/board/board.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/services/cacheset.service.client.ts" />
+        <option value="$PROJECT_DIR$/src/app/services/board.service.client.ts" />
         <option value="$PROJECT_DIR$/src/app/components/board/board.component.html" />
+        <option value="$PROJECT_DIR$/server/services/cacheset.service.server.js" />
+        <option value="$PROJECT_DIR$/server/services/board.service.server.js" />
+        <option value="$PROJECT_DIR$/src/environments/environment.ts" />
+        <option value="$PROJECT_DIR$/src/app/components/board/board.component.ts" />
       </list>
     </option>
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <exe-path />
+    <config-path />
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -211,17 +162,30 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="952" />
-    <option name="width" value="976" />
-    <option name="height" value="1038" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="253" />
+    <option name="y" value="1080" />
+    <option name="width" value="1340" />
+    <option name="height" value="792" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -232,7 +196,6 @@
             <path>
               <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
               <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
-<<<<<<< HEAD
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -245,7 +208,7 @@
               <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
               <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="process" type="462c0819:PsiDirectoryNode" />
+              <item name="cacheset" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
@@ -261,14 +224,6 @@
             <path>
               <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
               <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="test-mongodb" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
-=======
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -297,22 +252,32 @@
               <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="cacheset" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
-<<<<<<< HEAD
-=======
             <path>
               <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
               <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
+            <path>
+              <item name="finalproject-team-space-jam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finalproject-team-space-jam" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="environments" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -348,98 +313,48 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="server.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="server.js" working-dir="$PROJECT_DIR$" />
-    <recent_temporary>
-      <list>
-        <item itemvalue="Node.js.server.js" />
-      </list>
-    </recent_temporary>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a493ced6-ec7b-4e39-ba47-4f7a2b238cfe" name="Default" comment="" />
-      <created>1533230126704</created>
+      <changelist id="bf27ee07-19f3-47c7-b7cb-723be24be615" name="Default" comment="" />
+      <created>1533481366226</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1533230126704</updated>
-      <workItem from="1533230127810" duration="16152000" />
-      <workItem from="1533247736081" duration="248000" />
-      <workItem from="1533305269541" duration="345000" />
-      <workItem from="1533305631504" duration="377000" />
-      <workItem from="1533311553349" duration="3221000" />
-      <workItem from="1533314992206" duration="653000" />
-      <workItem from="1533325780995" duration="547000" />
-      <workItem from="1533328490433" duration="18511000" />
-      <workItem from="1533405265578" duration="7256000" />
-      <workItem from="1533440730339" duration="787000" />
+      <updated>1533481366226</updated>
+      <workItem from="1533481367571" duration="10176000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="34260000" />
+    <option name="totallyTimeSpent" value="26093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="952" y="0" width="976" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3767492" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40904197" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-=======
-    <option name="totallyTimeSpent" value="19990000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="46" width="3840" height="2114" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24921875" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32995194" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,174 +365,125 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
-=======
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/board/board.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="37" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/services/board.service.client.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#41#0" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+        <state relative-caret-position="147">
+          <caret line="249" column="7" lean-forward="true" selection-start-line="249" selection-start-column="7" selection-end-line="249" selection-end-column="7" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finalproject-team-space-jam/package-lock.json" />
-    <entry file="file://$PROJECT_DIR$/finalproject-team-space-jam/package.json" />
+    <entry file="file://$PROJECT_DIR$/model/process/process.model.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-253">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/test-mongodb/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/finalproject-team-space-jam/src/main.ts" />
     <entry file="file://$PROJECT_DIR$/finalproject-team-space-jam/server.js" />
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
     <entry file="file://$PROJECT_DIR$/finalproject-team-space-jam/server/app.js" />
     <entry file="file://$PROJECT_DIR$/finalproject-team-space-jam/server/test-mongodb/app.js" />
     <entry file="file://$PROJECT_DIR$/finalproject-team-space-jam/Procfile" />
     <entry file="file://$PROJECT_DIR$/src/app/services/board.service.client.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="4" selection-end-line="37" />
-          <folding>
-            <element signature="e#0#41#0" />
-          </folding>
+          <caret line="15" column="4" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/services/board.service.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-<<<<<<< HEAD
           <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-          <folding />
-=======
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/board/board.model.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-<<<<<<< HEAD
           <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-          <folding />
-=======
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
-          <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+          <caret line="51" column="26" lean-forward="false" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
-<<<<<<< HEAD
-=======
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#38#0" />
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-<<<<<<< HEAD
-          <caret line="30" column="9" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-=======
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/services/board.service.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1102">
-          <caret line="38" column="66" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
+          <caret line="38" column="66" lean-forward="false" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/board/board.model.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
-          <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+          <caret line="13" column="55" lean-forward="false" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/services/board.service.client.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="812">
-          <caret line="31" column="65" selection-start-line="31" selection-start-column="65" selection-end-line="31" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#41#0" />
-          </folding>
+          <caret line="31" column="65" lean-forward="false" selection-start-line="31" selection-start-column="65" selection-end-line="31" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4756">
-          <caret line="168" column="36" selection-start-line="168" selection-start-column="36" selection-end-line="168" selection-end-column="36" />
+          <caret line="168" column="36" lean-forward="false" selection-start-line="168" selection-start-column="36" selection-end-line="168" selection-end-column="36" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
           </folding>
@@ -627,24 +493,21 @@
     <entry file="file://$PROJECT_DIR$/server/services/board.service.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
-          <caret line="13" column="71" selection-start-line="13" selection-start-column="71" selection-end-line="13" selection-end-column="71" />
+          <caret line="13" column="71" lean-forward="false" selection-start-line="13" selection-start-column="71" selection-end-line="13" selection-end-column="71" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/board/board.model.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
-          <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+          <caret line="13" column="55" lean-forward="false" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/services/board.service.client.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="812">
-          <caret line="31" column="65" selection-start-line="31" selection-start-column="65" selection-end-line="31" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#41#0" />
-          </folding>
+          <caret line="31" column="65" lean-forward="false" selection-start-line="31" selection-start-column="65" selection-end-line="31" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -665,19 +528,18 @@
     <entry file="file://$PROJECT_DIR$/finalproject-team-space-jam/server/app.js" />
     <entry file="file://$PROJECT_DIR$/finalproject-team-space-jam/server/test-mongodb/app.js" />
     <entry file="file://$PROJECT_DIR$/finalproject-team-space-jam/Procfile" />
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/app/components/cacheset/cacheset.component.css">
+    <entry file="file://$PROJECT_DIR$/src/app/components/cacheset/cacheset.component.css" />
+    <entry file="file://$PROJECT_DIR$/model/board/board.model.server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="195">
+          <caret line="13" column="30" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/cacheset/cacheset.model.server.js">
+    <entry file="file://$PROJECT_DIR$/src/app/app.routing.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="165">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -688,273 +550,134 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/cacheset/cacheset.component.spec.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/components/cacheset/cacheset.component.spec.ts" />
+    <entry file="file://$PROJECT_DIR$/model/board/board.schema.server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        <state relative-caret-position="60">
+          <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/services/cacheset.service.client.ts">
+    <entry file="file://$PROJECT_DIR$/server/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="61" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/cacheset/cacheset.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/app/services/board.service.client.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="e#0#41#0" />
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/model/cacheset/cacheset.schema.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/process/board.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/cacheset.service.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1806">
-          <caret line="86" column="7" lean-forward="true" selection-start-line="86" selection-start-column="7" selection-end-line="86" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/board/board.schema.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-=======
-    <entry file="file://$PROJECT_DIR$/src/app/components/cacheset/cacheset.component.css" />
-    <entry file="file://$PROJECT_DIR$/model/cacheset/cacheset.model.server.js" />
-    <entry file="file://$PROJECT_DIR$/model/board/board.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="30" />
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/board.service.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="898">
-          <caret line="61" column="9" lean-forward="false" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
-          <folding />
-=======
-        <state relative-caret-position="232">
-          <caret line="8" selection-end-line="8" />
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/services/board.service.client.ts">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="735">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#55#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.routing.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/test-mongodb/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="53" lean-forward="false" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/board/board.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="25" column="3" lean-forward="false" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/process/process.schema.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding />
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/services/process.service.client.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="30" column="46" lean-forward="false" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+        <state relative-caret-position="798">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-=======
-        <state relative-caret-position="319">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/cacheset/cacheset.component.html" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/cacheset/cacheset.component.spec.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/services/cacheset.service.client.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/cacheset/cacheset.component.ts" />
-    <entry file="file://$PROJECT_DIR$/model/cacheset/cacheset.schema.server.js" />
+    <entry file="file://$PROJECT_DIR$/server/services/cacheset.service.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/cacheset/cacheset.schema.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/services/board.service.server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="35" selection-start-line="4" selection-end-line="5" />
+        <state relative-caret-position="888">
+          <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/cacheset.service.server.js" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.html">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        <state relative-caret-position="165">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/services/cacheset.service.client.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/services/board.service.client.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="3" lean-forward="false" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/environments/environment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3878">
-          <caret line="42" column="36" lean-forward="true" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/server/services/process.service.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-484">
-          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/process/process.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="27" column="8" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4607">
-          <caret line="224" column="10" lean-forward="false" selection-start-line="224" selection-start-column="10" selection-end-line="224" selection-end-column="10" />
+        <state relative-caret-position="189">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/board/board.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#ng-template#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#ng-template#1;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-=======
->>>>>>> f7ce92f01d1b445b9d6e321fd8543dfe8068dd1f
   </component>
 </project>

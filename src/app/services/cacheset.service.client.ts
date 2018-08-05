@@ -11,6 +11,32 @@ export class CacheSetService {
   constructor(private http: Http) {
   }
 
+  initializeCache(boardId) {
+    console.log("at the client cache server");
+    const url = this.baseUrl + '/api/cache/create/' + boardId;
+    console.log(url);
+    var emptybody = {};
+    return this.http.post(url, emptybody).map((response: Response) => {
+      console.log("getting back from the post");
+      return response.json();
+    });
+
+  }
+
+  zinitializeBoard(boardId, exampleBoard) {
+    const url = this.baseUrl + '/api/game/' + boardId;
+    return this.http.post(url, exampleBoard).map((response: Response) => {
+      return response.json();
+    });
+  }
+
+  findCache(boardId) {
+    const url = this.baseUrl + '/api/cache/' + boardId;
+    return this.http.get(url).map((response: Response) => {
+      return response.json();
+    });
+
+  }
 
 
 }
