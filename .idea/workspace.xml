@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a493ced6-ec7b-4e39-ba47-4f7a2b238cfe" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/3rdpartylicenses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dist/3rdpartylicenses.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/finalproj/3rdpartylicenses.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/finalproj/favicon.ico" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/finalproj/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/finalproj/main.c8adfb1f644fcb95cdbf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/finalproj/polyfills.2f4a59095805af02bd79.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/finalproj/runtime.a66f828dca56eeb90e02.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/finalproj/styles.34c57ab7888ec1573f9c.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/polyfills.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/polyfills.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/runtime.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/runtime.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/styles.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/styles.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/vendor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/vendor.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/finalproj/main.ca9bab97a2dbd84b4013.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/finalproj/styles.a474c4b2064489e33e1b.css" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -109,20 +90,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="angular.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="angular.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/angular.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="207">
-              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+              <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+            <state relative-caret-position="270">
+              <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -285,7 +266,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29315000" />
+    <option name="totallyTimeSpent" value="29318000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="1080" width="1920" height="1080" extended-state="6" />
@@ -608,17 +589,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular.json">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+        <state relative-caret-position="270">
+          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/angular.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        <state relative-caret-position="207">
+          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
         </state>
       </provider>
     </entry>
