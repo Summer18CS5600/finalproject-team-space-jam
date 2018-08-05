@@ -30,14 +30,17 @@ export class BoardComponent implements OnInit {
   processCache: [{}];
   errorFlag: boolean;
   errorMessage: string;
+  initializedOnce: boolean;
+  policy: string;
 
   constructor(private router: Router, private boardService: BoardService, private processService: ProcessService, private cacheService: CacheSetService) {}
 
   /* Refresh the gameBoard every 1 second*/
   ngOnInit() {
     this.startedRefresh = false;
-    this.body = document.getElementsByTagName('body')[0];
+    this.body = document.getElementsByTagName('body')[1];
     this.time = 0;
+    this.initializedOnce = false;
   }
 
   /* Get user input for board number and use that to initialize and render the table */
@@ -47,7 +50,7 @@ export class BoardComponent implements OnInit {
     console.log("NUM: ", num);
     console.log("bNUm: ", this.bNum);
     this.initializeBoard(this.bNum);
-    // this.renderTable();
+    this.initializedOnce = true;
   }
 
   getPid(num: string) {
@@ -91,6 +94,9 @@ export class BoardComponent implements OnInit {
    * @param boardId
    */
   initializeBoard(boardId) {
+    if (this.initializedOnce) {
+      this.tbl.remove();
+    }
     this.boardId = boardId;
     console.log('initializing');
     // Make a board.
@@ -227,6 +233,14 @@ export class BoardComponent implements OnInit {
      var currentCacheLine = null;
   }
 
+
+  updatePolicy() {
+    if (this.initializedOnce) {
+      this.cacheService.updatePolicy(this.boardId, this.policy).subscribe((cache: any) => {
+        // Intentionally left blank.
+      })
+    }
+  }
 
   accessMemory(e) {
     var value = {value: e.target.textContent};

@@ -20,8 +20,8 @@ board.component
     #bNum="ngModel"
   />
   <input
-           class="button"
-           type="submit"/>
+    class="button"
+    type="submit"/>
 </form>
 <form>
   Input Process ID:
@@ -47,17 +47,59 @@ board.component
     {{errorMessage}}
   </div>
 </div>
+<br><Br>
 
-<h1>Your Cache Line to find and complete: </h1>
-<div *ngFor="let process of processCache" style="border:solid; display: inline">
-  <div *ngIf="process.found === 0; then thenBlock; else elseBlock"></div>
-  <ng-template #thenBlock><span style="background: lightgreen;"> {{process.value}}</span></ng-template>
-  <ng-template #elseBlock><span style="background: red">{{process.value}}</span></ng-template>
+<div class="container">
+
+  <div class="col-sm-3">
+    <div *ngIf="initializedOnce">
+      <form>
+        Choose eviction/replacement policy:
+        <input name="LRU"
+               id="LRU"
+               value="LRU"
+               type="radio"
+               class="form-control"
+               required
+               [(ngModel)]="policy"/>
+        <label for="LRU">LRU</label>
+        <br>
+        <input name="RAN"
+               id="RAN"
+               value="RAN"
+               type="radio"
+               class="form-control"
+               required
+               [(ngModel)]="policy"/>
+        <label for="RAN">Random</label>
+        <br>
+        <input (click)="updatePolicy()"
+               class="button"
+               type="submit"
+        />
+      </form>
+    </div>
+  </div>
+  <div class="col-sm-9">
+      <div *ngIf="initializedOnce">
+        <h2>Your Cache Line to find and complete: </h2>
+      </div>
+      <div *ngFor="let process of processCache" style="border:solid; display: inline">
+        <div *ngIf="process.found === 0; then thenBlock; else elseBlock"></div>
+        <ng-template #thenBlock><span style="background: lightgreen;"> {{process.value}}</span></ng-template>
+        <ng-template #elseBlock><span style="background: red">{{process.value}}</span></ng-template>
+      </div>
+
+      <body>
+      <!--Memory will go here-->
+      </body>
+    </div>
+
 </div>
 <!--<button-->
-  <!--*ngIf="processCache != null"-->
-  <!--(click)="resetProcess()"-->
-  <!--class="button"-->
-  <!--type="submit"-->
+<!--*ngIf="processCache != null"-->
+<!--(click)="resetProcess()"-->
+<!--class="button"-->
+<!--type="submit"-->
 <!--&gt; Reset Process </button>-->
 

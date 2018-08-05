@@ -31,6 +31,14 @@ export class CacheSetService {
 
   }
 
+  updatePolicy(boardId, policy) {
+    var policyStruct = {policy: policy};
+    const url = this.baseUrl + '/api/cache/policy/' + boardId;
+    return this.http.post(url, policyStruct).map((response: Response) => {
+      return response.json();
+    });
+  }
+
 
 }
 
