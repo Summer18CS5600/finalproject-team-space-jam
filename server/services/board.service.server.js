@@ -111,7 +111,7 @@ module.exports = function(app){
       // Find out if there's been a cacheHit
       for (let a = 0; a < cacheSet['setOfCacheLines'].length; a++) {
         console.log("WHELJHKLJAFL:KJFDASKL:FJASDKL:FJASK:LFJAK:LFJASFK:LASFJA:LFJKAF:LKASDF");
-        console.log("Comparing: " + cacheLine + "with " + cacheSet['setOfCacheLines'][a]['lineId']);
+        // console.log("Comparing: " + cacheLine + "with " + cacheSet['setOfCacheLines'][a]['lineId']);
         if (cacheSet['setOfCacheLines'][a]['lineId'] == cacheLine) {
           // the cacheHasBeenHit
           cacheSet['setOfCacheLines'][a]['age'] = cacheSet['totalOccurrences'];
@@ -175,16 +175,22 @@ module.exports = function(app){
 
   function createCacheSet(req, res) {
     console.log("SERVER: creating cacheSet...");
-    const cacheSet = {
-      boardId: req.params['boardId'],
-      setOfCacheLines: [],
-      totalOccurrences: 0,
-    };
-    cacheSetModel.createCacheSet(cacheSet).then(function (cacheSet) {
-      console.log('SERVER: cacheSet created, sending back to client...');
-      console.log('in server, should get exact same cacheset that was sent to the model above..');
-      console.log(cacheSet);
-      res.json(cacheSet);
+    cacheSetModel.findCacheSet(req.params['boardId']).then(function (cacheSet) {
+      if (cacheSet != null) {
+        res.json(cacheSet);
+      } else {
+        const cacheSet = {
+          boardId: req.params['boardId'],
+          setOfCacheLines: [],
+          totalOccurrences: 0,
+        };
+        cacheSetModel.createCacheSet(cacheSet).then(function (cacheSet) {
+          console.log('SERVER: cacheSet created, sending back to client...');
+          console.log('in server, should get exact same cacheset that was sent to the model above..');
+          console.log(cacheSet);
+          res.json(cacheSet);
+        })
+      }
     })
   }
 
