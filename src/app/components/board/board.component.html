@@ -1,13 +1,38 @@
-board.component
+<h1 class="container-fluid text-center"> Cache Simulator Game: May the Best Thread Win</h1>
 
-<div *ngFor="let gameNumber of gameNumbers">
-  <!--{{gameNumber['value']}}-->
+<div class="container-fluid">
+  <div *ngIf="errorFlag"
+       class="alert alert-danger">
+    {{errorMessage}}
+  </div>
+</div>
+<br><Br>
+
+
+<div class="container-fluid">
+<body class = "col-xs-9">
+<!--Memory will go here-->
+</body>
+</div>
+<div class="container">
+
+
+  <div class="col-sm-9">
+      <div *ngIf="initializedOnce">
+        <h2>Your Cache Line to find and complete: </h2>
+      </div>
+      <div *ngFor="let process of processCache" style="border:solid; display: inline">
+        <div *ngIf="process.found === 0; then thenBlock; else elseBlock"></div>
+        <ng-template #thenBlock><span style="background: lightgreen;"> {{process.value}}</span></ng-template>
+        <ng-template #elseBlock><span style="background: red">{{process.value}}</span></ng-template>
+      </div>
+
+    </div>
+
 </div>
 
-<!--<a (click)="initializeBoard(31)">Initialize Board</a>-->
-<!--<a (click)="renderTable()">Create Board</a>-->
-<!--<a (click)="findBoard(31)">Find a board test</a>-->
-<form (ngSubmit)="boardInput(bNum.value)" #f="ngForm">
+<div class ="container-fluid col-xs-2">
+  <form (ngSubmit)="boardInput(bNum.value)" #f="ngForm">
   Input Board Number:
   <input
     name="bNum"
@@ -20,37 +45,26 @@ board.component
     #bNum="ngModel"
   />
   <input
-    class="button"
+    class="btn btn-success"
     type="submit"/>
 </form>
-<form>
-  Input Process ID:
-  <input
-    name="pid"
-    id="pid"
-    type="text"
-    placeholder="23"
-    class="form-control"
-    ngModel
-    required
-    #pid="ngModel"
-  />
-  <input (click)="getPid(pid.value)"
-         class="button"
-         type="submit"
-  />
-</form>
-
-<div class="container-fluid">
-  <div *ngIf="errorFlag"
-       class="alert alert-danger">
-    {{errorMessage}}
-  </div>
-</div>
-<br><Br>
-
-<div class="container">
-
+  <form>
+    Input Your Thread ID:
+    <input
+      name="pid"
+      id="pid"
+      type="text"
+      placeholder="23"
+      class="form-control"
+      ngModel
+      required
+      #pid="ngModel"
+    />
+    <input (click)="getPid(pid.value)"
+           class="btn btn-primary"
+           type="submit"
+    />
+  </form>
   <div class="col-sm-3">
     <div *ngIf="initializedOnce">
       <form>
@@ -80,21 +94,6 @@ board.component
       </form>
     </div>
   </div>
-  <div class="col-sm-9">
-      <div *ngIf="initializedOnce">
-        <h2>Your Cache Line to find and complete: </h2>
-      </div>
-      <div *ngFor="let process of processCache" style="border:solid; display: inline">
-        <div *ngIf="process.found === 0; then thenBlock; else elseBlock"></div>
-        <ng-template #thenBlock><span style="background: lightgreen;"> {{process.value}}</span></ng-template>
-        <ng-template #elseBlock><span style="background: red">{{process.value}}</span></ng-template>
-      </div>
-
-      <body>
-      <!--Memory will go here-->
-      </body>
-    </div>
-
 </div>
 <!--<button-->
 <!--*ngIf="processCache != null"-->

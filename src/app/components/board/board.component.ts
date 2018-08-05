@@ -165,7 +165,8 @@ export class BoardComponent implements OnInit {
 
   renderTable() {
     this.tbl = document.createElement('table');
-    this.tbl.style.width = '50%';
+    this.tbl.style.width = '400px';
+    this.tbl.style.height= '400px';
     this.tbl.setAttribute('border', '1');
     var tbdy = document.createElement('tbody');
     for (var i = 0; i < 10; i++) {
@@ -193,6 +194,8 @@ export class BoardComponent implements OnInit {
             td.style.backgroundColor = 'white';
           }
           td.style.textAlign = 'center';
+          // td.style.height = '40x';
+          // td.style.width = '40px';
           td.style.webkitTextFillColor = '#000000';
           td.addEventListener("click", this.tileClick);
           td.addEventListener("click", (e) => {
