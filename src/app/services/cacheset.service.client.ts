@@ -11,6 +11,22 @@ export class CacheSetService {
   constructor(private http: Http) {
   }
 
+  initializeCache(boardId) {
+    const url = this.baseUrl + '/api/cache/' + boardId;
+    return this.http.post(url, null).map((response: Response) => {
+      return response.json();
+    })
+
+
+  }
+
+  findCache(boardId) {
+    const url = this.baseUrl + '/api/cache/' + boardId;
+    return this.http.get(url).map((response: Response) => {
+      return response.json();
+    });
+
+  }
 
 
 }
