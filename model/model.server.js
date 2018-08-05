@@ -10,6 +10,7 @@ if(process.env.MLAB_USERNAME_WEBDEV) { // check if running remotely
 
 var db = mongoose.connect(connectionString, {
   // useMongoClient: true
+  useNewUrlParser: true
 });
 
 module.exports = db;
