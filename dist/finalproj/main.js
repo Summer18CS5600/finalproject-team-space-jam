@@ -311,7 +311,11 @@ var BoardComponent = /** @class */ (function () {
             _this.renderTable();
         });
         //Initialize the cache in the database/server.
-        this.cacheService.initializeCache(boardId);
+        console.log("running initialize cache call from component");
+        this.cacheService.initializeCache(boardId).subscribe(function (cache) {
+            console.log("cache should be initalized. in the board component");
+            console.log(cache);
+        });
     };
     /**
      * Find the number who's position equals the given parameter.
@@ -625,8 +629,18 @@ var CacheSetService = /** @class */ (function () {
         this.baseUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseUrl;
     }
     CacheSetService.prototype.initializeCache = function (boardId) {
-        var url = this.baseUrl + '/api/cache/' + boardId;
-        return this.http.post(url, null).map(function (response) {
+        console.log("at the client cache server");
+        var url = this.baseUrl + '/api/cache/create/' + boardId;
+        console.log(url);
+        var emptybody = {};
+        return this.http.post(url, emptybody).map(function (response) {
+            console.log("getting back from the post");
+            return response.json();
+        });
+    };
+    CacheSetService.prototype.zinitializeBoard = function (boardId, exampleBoard) {
+        var url = this.baseUrl + '/api/game/' + boardId;
+        return this.http.post(url, exampleBoard).map(function (response) {
             return response.json();
         });
     };
@@ -724,7 +738,7 @@ var ProcessService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
 var environment = {
-    production: false,
+    production: true,
     baseUrl: 'http://localhost:3100'
 };
 
