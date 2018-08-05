@@ -5,5 +5,7 @@
 module.exports = function (app) {
   db = require("./../model/model.server");
   require("./services/board.service.server")(app);
+  require("./services/cacheset.service.server")(app);
+  require("./services/process.service.server")(app);
 };
 

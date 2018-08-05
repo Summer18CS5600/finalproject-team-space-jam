@@ -11,18 +11,18 @@ module.exports = BoardModel;
 
 //call the db specific functions.
 function createBoard(board) {
-  console.log("MODEL: creating board: " + board.boardId);
-  console.log(board);
+//  console.log("MODEL: creating board: " + board.boardId);
+//  console.log(board);
   var newBoard = board;
   return BoardModel.create(newBoard);
 }
 
 function findBoard(boardId) {
-  console.log("MODEL: finding board: " + boardId);
+ // console.log("MODEL: finding board: " + boardId);
   return BoardModel.findOne({boardId: boardId});
 }
 
 function updateBoard(boardId, board) {
-  console.log("MODEL: updating board: " + boardId);
+ // console.log("MODEL: updating board: " + boardId);
   return BoardModel.update({boardId: boardId}, board);
 }

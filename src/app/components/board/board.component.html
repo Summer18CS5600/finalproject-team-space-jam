@@ -7,7 +7,7 @@ board.component
 <!--<a (click)="initializeBoard(31)">Initialize Board</a>-->
 <!--<a (click)="renderTable()">Create Board</a>-->
 <!--<a (click)="findBoard(31)">Find a board test</a>-->
-<form (ngSubmit)="boardInput(bNum.value)" #f="ngForm">
+<form>
   Input Board Number:
   <input
     name="bNum"
@@ -23,3 +23,28 @@ board.component
            class="button"
            type="submit"/>
 </form>
+<form>
+  Input Process ID:
+  <input
+    name="pid"
+    id="pid"
+    type="text"
+    placeholder="23"
+    class="form-control"
+    ngModel
+    required
+    #pid="ngModel"
+  />
+  <input (click)="getPid(pid.value)"
+         class="button"
+         type="submit"
+  />
+</form>
+
+<h1>Your Cache Line to find and complete: </h1>
+<div *ngFor="let process of processCache" style="border:solid; display: inline">
+  <div *ngIf="process.found === 0; then thenBlock; else elseBlock"></div>
+  <ng-template #thenBlock><span style="background: lightgreen;"> {{process.value}}</span></ng-template>
+  <ng-template #elseBlock><span style="background: red">{{process.value}}</span></ng-template>
+</div>
+

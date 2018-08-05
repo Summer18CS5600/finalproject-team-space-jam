@@ -5,6 +5,7 @@ import {BoardService} from '../../services/board.service.client';
 import {Observable, Subscription} from "rxjs/Rx";
 import {NgForm} from "@angular/forms";
 import {isUndefined} from "util";
+import {ProcessService} from "../../services/process.service.client";
 
 @Component({
   selector: 'app-board',
@@ -24,8 +25,10 @@ export class BoardComponent implements OnInit {
   body: any;
   startedRefresh: boolean;
   bNum: number;
+  pid: string;
+  processCache: [{}];
 
-  constructor(private router: Router, private boardService: BoardService) {}
+  constructor(private router: Router, private boardService: BoardService, private processService: ProcessService) {}
 
   /* Refresh the gameBoard every 1 second*/
   ngOnInit() {
@@ -44,6 +47,17 @@ export class BoardComponent implements OnInit {
     this.renderTable();
   }
 
+  getPid(num: string) {
+    this.pid = num;
+    console.log("PID ", this.pid);
+    this.processService.findProcessById(this.pid)
+      .subscribe((process: any) => {
+        this.processCache = process.processCache;
+        // console.log("INSIDE THE SUBSCRIBE ", process);
+        // console.log("PROCESS CACHE: ", this.processCache);
+      });
+  }
+
   /* Being the refresh for the page */
   startRefresh() {
     this.startedRefresh = true;
@@ -58,7 +72,7 @@ export class BoardComponent implements OnInit {
 
   /* Refresh the page, calling the findBoard function so that all players have updated gameBoards */
   refresh() {
-    console.log("REFRESHING: ", this.time);
+    //console.log("REFRESHING: ", this.time);
     this.time = this.time + 5;
     this.boardService.findBoard(this.boardId)
       .subscribe((board : any) => {
@@ -95,9 +109,9 @@ export class BoardComponent implements OnInit {
     };
     // Send the board to the client api
     this.boardService.initializeBoard(boardId, this.exampleBoard).subscribe((game: any) => {
-      console.log(game);
+      //console.log(game);
       this.gameNumbers = game.numbers; // This should get removed once we put in boardId (probably)
-      console.log(this.gameNumbers);
+     // console.log(this.gameNumbers);
     });
   }
 
@@ -107,7 +121,7 @@ export class BoardComponent implements OnInit {
    * @returns the Value and Hidden Flag, may later expand to have it also include the cacheLine
    */
   findThisNumber(position) {
-    console.log("entering find This number");
+    //console.log("entering find This number");
     for (var i = 0; i < this.gameNumbers.length; i++) {
       if (this.gameNumbers[i]['position'] === position) {
         return {value: this.gameNumbers[i]['value'], hidden: this.gameNumbers[i]['hidden']};
@@ -165,7 +179,18 @@ export class BoardComponent implements OnInit {
           td.style.webkitTextFillColor = '#000000';
           td.addEventListener("click", this.tileClick);
           td.addEventListener("click", (e) => {
+            //console.log("WHAT IS e", e.target.toString());
             this.accessMemory(e);
+            // var process = {};
+            // for (let i = 0; i < this.processCache.length; ++i) {
+            //   console.log("INSIDE FOR LOOP");
+            //   if(this.processCache[i]['value'] === e.target.valueOf()) {
+            //     process = {value: this.processCache[i]['value'], found: 1};
+            //     this.processCache.splice(i, 1, process);
+            //     //this.processCache[i] = process;
+            //   }
+            // }
+            // console.log(this.processCache);
           });
           tr.appendChild(td);
         }
@@ -192,10 +217,30 @@ export class BoardComponent implements OnInit {
   accessMemory(e) {
     var value = {value: e.target.textContent};
     console.log("umm.." + value.value);
-
+    var process = {};
+    for (let i = 0; i < 10; i++) {
+      //console.log("INSIDE FOR LOOP", this.processCache[i]['value'] == e.target.textContent);
+      if(this.processCache[i]['value'] == e.target.textContent) {
+        process = {value: this.processCache[i]['value'], found: 1};
+        //console.log(process);
+        this.processService.updateProcess(this.pid, process)
+          .subscribe((status: any) => {
+            //console.log(status);
+            this.processService.findProcessById(this.pid)
+              .subscribe((process1: any) => {
+                //console.log("RETURNED PROCESS ", process1);
+                this.processCache = process1.processCache;
+                //console.log(this.processCache);
+              });
+          });
+        //this.processCache.splice(i, 1, process);
+        //this.processCache[i] = process;
+      }
+    }
+    //console.log(this.processCache);
     this.boardService.accessMemory(this.boardId, value).subscribe((board: any) => {
       this.gameNumbers = board.numbers; // This should get removed once we put in boardId (probably)
-      console.log(this.gameNumbers)
+      //console.log(this.gameNumbers)
     })
 
   }
