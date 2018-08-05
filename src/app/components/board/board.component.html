@@ -7,7 +7,7 @@ board.component
 <!--<a (click)="initializeBoard(31)">Initialize Board</a>-->
 <!--<a (click)="renderTable()">Create Board</a>-->
 <!--<a (click)="findBoard(31)">Find a board test</a>-->
-<form>
+<form (ngSubmit)="boardInput(bNum.value)" #f="ngForm">
   Input Board Number:
   <input
     name="bNum"
