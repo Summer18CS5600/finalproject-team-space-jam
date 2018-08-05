@@ -29,7 +29,7 @@ export class BoardComponent implements OnInit {
   pid: string;
   processCache: [{}];
   errorFlag: boolean;
-  errorMessage: 'You must finish your cacheline in order!';
+  errorMessage: string;
 
   constructor(private router: Router, private boardService: BoardService, private processService: ProcessService) {}
 
@@ -221,23 +221,32 @@ export class BoardComponent implements OnInit {
     var value = {value: e.target.textContent};
     console.log("umm.." + value.value);
     var process = {};
+    this.errorFlag = false;
     for (let i = 0; i < 10; i++) {
       //console.log("INSIDE FOR LOOP", this.processCache[i]['value'] == e.target.textContent);
       if(this.processCache[i]['value'] == e.target.textContent) {
-        process = {value: this.processCache[i]['value'], found: 1};
-        //console.log(process);
-        this.processService.updateProcess(this.pid, process)
-          .subscribe((status: any) => {
-            //console.log(status);
-            this.processService.findProcessById(this.pid)
-              .subscribe((process1: any) => {
-                //console.log("RETURNED PROCESS ", process1);
-                this.processCache = process1.processCache;
-                //console.log(this.processCache);
-              });
-          });
-        //this.processCache.splice(i, 1, process);
-        //this.processCache[i] = process;
+        if (i != 0) {
+          if (this.processCache[i - 1]['found'] != 1) {
+            this.errorFlag = true;
+            this.errorMessage = "You must finish your cache line in order!";
+          }
+        }
+        if (!this.errorFlag) {
+          process = {value: this.processCache[i]['value'], found: 1};
+          //console.log(process);
+          this.processService.updateProcess(this.pid, process)
+            .subscribe((status: any) => {
+              //console.log(status);
+              this.processService.findProcessById(this.pid)
+                .subscribe((process1: any) => {
+                  //console.log("RETURNED PROCESS ", process1);
+                  this.processCache = process1.processCache;
+                  //console.log(this.processCache);
+                });
+            });
+          //this.processCache.splice(i, 1, process);
+          //this.processCache[i] = process;
+        }
       }
     }
     //console.log(this.processCache);
@@ -248,52 +257,52 @@ export class BoardComponent implements OnInit {
 
   }
 
-  // resetProcess() {
-  //   var processToUpdate = {};
-  //   var count1 = 0;
-  //   var count2 = 0;
-  //   console.log('PROCESS LIST LEN', this.processCache.length);
-  //   for (let i = 0; i < this.processCache.length; i++) {
-  //     if (this.processCache[i]['found'] == 1) {
-  //       count1++;
-  //       processToUpdate = {value: this.processCache[i]['value'], found: 0};
-  //       console.log(processToUpdate);
-  //       this.processService.updateProcess(this.pid, processToUpdate)
-  //         .subscribe((status: any) => {
-  //           count2++;
-  //           console.log("HOW MANY TIMES", i);
-  //           console.log("STATUS", status);
-  //           // if(status) {
-  //           //   count++;
-  //           //   console.log("IN STATUS", count);
-  //           // }
-  //           console.log(count1);
-  //           console.log(count2);
-  //           if(count1 == count2) {
-  //             console.log(count1);
-  //             console.log(count2);
-  //             console.log("FINAL I", i);
-  //             this.processService.findProcessById(this.pid)
-  //               .subscribe((process: any) => {
-  //                 this.processCache = process.processCache;
-  //               });
-  //           }
-  //         });
-  //     }
-  //   }
-  //   //waits(5000);
-  //
-  //   // if(count >= 10) {
-  //   //   this.processService.findProcessById(this.pid)
-  //   //     .subscribe((process: any) => {
-  //   //       this.processCache = process.processCache;
-  //   //       //componentRefresh();
-  //   //       //this.startRefresh();
-  //   //       console.log(this.processCache);
-  //   //     });
-  //   // }
-  //   //console.log(this.processCache);
-  // }
+  resetProcess() {
+    var processToUpdate = {};
+    var count1 = 0;
+    var count2 = 0;
+    console.log('PROCESS LIST LEN', this.processCache.length);
+    for (let i = 0; i < this.processCache.length; i++) {
+      if (this.processCache[i]['found'] == 1) {
+        count1++;
+        processToUpdate = {value: this.processCache[i]['value'], found: 0};
+        console.log(processToUpdate);
+        this.processService.updateProcess(this.pid, processToUpdate)
+          .subscribe((status: any) => {
+            count2++;
+            console.log("HOW MANY TIMES", i);
+            console.log("STATUS", status);
+            // if(status) {
+            //   count++;
+            //   console.log("IN STATUS", count);
+            // }
+            console.log(count1);
+            console.log(count2);
+            if(count1 == count2) {
+              console.log(count1);
+              console.log(count2);
+              console.log("FINAL I", i);
+              this.processService.findProcessById(this.pid)
+                .subscribe((process: any) => {
+                  this.processCache = process.processCache;
+                });
+            }
+          });
+      }
+    }
+    //waits(5000);
+
+    // if(count >= 10) {
+    //   this.processService.findProcessById(this.pid)
+    //     .subscribe((process: any) => {
+    //       this.processCache = process.processCache;
+    //       //componentRefresh();
+    //       //this.startRefresh();
+    //       console.log(this.processCache);
+    //     });
+    // }
+    //console.log(this.processCache);
+  }
 
 
 

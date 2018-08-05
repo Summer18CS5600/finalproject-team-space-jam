@@ -41,16 +41,23 @@ board.component
   />
 </form>
 
+<div class="container-fluid">
+  <div *ngIf="errorFlag"
+       class="alert alert-danger">
+    {{errorMessage}}
+  </div>
+</div>
+
 <h1>Your Cache Line to find and complete: </h1>
 <div *ngFor="let process of processCache" style="border:solid; display: inline">
   <div *ngIf="process.found === 0; then thenBlock; else elseBlock"></div>
   <ng-template #thenBlock><span style="background: lightgreen;"> {{process.value}}</span></ng-template>
   <ng-template #elseBlock><span style="background: red">{{process.value}}</span></ng-template>
 </div>
-<!--<button-->
-  <!--*ngIf="processCache != null"-->
-  <!--(click)="resetProcess()"-->
-  <!--class="button"-->
-  <!--type="submit"-->
-<!--&gt; Reset Process </button>-->
+<button
+  *ngIf="processCache != null"
+  (click)="resetProcess()"
+  class="button"
+  type="submit"
+> Reset Process </button>
 
