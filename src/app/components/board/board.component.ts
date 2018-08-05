@@ -278,9 +278,11 @@ export class BoardComponent implements OnInit {
       }
     }
     //console.log(this.processCache);
-    this.boardService.accessMemory(this.boardId, value).subscribe((board: any) => {
-      this.gameNumbers = board.numbers; // This should get removed once we put in boardId (probably)
-      //console.log(this.gameNumbers)
+    this.boardService.accessMemory(this.boardId, value).subscribe((board: any) => { // <--THIS IS IMPORTANT
+      // this.gameNumbers = board.numbers; // This should get removed once we put in boardId (probably)
+      //console.log(this.gameNumbers) // UPDATE: I just removed it Sunday, 6:19 PM, I think this is an artifact from
+      // the early days of just the client.
+
     })
 
   }

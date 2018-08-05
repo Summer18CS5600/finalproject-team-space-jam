@@ -2,7 +2,9 @@ var mongoose = require('mongoose');
 
 var ProcessSchema = mongoose.Schema({
   pid: String,
-  processCache: [{}]
+  processCache: [{}],
+  processHits: Number,
+  processMisses: Number
 }, {collection: 'process'});
 
 module.exports = ProcessSchema;
