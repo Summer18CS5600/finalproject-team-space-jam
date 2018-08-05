@@ -28,11 +28,12 @@ export class ProcessService {
   }
 
   updateProcess(pid: string, process: any) {
-    console.log("ARE WE GETTING TO UPDATE?!");
+   // console.log("ARE WE GETTING TO UPDATE?!");
     const url = this.baseUrl + '/api/process/' + pid;
     return this.http.put(url, process)
       .map((response: Response) => {
         return response.json();
       });
   }
+
 }
