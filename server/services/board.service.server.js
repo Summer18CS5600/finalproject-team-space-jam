@@ -176,11 +176,13 @@ module.exports = function(app){
     console.log("SERVER: creating cacheSet...");
     const cacheSet = {
       boardId: req.params['boardId'],
-      setOfCacheLines: [{}],
+      setOfCacheLines: [],
       totalOccurrences: 0,
     };
     cacheSetModel.createCacheSet(cacheSet).then(function (cacheSet) {
       console.log('SERVER: cacheSet created, sending back to client...');
+      console.log('in server, should get exact same cacheset that was sent to the model above..');
+      console.log(cacheSet);
       res.json(cacheSet);
     })
   }

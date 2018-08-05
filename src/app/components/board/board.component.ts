@@ -120,7 +120,8 @@ export class BoardComponent implements OnInit {
     //Initialize the cache in the database/server.
     console.log("running initialize cache call from component");
     this.cacheService.initializeCache(boardId).subscribe((cache: any) => {
-      console.log("huh");
+      console.log("cache should be initalized. in the board component");
+      console.log(cache);
     });
 
 

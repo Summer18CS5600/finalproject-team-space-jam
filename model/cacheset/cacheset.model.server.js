@@ -12,6 +12,7 @@ module.exports = CacheSetModel;
 //call the db specific functions.
 function createCacheSet(cacheSet) {
   console.log("MODEL: creating cacheSet: " + cacheSet.boardId);
+  console.log("sent to the model from server:");
   console.log(cacheSet);
   var newCacheSet = cacheSet;
   return CacheSetModel.create(newCacheSet);
