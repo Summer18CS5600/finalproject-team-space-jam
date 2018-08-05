@@ -145,11 +145,11 @@ module.exports = function(app){
       // Third, push the updates to the model
       cacheSetModel.updateCacheSet(boardId, cacheSet).then(function (updatedCacheSet) {
         cacheSetModel.findCacheSet(boardId).then(function (updatedCacheSet) {
-        })
+        });
+        if (oldestLine > -1) {
+          hideCacheLine(boardId, oldestLine);
+        }
       });
-      if (oldestLine > -1) {
-        hideCacheLine(boardId, oldestLine);
-      }
     });
   }
 
