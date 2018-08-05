@@ -165,18 +165,25 @@ module.exports = function(app){
    */
 
   function hideCacheLine(boardId, cacheLineToHide) {
+    console.log("\n\nhiding cachelines now....\n\n");
+
     boardModel.findBoard(boardId).then(function (boardToBeUpdated) {
 
       // Update the hidden fields.
       for (let i = 0; i < boardToBeUpdated.numbers.length; i++) {
         if (boardToBeUpdated.numbers[i].cacheLine == cacheLineToHide) {
           boardToBeUpdated.numbers[i].hidden = true;
+          console.log(boardToBeUpdated.numbers[i]);
         }
       }
 
       // TODO: .then() stuff.
       // Update the board in the database and send back to client.
-      boardModel.updateBoard(boardId, boardToBeUpdated);
+      boardModel.updateBoard(boardId, boardToBeUpdated).then(function (updatedBoard) {
+        console.log("the updated model was send to the model and is now back....");
+        console.log(updatedBoard);
+        //nothing here.
+      });
 
     })
   }
