@@ -12,8 +12,10 @@ export class CacheSetService {
   }
 
   initializeCache(boardId) {
+    console.log("should get to client cache server");
     const url = this.baseUrl + '/api/cache/' + boardId;
-    return this.http.post(url, null).map((response: Response) => {
+    return this.http.post(url, 3).map((response: Response) => {
+      console.log("getting back from the post");
       return response.json();
     })
 

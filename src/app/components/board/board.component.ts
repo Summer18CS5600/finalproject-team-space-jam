@@ -6,6 +6,7 @@ import {Observable, Subscription} from "rxjs/Rx";
 import {NgForm} from "@angular/forms";
 import {isUndefined} from "util";
 import {ProcessService} from "../../services/process.service.client";
+import {CacheSetService} from '../../services/cacheset.service.client';
 
 @Component({
   selector: 'app-board',
@@ -28,7 +29,7 @@ export class BoardComponent implements OnInit {
   pid: string;
   processCache: [{}];
 
-  constructor(private router: Router, private boardService: BoardService, private processService: ProcessService) {}
+  constructor(private router: Router, private boardService: BoardService, private processService: ProcessService, private cacheService: CacheSetService) {}
 
   /* Refresh the gameBoard every 1 second*/
   ngOnInit() {
@@ -106,13 +107,18 @@ export class BoardComponent implements OnInit {
     this.exampleBoard = {id: boardId,
       numbers: nums
     };
-    // Send the board to the client api
+
+    // Initialize the board in the database/server.
     this.boardService.initializeBoard(boardId, this.exampleBoard).subscribe((game: any) => {
       //console.log(game);
       this.gameNumbers = game.numbers; // This should get removed once we put in boardId (probably)
       console.log(this.gameNumbers);
       this.renderTable();
     });
+
+    //Initialize the cache in the database/server.
+    console.log("runing initialize cache call from component");
+    this.cacheService.initializeCache(boardId);
   }
 
   /**
