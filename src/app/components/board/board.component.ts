@@ -108,6 +108,7 @@ export class BoardComponent implements OnInit {
       numbers: nums
     };
 
+
     // Initialize the board in the database/server.
     this.boardService.initializeBoard(boardId, this.exampleBoard).subscribe((game: any) => {
       //console.log(game);
@@ -117,8 +118,12 @@ export class BoardComponent implements OnInit {
     });
 
     //Initialize the cache in the database/server.
-    console.log("runing initialize cache call from component");
-    this.cacheService.initializeCache(boardId);
+    console.log("running initialize cache call from component");
+    this.cacheService.initializeCache(boardId).subscribe((cache: any) => {
+      console.log("huh");
+    });
+
+
   }
 
   /**

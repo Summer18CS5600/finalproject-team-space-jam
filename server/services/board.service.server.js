@@ -1,16 +1,13 @@
-
-/* unlike angular, if w e ask by name, we cant get it */
-
-module.exports= function(app){
+module.exports = function(app){
   var boardModel = require("../../model/board/board.model.server");
   var cacheSetModel = require("../../model/cacheset/cacheset.model.server");
 
   console.log("Server started...");
+
+  app.post("/api/cache/create/:boardId", createCacheSet);
   app.get("/api/game/:boardId",findGame);
   app.post("/api/game/:boardId", createBoard);
   app.post("/api/game/:boardId/accessMemory", accessMemory);
-  app.post("/api/cache/:boardId", updateCacheSet);
-
   function findGame(req, res) {
    // console.log("looking for game in server side");
     boardModel.findBoard(req.params['boardId']).then(function (board) {
@@ -20,7 +17,7 @@ module.exports= function(app){
 
   /* Look to see if the board is already in the database, else, create it */
   function createBoard(req, res) {
-   // console.log("SERVER: creating board...");
+   console.log("SERVER: creating board...");
     var nums = req.body.numbers;
     var bID = req.params['boardId'];
     const board = {
@@ -175,7 +172,18 @@ module.exports= function(app){
   }
 
 
-
+  function createCacheSet(req, res) {
+    console.log("SERVER: creating cacheSet...");
+    const cacheSet = {
+      boardId: req.params['boardId'],
+      setOfCacheLines: [{}],
+      totalOccurrences: 0,
+    };
+    cacheSetModel.createCacheSet(cacheSet).then(function (cacheSet) {
+      console.log('SERVER: cacheSet created, sending back to client...');
+      res.json(cacheSet);
+    })
+  }
 
 
 
