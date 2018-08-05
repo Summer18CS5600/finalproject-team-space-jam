@@ -28,20 +28,14 @@ module.exports = function(app){
     boardModel.findBoard(bID)
       .then(function (board1) {
         if(board1 != null) {
-     //     console.log("FOUND A BOARD!");
           res.json(board1);
         } else {
           boardModel.createBoard(board)
             .then(function (board2) {
-     //         console.log("DIDN'T FIND A BOARD CREATED ONE INSTEAD");
               res.json(board2);
             });
         }
       });
-    // boardModel.createBoard(board).then(function (board) {
-    //   console.log('SERVER: board created, sending back to client...');
-    //   res.json(board);
-    // })
   }
 
   /**
@@ -50,7 +44,6 @@ module.exports = function(app){
    */
   function accessMemory(req, res) {
     let v = req.body.value; // the value to be updated.
-    // console.log("in server accessing memory: value is - " + v);
     let theCLine; // the cache line of the number accessed.
     let data = [];
 
@@ -92,9 +85,15 @@ module.exports = function(app){
    * @param tiles Four numbers with the same associated cacheline.
    */
   function updateCacheSet(boardId, tiles) {
-    // tiles: [{}, {}, {}. {}]
+    // Reminder on what tiles reprsents:
+    // tiles: [
+    // {hidden: bool, value: int, position: int, cacheLine: int},
+    // {hidden: bool, value: int, position: int, cacheLine: int},
+    // {hidden: bool, value: int, position: int, cacheLine: int},
+    // {hidden: bool, value: int, position: int, cacheLine: int},
+    // ]
     var oldestLine = -1;
-    var cachePolicyIsLRU = true; // later implement a way to have a different cache Policy that can tweak this, we'll
+    var cachePolicyIsLRU = false; // later implement a way to have a different cache Policy that can tweak this, we'll
     // then just make this a global variable. Maybe best to pass the evict policy type from the board Service.
 
     // STEP 1:
@@ -104,13 +103,14 @@ module.exports = function(app){
 
       // update the current age:
       cacheSet['totalOccurrences'] = cacheSet['totalOccurrences'] + 1;
+      var policy = cacheSet['policy'];
+      console.log(cacheSet['policy']);
       // determines the current cacheLine to be evaluated against the current cache.
       var cacheLine = tiles[0]['cacheLine'];
       // bool to track if we hit or miss.
       var didWeMiss = true;
       // Find out if there's been a cacheHit
       for (let a = 0; a < cacheSet['setOfCacheLines'].length; a++) {
-        console.log("WHELJHKLJAFL:KJFDASKL:FJASDKL:FJASK:LFJAK:LFJASFK:LASFJA:LFJKAF:LKASDF");
         // console.log("Comparing: " + cacheLine + "with " + cacheSet['setOfCacheLines'][a]['lineId']);
         if (cacheSet['setOfCacheLines'][a]['lineId'] == cacheLine) {
           // the cacheHasBeenHit
@@ -125,7 +125,7 @@ module.exports = function(app){
           cacheSet['setOfCacheLines'].push({lineId: cacheLine, tiles: tiles, age: cacheSet['totalOccurrences']});
         } else{
           // there's no more room in the cache, let's check for the LRU of the group, later we can make a flag for the
-          if (cachePolicyIsLRU) {
+          if (policy == 'LRU') {
             var currentAge = 100000000000000000000;
             var tracker = -1;
             // find the oldest line (the one to replace).
@@ -139,6 +139,13 @@ module.exports = function(app){
             // now update the cacheSet by replacing the oldestLine
             cacheSet['setOfCacheLines'][tracker] = {lineId: cacheLine, tiles: tiles, age: cacheSet['totalOccurrences']};
             // send boardService back the oldestLine for eviction
+          } else {
+            // Policy equals random
+            var index = Math.floor(Math.random() * 4);     // returns a random integer from 0 to 9
+            console.log('Index to replace is: ' + index);
+            oldestLine = cacheSet['setOfCacheLines'][index]['lineId'];// has to equal the cacheLine that's getting evicted.
+            cacheSet['setOfCacheLines'][index] = {lineId: cacheLine, tiles: tiles, age: cacheSet['totalOccurrences']};
+            console.log('Oldest Line is: ' + oldestLine);
           }
         }
       }
@@ -183,6 +190,7 @@ module.exports = function(app){
           boardId: req.params['boardId'],
           setOfCacheLines: [],
           totalOccurrences: 0,
+          policy: 'RAN'
         };
         cacheSetModel.createCacheSet(cacheSet).then(function (cacheSet) {
           console.log('SERVER: cacheSet created, sending back to client...');

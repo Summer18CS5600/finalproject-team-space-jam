@@ -23,13 +23,6 @@ export class CacheSetService {
 
   }
 
-  zinitializeBoard(boardId, exampleBoard) {
-    const url = this.baseUrl + '/api/game/' + boardId;
-    return this.http.post(url, exampleBoard).map((response: Response) => {
-      return response.json();
-    });
-  }
-
   findCache(boardId) {
     const url = this.baseUrl + '/api/cache/' + boardId;
     return this.http.get(url).map((response: Response) => {
