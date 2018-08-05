@@ -25,5 +25,7 @@ function findCacheSet(cacheSetId) {
 
 function updateCacheSet(cacheSetId, cacheSet) {
   console.log("MODEL: updating cacheSet: " + cacheSetId);
+  console.log("this is what the cacheset looks like before being updated in the model...");
+  console.log(cacheSet);
   return CacheSetModel.update({boardId: cacheSetId}, cacheSet);
 }

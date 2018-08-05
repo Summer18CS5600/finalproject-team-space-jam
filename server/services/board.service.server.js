@@ -92,6 +92,7 @@ module.exports = function(app){
    * @param tiles Four numbers with the same associated cacheline.
    */
   function updateCacheSet(boardId, tiles) {
+    console.log("\n================trying to update======================\n");
     // tiles: [{}, {}, {}. {}]
     var oldestLine = -1;
     var cachePolicyIsLRU = true; // later implement a way to have a different cache Policy that can tweak this, we'll
@@ -144,7 +145,14 @@ module.exports = function(app){
         }
       }
       // Third, push the updates to the model
-      cacheSetModel.updateCacheSet(boardId, cacheSet);
+      cacheSetModel.updateCacheSet(boardId, cacheSet).then(function (updatedCacheSet) {
+        console.log("back from the model==============");
+        console.log(updatedCacheSet);
+        cacheSetModel.findCacheSet(boardId).then(function (updatedCacheSet) {
+          console.log("hmmmmmmmmmmm");
+          console.log(updatedCacheSet);
+        })
+      });
       if (oldestLine > -1) {
         hideCacheLine(boardId, oldestLine);
       }
@@ -166,6 +174,7 @@ module.exports = function(app){
         }
       }
 
+      // TODO: .then() stuff.
       // Update the board in the database and send back to client.
       boardModel.updateBoard(boardId, boardToBeUpdated);
 
