@@ -112,10 +112,14 @@ module.exports = function(app){
       var cacheLine = tiles[0]['cacheLine'];
       var didWeMiss = true;
       // Find out if there's been a cacheHit
-      for (var a = 0; i < cacheSet['setOfCacheLines'].length; a++) {
+      console.log("the length of the cacheSetOfLines is currently: " + cacheSet['setOfCacheLines'].length);
+      for (let a = 0; a < cacheSet['setOfCacheLines'].length; a++) {
+        console.log("WHELJHKLJAFL:KJFDASKL:FJASDKL:FJASK:LFJAK:LFJASFK:LASFJA:LFJKAF:LKASDF");
+        console.log("Comparing: " + cacheLine + "with " + cacheSet['setOfCacheLines'][a]['lineId']);
         if (cacheSet['setOfCacheLines'][a]['lineId'] == cacheLine) {
           // the cacheHasBeenHit
-          cacheSet['setOfCacheLines'][a]['age'] = cacheSet[totalOccurrences];
+          console.log("+++++++++++++we had a cache hit!++++++++++++");
+          cacheSet['setOfCacheLines'][a]['age'] = cacheSet['totalOccurrences'];
           didWeMiss = false;
         }
       }
