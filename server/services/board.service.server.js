@@ -190,7 +190,7 @@ module.exports = function(app){
           boardId: req.params['boardId'],
           setOfCacheLines: [],
           totalOccurrences: 0,
-          policy: 'RAN'
+          policy: 'LRU'
         };
         cacheSetModel.createCacheSet(cacheSet).then(function (cacheSet) {
           console.log('SERVER: cacheSet created, sending back to client...');
