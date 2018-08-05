@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a493ced6-ec7b-4e39-ba47-4f7a2b238cfe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/services/board.service.server.js" afterPath="$PROJECT_DIR$/server/services/board.service.server.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -109,10 +108,10 @@
       <file leaf-file-name="board.service.server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/services/board.service.server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="104" column="63" lean-forward="false" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="63" />
+            <state relative-caret-position="1163">
+              <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
               <folding>
-                <marker date="1533490258000" expanded="true" signature="8538:8543" ph="{...}" />
+                <marker date="1533490737000" expanded="true" signature="7556:7561" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -394,7 +393,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25190000" />
+    <option name="totallyTimeSpent" value="25664000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -908,10 +907,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/services/board.service.server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="104" column="63" lean-forward="false" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="63" />
+        <state relative-caret-position="1163">
+          <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
           <folding>
-            <marker date="1533490258000" expanded="true" signature="8538:8543" ph="{...}" />
+            <marker date="1533490737000" expanded="true" signature="7556:7561" ph="{...}" />
           </folding>
         </state>
       </provider>

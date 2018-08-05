@@ -92,39 +92,33 @@ module.exports = function(app){
    * @param tiles Four numbers with the same associated cacheline.
    */
   function updateCacheSet(boardId, tiles) {
-    console.log("\n================trying to update======================\n");
     // tiles: [{}, {}, {}. {}]
     var oldestLine = -1;
     var cachePolicyIsLRU = true; // later implement a way to have a different cache Policy that can tweak this, we'll
     // then just make this a global variable. Maybe best to pass the evict policy type from the board Service.
-    // Fist grab the current cacheSet from the Model
+
+    // STEP 1:
+    // Grab the Current CacheSet from the Model
     cacheSetModel.findCacheSet(boardId).then(function(cacheSet) {
-      console.log("in server... before");
-      console.log(cacheSet);
-      console.log("in server after:");
+      // STEP 2: Cache Policy Logic
+
+      // update the current age:
       cacheSet['totalOccurrences'] = cacheSet['totalOccurrences'] + 1;
-      // Second, do the update logic on the cacheSet (cacheHit, cacheMiss, if cacheMiss, evict or cold miss?)
-      for (var i = 0; i < cacheSet['setOfCacheLines'].length; i++) {
-        console.log("The lineId is: " + cacheSet['setOfCacheLines'][i]['lineId']);
-        console.log("The tiles are is: " + cacheSet['setOfCacheLines'][i]['tiles']);
-        console.log("The age is: " + cacheSet['setOfCacheLines'][i]['age']);
-      }
+      // determines the current cacheLine to be evaluated against the current cache.
       var cacheLine = tiles[0]['cacheLine'];
+      // bool to track if we hit or miss.
       var didWeMiss = true;
       // Find out if there's been a cacheHit
-      console.log("the length of the cacheSetOfLines is currently: " + cacheSet['setOfCacheLines'].length);
       for (let a = 0; a < cacheSet['setOfCacheLines'].length; a++) {
         console.log("WHELJHKLJAFL:KJFDASKL:FJASDKL:FJASK:LFJAK:LFJASFK:LASFJA:LFJKAF:LKASDF");
         console.log("Comparing: " + cacheLine + "with " + cacheSet['setOfCacheLines'][a]['lineId']);
         if (cacheSet['setOfCacheLines'][a]['lineId'] == cacheLine) {
           // the cacheHasBeenHit
-          console.log("+++++++++++++we had a cache hit!++++++++++++");
           cacheSet['setOfCacheLines'][a]['age'] = cacheSet['totalOccurrences'];
-          didWeMiss = false;
+          didWeMiss = false; // set to false so we no longer treat this as a miss
         }
       }
       if (didWeMiss) {
-        // we didn't hit the cache.
         // First Check is there open room in the cache. If so, it's a cold miss.
         var firstEmptyPosition = cacheSet['setOfCacheLines'].length;
         if (firstEmptyPosition < 4) {
@@ -150,11 +144,7 @@ module.exports = function(app){
       }
       // Third, push the updates to the model
       cacheSetModel.updateCacheSet(boardId, cacheSet).then(function (updatedCacheSet) {
-        console.log("back from the model==============");
-        console.log(updatedCacheSet);
         cacheSetModel.findCacheSet(boardId).then(function (updatedCacheSet) {
-          console.log("hmmmmmmmmmmm");
-          console.log(updatedCacheSet);
         })
       });
       if (oldestLine > -1) {
@@ -167,12 +157,8 @@ module.exports = function(app){
   /**
    *    Changes the hidden field to true for all numbers with the given cacheline in the given boardId.
    */
-
   function hideCacheLine(boardId, cacheLineToHide) {
-    console.log("\n\nhiding cachelines now....\n\n");
-
     boardModel.findBoard(boardId).then(function (boardToBeUpdated) {
-
       // Update the hidden fields.
       for (let i = 0; i < boardToBeUpdated.numbers.length; i++) {
         if (boardToBeUpdated.numbers[i].cacheLine == cacheLineToHide) {
@@ -180,15 +166,9 @@ module.exports = function(app){
           console.log(boardToBeUpdated.numbers[i]);
         }
       }
-
-      // TODO: .then() stuff.
       // Update the board in the database and send back to client.
       boardModel.updateBoard(boardId, boardToBeUpdated).then(function (updatedBoard) {
-        console.log("the updated model was send to the model and is now back....");
-        console.log(updatedBoard);
-        //nothing here.
       });
-
     })
   }
 
