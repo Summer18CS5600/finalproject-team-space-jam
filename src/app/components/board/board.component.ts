@@ -32,6 +32,8 @@ export class BoardComponent implements OnInit {
   errorMessage: string;
   initializedOnce: boolean;
   policy: string;
+  setOfCacheLines: [{}];
+  //tilesInCache: any[];
 
   constructor(private router: Router, private boardService: BoardService, private processService: ProcessService, private cacheService: CacheSetService) {}
 
@@ -51,6 +53,7 @@ export class BoardComponent implements OnInit {
     console.log("bNUm: ", this.bNum);
     this.initializeBoard(this.bNum);
     this.initializedOnce = true;
+
   }
 
   getPid(num: string) {
@@ -121,7 +124,7 @@ export class BoardComponent implements OnInit {
     this.boardService.initializeBoard(boardId, this.exampleBoard).subscribe((game: any) => {
       //console.log(game);
       this.gameNumbers = game.numbers; // This should get removed once we put in boardId (probably)
-      console.log(this.gameNumbers);
+      //console.log(this.gameNumbers);
       this.renderTable();
     });
 
@@ -130,6 +133,13 @@ export class BoardComponent implements OnInit {
     this.cacheService.initializeCache(boardId).subscribe((cache: any) => {
       console.log("cache should be initalized. in the board component");
       console.log(cache);
+      //this.cacheLines = cache.setOfCacheLines;
+      //console.log(this.cacheLines);
+
+      /**
+       * Update the cache lines for visualizion.
+       */
+          this.setOfCacheLines = cache.setOfCacheLines;
     });
 
 
@@ -154,6 +164,13 @@ export class BoardComponent implements OnInit {
     console.log("looking for a board");
     this.boardService.findBoard(boardId).subscribe((board: any) => {
       this.gameNumbers = board.numbers;
+      this.cacheService.findCache(this.boardId)
+        .subscribe((cache: any) => {
+          this.setOfCacheLines = cache.setOfCacheLines;
+          //this.tilesInCache = cache.setOfCacheLines.tiles;
+          console.log(this.setOfCacheLines);
+          //console.log(this.tilesInCache);
+        });
     });
   }
   /**
@@ -241,7 +258,7 @@ export class BoardComponent implements OnInit {
     if (this.initializedOnce) {
       this.cacheService.updatePolicy(this.boardId, this.policy).subscribe((cache: any) => {
         // Intentionally left blank.
-      })
+      });
     }
   }
 
@@ -278,12 +295,17 @@ export class BoardComponent implements OnInit {
       }
     }
     //console.log(this.processCache);
-    this.boardService.accessMemory(this.boardId, value).subscribe((board: any) => { // <--THIS IS IMPORTANT
-      // this.gameNumbers = board.numbers; // This should get removed once we put in boardId (probably)
-      //console.log(this.gameNumbers) // UPDATE: I just removed it Sunday, 6:19 PM, I think this is an artifact from
-      // the early days of just the client.
-
-    })
+    this.boardService.accessMemory(this.boardId, value).subscribe((board: any) => {
+      //this.gameNumbers = board.numbers; // This should get removed once we put in boardId (probably)
+      //console.log(this.gameNumbers)
+      this.cacheService.findCache(this.boardId)
+        .subscribe((cache:any) => {
+          this.setOfCacheLines = cache.setOfCacheLines;
+          //this.tilesInCache = cache.setOfCacheLines['tiles'];
+          console.log("EVERY CLICK", this.setOfCacheLines);
+         // console.log("TILES", this.tilesInCache);
+        });
+    });
 
   }
 

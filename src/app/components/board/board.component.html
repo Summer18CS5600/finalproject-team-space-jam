@@ -15,22 +15,6 @@
 </body>
 </div>
 <div class="container">
-
-
-  <div class="col-sm-9">
-      <div *ngIf="initializedOnce">
-        <h2>Your Cache Line to find and complete: </h2>
-      </div>
-      <div *ngFor="let process of processCache" style="border:solid; display: inline">
-        <div *ngIf="process.found === 0; then thenBlock; else elseBlock"></div>
-        <ng-template #thenBlock><span style="background: lightgreen;"> {{process.value}}</span></ng-template>
-        <ng-template #elseBlock><span style="background: red">{{process.value}}</span></ng-template>
-      </div>
-
-    </div>
-
-</div>
-
 <div class ="container-fluid col-xs-2">
   <form (ngSubmit)="boardInput(bNum.value)" #f="ngForm">
   Input Board Number:
@@ -48,23 +32,35 @@
     class="btn btn-success"
     type="submit"/>
 </form>
-  <form>
-    Input Your Thread ID:
-    <input
-      name="pid"
-      id="pid"
-      type="text"
-      placeholder="23"
-      class="form-control"
-      ngModel
-      required
-      #pid="ngModel"
-    />
-    <input (click)="getPid(pid.value)"
-           class="btn btn-primary"
-           type="submit"
-    />
-  </form>
+
+<form>
+  Input Process ID:
+  <input
+    name="pid"
+    id="pid"
+    type="text"
+    placeholder="23"
+    class="form-control"
+    ngModel
+    required
+    #pid="ngModel"
+  />
+  <input (click)="getPid(pid.value)"
+         class="button"
+         type="submit"
+  />
+</form>
+
+<div class="container-fluid">
+  <div *ngIf="errorFlag"
+       class="alert alert-danger">
+    {{errorMessage}}
+  </div>
+</div>
+<br><Br>
+
+<div class="container">
+<div class="row">
   <div class="col-sm-3">
     <div *ngIf="initializedOnce">
       <form>
@@ -94,6 +90,33 @@
       </form>
     </div>
   </div>
+
+  <div class="col-sm-7">
+      <div *ngIf="initializedOnce">
+        <h2>Your Cache Line to find and complete: </h2>
+      </div>
+      <div *ngFor="let process of processCache" style="border:solid; display: inline">
+        <div *ngIf="process.found === 0; then thenBlock; else elseBlock"></div>
+        <ng-template #thenBlock><span style="background: lightgreen;"> {{process.value}}</span></ng-template>
+        <ng-template #elseBlock><span style="background: red">{{process.value}}</span></ng-template>
+      </div>
+
+      <body>
+      <!--Memory will go here-->
+      </body>
+    </div>
+  <div class="col-sm-2">
+    <div *ngFor="let cacheLine of setOfCacheLines">
+      <p style="display: inline-block;">Line Number: {{cacheLine.lineId}}</p>
+      <br>
+      <p style="display: inline-block"> Age: {{cacheLine.age}}</p>
+      <br>
+      <div *ngFor="let tile of cacheLine.tiles" style="display: inline">
+        {{tile.value}}
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 <!--<button-->
 <!--*ngIf="processCache != null"-->
@@ -101,4 +124,5 @@
 <!--class="button"-->
 <!--type="submit"-->
 <!--&gt; Reset Process </button>-->
+
 
