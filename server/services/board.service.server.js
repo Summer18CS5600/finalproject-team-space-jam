@@ -115,14 +115,18 @@ module.exports = function(app){
         if (cacheSet['setOfCacheLines'][a]['lineId'] == cacheLine) {
           // the cacheHasBeenHit
           cacheSet['setOfCacheLines'][a]['age'] = cacheSet['totalOccurrences'];
+          cacheSet['cacheHits'] = cacheSet['cacheHits'] + 1;
+          cacheSet['cacheHistory'].push('Cache was hit by the cache line #' + cacheLine + '!');
           didWeMiss = false; // set to false so we no longer treat this as a miss
         }
       }
       if (didWeMiss) {
+        cacheSet['cacheMisses'] = cacheSet['cacheMisses'] + 1;
         // First Check is there open room in the cache. If so, it's a cold miss.
         var firstEmptyPosition = cacheSet['setOfCacheLines'].length;
         if (firstEmptyPosition < 4) {
           cacheSet['setOfCacheLines'].push({lineId: cacheLine, tiles: tiles, age: cacheSet['totalOccurrences']});
+          cacheSet['cacheHistory'].push('Cache Line ' + cacheLine + ' caused a cold miss!')
         } else{
           // there's no more room in the cache, let's check for the LRU of the group, later we can make a flag for the
           if (policy == 'LRU') {
@@ -137,6 +141,7 @@ module.exports = function(app){
               }
             }
             // now update the cacheSet by replacing the oldestLine
+            cacheSet['cacheHistory'].push('CONFLICT MISS: The Cache Line #' + cacheSet['setOfCacheLines'][tracker]['lineId'] + ' was replaced by Cache Line #' + cacheLine);
             cacheSet['setOfCacheLines'][tracker] = {lineId: cacheLine, tiles: tiles, age: cacheSet['totalOccurrences']};
             // send boardService back the oldestLine for eviction
           } else {
@@ -144,8 +149,8 @@ module.exports = function(app){
             var index = Math.floor(Math.random() * 4);     // returns a random integer from 0 to 9
             console.log('Index to replace is: ' + index);
             oldestLine = cacheSet['setOfCacheLines'][index]['lineId'];// has to equal the cacheLine that's getting evicted.
+            cacheSet['cacheHistory'].push('CONFLICT MISS: The Cache Line #' + cacheSet['setOfCacheLines'][index]['lineId'] + ' was replaced by Cache Line #' + cacheLine);
             cacheSet['setOfCacheLines'][index] = {lineId: cacheLine, tiles: tiles, age: cacheSet['totalOccurrences']};
-            console.log('Oldest Line is: ' + oldestLine);
           }
         }
       }
@@ -190,6 +195,8 @@ module.exports = function(app){
           boardId: req.params['boardId'],
           setOfCacheLines: [],
           totalOccurrences: 0,
+          cacheHits: 0,
+          cacheMisses: 0,
           policy: 'LRU'
         };
         cacheSetModel.createCacheSet(cacheSet).then(function (cacheSet) {

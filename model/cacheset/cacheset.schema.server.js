@@ -20,7 +20,10 @@ var CacheSetSchema = mongoose.Schema ( {
   boardId: String,
   setOfCacheLines: [],
   totalOccurrences: Number,
-  policy: String
+  policy: String,
+  cacheHits: Number,
+  cacheMisses: Number,
+  cacheHistory: []
 }, {collection: "cacheSet" });
 
 module.exports = CacheSetSchema;
