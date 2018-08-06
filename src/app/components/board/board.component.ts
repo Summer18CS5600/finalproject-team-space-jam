@@ -46,6 +46,7 @@ export class BoardComponent implements OnInit {
     this.body = document.getElementsByTagName('body')[1];
     this.time = 0;
     this.initializedOnce = false;
+    this.getPid("" + Math.random() * 300);
   }
 
   /* Get user input for board number and use that to initialize and render the table */

@@ -25,7 +25,7 @@ module.exports = function (app) {
     var cacheLine = [];
     var addedNums = [];
     while(cacheLine.length < 10) {
-      var num = Math.floor((Math.random()*100) + 1);
+      var num = Math.floor((Math.random()*100));
     //  console.log("NUMBER AT ", cacheLine.length);
     //  console.log("NUMBER ", num);
       if(addedNums.indexOf(num) > -1) {
