@@ -53,7 +53,14 @@ export class BoardComponent implements OnInit {
     console.log("bNUm: ", this.bNum);
     this.initializeBoard(this.bNum);
     this.initializedOnce = true;
+<<<<<<< HEAD
 
+=======
+    this.cacheService.findCache(this.boardId)
+      .subscribe((cache: any) => {
+        this.setOfCacheLines = cache.setOfCacheLines;
+      })
+>>>>>>> 32bcc0b4aac8e8b4c56f48765dbd97bb2646d4f9
   }
 
   getPid(num: string) {
@@ -135,11 +142,14 @@ export class BoardComponent implements OnInit {
       console.log(cache);
       //this.cacheLines = cache.setOfCacheLines;
       //console.log(this.cacheLines);
+<<<<<<< HEAD
 
       /**
        * Update the cache lines for visualizion.
        */
           this.setOfCacheLines = cache.setOfCacheLines;
+=======
+>>>>>>> 32bcc0b4aac8e8b4c56f48765dbd97bb2646d4f9
     });
 
 
