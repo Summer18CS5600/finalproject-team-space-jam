@@ -2,10 +2,10 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 
 import {Router} from '@angular/router';
 import {BoardService} from '../../services/board.service.client';
-import {Observable, Subscription} from "rxjs/Rx";
-import {NgForm} from "@angular/forms";
-import {isUndefined} from "util";
-import {ProcessService} from "../../services/process.service.client";
+import {Observable, Subscription} from 'rxjs/Rx';
+import {NgForm} from '@angular/forms';
+import {isUndefined} from 'util';
+import {ProcessService} from '../../services/process.service.client';
 import {CacheSetService} from '../../services/cacheset.service.client';
 
 @Component({
@@ -37,7 +37,8 @@ export class BoardComponent implements OnInit {
   history: any[];
   fullhistory: [{}];
 
-  constructor(private router: Router, private boardService: BoardService, private processService: ProcessService, private cacheService: CacheSetService) {}
+  constructor(private router: Router, private boardService: BoardService, private processService: ProcessService, private cacheService: CacheSetService) {
+  }
 
   /* Refresh the gameBoard every 1 second*/
   ngOnInit() {
@@ -51,16 +52,16 @@ export class BoardComponent implements OnInit {
   boardInput(num: number) {
     this.bNum = num;
     this.boardId = num;
-    console.log("NUM: ", num);
-    console.log("bNUm: ", this.bNum);
+    console.log('NUM: ', num);
+    console.log('bNUm: ', this.bNum);
     this.initializeBoard(this.bNum);
     this.initializedOnce = true;
-    this.policy = "NULL";
+    this.policy = 'NULL';
   }
 
   getPid(num: string) {
     this.pid = num;
-    console.log("PID ", this.pid);
+    console.log('PID ', this.pid);
     this.processService.findProcessById(this.pid)
       .subscribe((process: any) => {
         this.processCache = process.processCache;
@@ -72,8 +73,8 @@ export class BoardComponent implements OnInit {
   /* Being the refresh for the page */
   startRefresh() {
     this.startedRefresh = true;
-    if(this.boardId != null) {
-      console.log("INSIDE: ", this.boardId);
+    if (this.boardId != null) {
+      console.log('INSIDE: ', this.boardId);
       this.interval = setInterval(() => {
         this.refresh();
       }, 1000);
@@ -85,7 +86,7 @@ export class BoardComponent implements OnInit {
     //console.log("REFRESHING: ", this.time);
     this.time = this.time + 5;
     this.boardService.findBoard(this.boardId)
-      .subscribe((board : any) => {
+      .subscribe((board: any) => {
         // console.log("ARE WE GETTING A BOARD?!");
         this.gameNumbers = board.numbers;
         this.tbl.remove();
@@ -114,10 +115,11 @@ export class BoardComponent implements OnInit {
         cacheLine += 1;
         cacheCounter = 0;
       }
-      nums.push({position: 99-i, value: i, cacheLine: cacheLine, hidden: true, locked: false});
+      nums.push({position: 99 - i, value: i, cacheLine: cacheLine, hidden: true, locked: false});
       cacheCounter += 1;
     }
-    this.exampleBoard = {id: boardId,
+    this.exampleBoard = {
+      id: boardId,
       numbers: nums
     };
 
@@ -131,9 +133,9 @@ export class BoardComponent implements OnInit {
     });
 
     //Initialize the cache in the database/server.
-    console.log("running initialize cache call from component");
+    console.log('running initialize cache call from component');
     this.cacheService.initializeCache(boardId).subscribe((cache: any) => {
-      console.log("cache should be initalized. in the board component");
+      console.log('cache should be initalized. in the board component');
       console.log(cache);
       //this.cacheLines = cache.setOfCacheLines;
       //console.log(this.cacheLines);
@@ -141,12 +143,11 @@ export class BoardComponent implements OnInit {
       /**
        * Update the cache lines for visualizion.
        */
-          this.setOfCacheLines = cache.setOfCacheLines;
-          this.policy = cache.policy;
-          this.fullhistory = cache.cacheHistory;
-          for (let z = this.fullhistory.length - 1; z > this.fullhistory.length - 5; --z) {
-            this.history.push('hello');
-          }
+      this.setOfCacheLines = cache.setOfCacheLines;
+      this.policy = cache.policy;
+      this.fullhistory = cache.cacheHistory;
+      this.history = cache.cacheHistory
+      // this.history = this.fullhistory.slice(Math.max(this.fullhistory.length - 5, 0));
     });
 
 
@@ -168,7 +169,7 @@ export class BoardComponent implements OnInit {
 
   findBoard(boardId) {
     this.boardId = boardId;
-    console.log("looking for a board");
+    console.log('looking for a board');
     this.boardService.findBoard(boardId).subscribe((board: any) => {
       this.gameNumbers = board.numbers;
       this.cacheService.findCache(this.boardId)
@@ -180,6 +181,7 @@ export class BoardComponent implements OnInit {
         });
     });
   }
+
   /**
    * Creates (HTML-wise) and Renders the table to the screen.
    *
@@ -190,7 +192,7 @@ export class BoardComponent implements OnInit {
   renderTable() {
     this.tbl = document.createElement('table');
     this.tbl.style.width = '400px';
-    this.tbl.style.height= '400px';
+    this.tbl.style.height = '400px';
     this.tbl.setAttribute('border', '1');
     this.tbl.setAttribute('align', 'center');
 
@@ -223,8 +225,8 @@ export class BoardComponent implements OnInit {
           // td.style.height = '40x';
           // td.style.width = '40px';
           td.style.webkitTextFillColor = '#000000';
-          td.addEventListener("click", this.tileClick);
-          td.addEventListener("click", (e) => {
+          td.addEventListener('click', this.tileClick);
+          td.addEventListener('click', (e) => {
             //console.log("WHAT IS e", e.target.toString());
             this.accessMemory(e);
             // var process = {};
@@ -250,22 +252,22 @@ export class BoardComponent implements OnInit {
     }
   }
 
-   /**
+  /**
    * Represents what happens when we click a tile. Currently used to highlight the tile by changing the background color.
    * @param e represents the mouse event.
    */
   tileClick(e) {
     // e.target.style.backgroundColor = 'white'; This shouldn't be necessary once we implement rendering every 'x' seconds.
-    console.log("You clicked on " + e.target.textContent);
+    console.log('You clicked on ' + e.target.textContent);
     var currentNum = e.target.textContent;
-     //var currentCacheLine = this.findThisNumbersCacheLine(currentNum);
-     var currentCacheLine = null;
+    //var currentCacheLine = this.findThisNumbersCacheLine(currentNum);
+    var currentCacheLine = null;
   }
 
 
   updatePolicy(policy) {
     this.policy = policy;
-    console.log("CHANGING POLICY");
+    console.log('CHANGING POLICY');
     if (this.initializedOnce) {
       this.cacheService.updatePolicy(this.boardId, this.policy).subscribe((cache: any) => {
         // Intentionally left blank.
@@ -275,16 +277,16 @@ export class BoardComponent implements OnInit {
 
   accessMemory(e) {
     var value = {value: e.target.textContent};
-    console.log("umm.." + value.value);
+    console.log('umm..' + value.value);
     var process = {};
     this.errorFlag = false;
     for (let i = 0; i < 10; i++) {
       //console.log("INSIDE FOR LOOP", this.processCache[i]['value'] == e.target.textContent);
-      if(this.processCache[i]['value'] == e.target.textContent) {
+      if (this.processCache[i]['value'] == e.target.textContent) {
         if (i != 0) {
           if (this.processCache[i - 1]['found'] != 1) {
             this.errorFlag = true;
-            this.errorMessage = "You must finish your cache line in order!";
+            this.errorMessage = 'You must finish your cache line in order!';
           }
         }
         if (!this.errorFlag) {
@@ -310,11 +312,16 @@ export class BoardComponent implements OnInit {
       //this.gameNumbers = board.numbers; // This should get removed once we put in boardId (probably)
       //console.log(this.gameNumbers)
       this.cacheService.findCache(this.boardId)
-        .subscribe((cache:any) => {
+        .subscribe((cache: any) => {
           this.setOfCacheLines = cache.setOfCacheLines;
           //this.tilesInCache = cache.setOfCacheLines['tiles'];
-          console.log("EVERY CLICK", this.setOfCacheLines);
-         // console.log("TILES", this.tilesInCache);
+          console.log('EVERY CLICK', this.setOfCacheLines);
+          // console.log("TILES", this.tilesInCache);
+
+
+          this.fullhistory = cache.cacheHistory;
+          this.fullhistory.splice(0, Math.max(this.fullhistory.length - 10, 0));
+          this.history = this.fullhistory.reverse();
         });
     });
 
@@ -366,10 +373,6 @@ export class BoardComponent implements OnInit {
   //   // }
   //   //console.log(this.processCache);
   // }
-
-
-
-
 
 
 }
