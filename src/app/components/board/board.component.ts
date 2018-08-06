@@ -53,6 +53,7 @@ export class BoardComponent implements OnInit {
     console.log("bNUm: ", this.bNum);
     this.initializeBoard(this.bNum);
     this.initializedOnce = true;
+    this.policy = "NULL";
   }
 
   getPid(num: string) {
@@ -139,6 +140,7 @@ export class BoardComponent implements OnInit {
        * Update the cache lines for visualizion.
        */
           this.setOfCacheLines = cache.setOfCacheLines;
+          this.policy = cache.policy;
     });
 
 
@@ -255,7 +257,9 @@ export class BoardComponent implements OnInit {
   }
 
 
-  updatePolicy() {
+  updatePolicy(policy) {
+    this.policy = policy;
+    console.log("CHANGING POLICY");
     if (this.initializedOnce) {
       this.cacheService.updatePolicy(this.boardId, this.policy).subscribe((cache: any) => {
         // Intentionally left blank.
