@@ -84,7 +84,6 @@ export class BoardComponent implements OnInit {
 
   /* Refresh the page, calling the findBoard function so that all players have updated gameBoards */
   refresh() {
-    //console.log("REFRESHING: ", this.time);
     this.time = this.time + 5;
     this.boardService.findBoard(this.boardId)
       .subscribe((board: any) => {
@@ -94,6 +93,7 @@ export class BoardComponent implements OnInit {
         // this.body.removeChild(this.tbl);
         this.renderTable();
       });
+    this.refreshCache();
   }
 
   /**
@@ -250,7 +250,6 @@ export class BoardComponent implements OnInit {
     if (this.startedRefresh == false) {
       this.startRefresh();
     }
-    this.refreshCache();
   }
 
   refreshCache() {
