@@ -189,6 +189,8 @@ export class BoardComponent implements OnInit {
     this.tbl.style.width = '400px';
     this.tbl.style.height= '400px';
     this.tbl.setAttribute('border', '1');
+    this.tbl.setAttribute('align', 'center');
+
     var tbdy = document.createElement('tbody');
     for (var i = 0; i < 10; i++) {
       var tr = document.createElement('tr');

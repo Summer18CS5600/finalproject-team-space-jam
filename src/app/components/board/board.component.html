@@ -1,128 +1,109 @@
 <h1 class="container-fluid text-center"> Cache Simulator Game: May the Best Thread Win</h1>
-
 <div class="container-fluid">
-  <div *ngIf="errorFlag"
-       class="alert alert-danger">
-    {{errorMessage}}
+  <div class="row">
+    <div class="col-xs-9">
+      <div class="text-center">
+        <div *ngIf="initializedOnce">
+          <h6>Your Cache Line to find and complete: </h6>
+        </div>
+        <div *ngFor="let process of processCache" style="border:solid; display: inline">
+          <div *ngIf="process.found === 0; then thenBlock; else elseBlock"></div>
+          <ng-template #thenBlock><span style="background: lightgreen;"> {{process.value}}</span></ng-template>
+          <ng-template #elseBlock><span style="background: red">{{process.value}}</span></ng-template>
+        </div>
+        <body style="width: 100%; align-self: center">
+        <!--Table is Rendered Here-->
+        </body>
+        <div class="container-fluid" style="align-self: center">
+          <div *ngIf="errorFlag"
+               class="alert alert-danger" style="width:400px;">
+            {{errorMessage}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-3">
+      The Cache
+      <!--The Cache Goes Here!-->
+      <!--Then The Cahce History below it!-->
+    </div>
   </div>
-</div>
-<br><Br>
-
-
-<div class="container-fluid">
-<body class = "col-xs-9">
-<!--Memory will go here-->
-</body>
-</div>
-<div class="container">
-<div class ="container-fluid col-xs-2">
-  <form (ngSubmit)="boardInput(bNum.value)" #f="ngForm">
-  Input Board Number:
-  <input
-    name="bNum"
-    id="bNum"
-    type="text"
-    placeholder="31"
-    class="form-control"
-    ngModel
-    required
-    #bNum="ngModel"
-  />
-  <input
-    class="btn btn-success"
-    type="submit"/>
-</form>
-
-<form>
-  Input Process ID:
-  <input
-    name="pid"
-    id="pid"
-    type="text"
-    placeholder="23"
-    class="form-control"
-    ngModel
-    required
-    #pid="ngModel"
-  />
-  <input (click)="getPid(pid.value)"
-         class="button"
-         type="submit"
-  />
-</form>
-
-<div class="container-fluid">
-  <div *ngIf="errorFlag"
-       class="alert alert-danger">
-    {{errorMessage}}
-  </div>
-</div>
-<br><Br>
-
-<div class="container">
-<div class="row">
-  <div class="col-sm-3">
-    <div *ngIf="initializedOnce">
+  <div class="row">
+    <div class="col-xs-3"></div>
+    <div class="col-xs-2">
+      <form (ngSubmit)="boardInput(bNum.value)" #f="ngForm">
+        Input Board Number:
+        <input
+          name="bNum"
+          id="bNum"
+          type="text"
+          placeholder="31"
+          class="form-control"
+          ngModel
+          required
+          #bNum="ngModel"
+        />
+        <input
+          class="btn btn-success"
+          type="submit"/>
+      </form>
+    </div>
+    <div class="col-xs-2">
       <form>
-        Choose eviction/replacement policy:
-        <input name="LRU"
-               id="LRU"
-               value="LRU"
-               type="radio"
-               class="form-control"
-               required
-               [(ngModel)]="policy"/>
-        <label for="LRU">LRU</label>
-        <br>
-        <input name="RAN"
-               id="RAN"
-               value="RAN"
-               type="radio"
-               class="form-control"
-               required
-               [(ngModel)]="policy"/>
-        <label for="RAN">Random</label>
-        <br>
-        <input (click)="updatePolicy()"
-               class="button"
+        Input Thread ID:
+        <input
+          name="pid"
+          id="pid"
+          type="text"
+          placeholder="23"
+          class="form-control"
+          ngModel
+          required
+          #pid="ngModel"
+        />
+        <input (click)="getPid(pid.value)"
+               class="btn btn-primary"
                type="submit"
         />
       </form>
     </div>
-  </div>
-
-  <div class="col-sm-7">
+    <div class="col-xs-2">
       <div *ngIf="initializedOnce">
-        <h2>Your Cache Line to find and complete: </h2>
+        <form>
+          Choose eviction/replacement policy (defaults to LRU):
+          <input name="LRU"
+                 id="LRU"
+                 value="LRU"
+                 type="radio"
+                 class="form-control"
+                 required
+                 [(ngModel)]="policy"/>
+          <label for="LRU">LRU</label>
+          <input name="RAN"
+                 id="RAN"
+                 value="RAN"
+                 type="radio"
+                 class="form-control"
+                 required
+                 [(ngModel)]="policy"/>
+          <label for="RAN">Random</label>
+          <input (click)="updatePolicy()"
+                 class="button"
+                 type="submit"
+          />
+        </form>
       </div>
-      <div *ngFor="let process of processCache" style="border:solid; display: inline">
-        <div *ngIf="process.found === 0; then thenBlock; else elseBlock"></div>
-        <ng-template #thenBlock><span style="background: lightgreen;"> {{process.value}}</span></ng-template>
-        <ng-template #elseBlock><span style="background: red">{{process.value}}</span></ng-template>
-      </div>
-
-      <body>
-      <!--Memory will go here-->
-      </body>
     </div>
-  <div class="col-sm-2">
-    <div *ngFor="let cacheLine of setOfCacheLines">
-      <p style="display: inline-block;">Line Number: {{cacheLine.lineId}}</p>
-      <br>
-      <p style="display: inline-block"> Age: {{cacheLine.age}}</p>
-      <br>
-      <div *ngFor="let tile of cacheLine.tiles" style="display: inline">
-        {{tile.value}}
-      </div>
+    <div class="col-xs-3">
     </div>
   </div>
 </div>
-</div>
-<!--<button-->
-<!--*ngIf="processCache != null"-->
-<!--(click)="resetProcess()"-->
-<!--class="button"-->
-<!--type="submit"-->
-<!--&gt; Reset Process </button>-->
 
+
+<div class="container-fluid">
+  <div *ngIf="errorFlag"
+       class="alert alert-danger">
+    {{errorMessage}}
+  </div>
+</div>
 
