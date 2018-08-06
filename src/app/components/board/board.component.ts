@@ -34,6 +34,8 @@ export class BoardComponent implements OnInit {
   policy: string;
   setOfCacheLines: [{}];
   //tilesInCache: any[];
+  history: any[];
+  fullhistory: [{}];
 
   constructor(private router: Router, private boardService: BoardService, private processService: ProcessService, private cacheService: CacheSetService) {}
 
@@ -141,6 +143,10 @@ export class BoardComponent implements OnInit {
        */
           this.setOfCacheLines = cache.setOfCacheLines;
           this.policy = cache.policy;
+          this.fullhistory = cache.cacheHistory;
+          for (let z = this.fullhistory.length - 1; z > this.fullhistory.length - 5; --z) {
+            this.history.push('hello');
+          }
     });
 
 
