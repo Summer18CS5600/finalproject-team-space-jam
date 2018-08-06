@@ -3,20 +3,20 @@
   <div class="row">
 
 
-    <div class="col-xs-6">
+    <div class="col-md-6">
       <div class="row">
         <div class="text-center">
           <div *ngIf="initializedOnce">
             <div class="row">
               <h6>Data needed to complete program execution:</h6>
-              <div class="col-xs-2"></div>
-              <div class="col-xs-8">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
                 <div *ngIf="errorFlag"
                      class="alert alert-danger">
                   {{errorMessage}}
                 </div>
               </div>
-              <div class="col-xs-2"></div>
+              <div class="col-md-2"></div>
             </div>
 
           </div>
@@ -33,10 +33,10 @@
 
 
       <div class="row">
-        <div class="col-xs-2">
+        <div class="col-md-2">
           <!--Padding          -->
         </div>
-        <div class="col-xs-4">
+        <div class="col-md-4">
           <form (ngSubmit)="boardInput(bNum.value)" #f="ngForm">
             Access Memory Region
             <input
@@ -55,7 +55,7 @@
           </form>
         </div>
 
-        <div class="col-xs-4">
+        <div class="col-md-4">
           <form>
             Input Thread ID
             <input
@@ -74,7 +74,7 @@
             />
           </form>
         </div>
-        <div class="col-xs-2">
+        <div class="col-md-2">
           <!--Padding          -->
         </div>
       </div>
@@ -82,10 +82,10 @@
 
       <div class="row">
 
-        <div class="col-xs-2">
+        <div class="col-md-2">
           <!--Padding          -->
         </div>
-        <div class="col-xs-8">
+        <div class="col-md-8">
           <div *ngIf="initializedOnce">
 
               Choose eviction/replcaement policy (current: {{policy}})
@@ -103,7 +103,7 @@
 
           </div>
         </div>
-        <div class="col-xs-2">
+        <div class="col-md-2">
           <!--Padding          -->
         </div>
       </div>
@@ -112,7 +112,7 @@
     </div>
 
     <!--THE RIGHT COLUMN-->
-    <div class="col-xs-6">
+    <div class="col-md-6">
 
       <div class="row">
         <h6>The Current Cache:</h6>

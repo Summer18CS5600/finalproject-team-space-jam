@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import {BoardService} from './services/board.service.client';
 import {BoardComponent} from './components/board/board.component';
 import {CacheSetService} from "./services/cacheset.service.client";
-import {CachesetComponent} from "./components/cacheset/cacheset.component";
 import {ProcessService} from "./services/process.service.client";
 
 // add client side services to providers
@@ -16,7 +15,6 @@ import {ProcessService} from "./services/process.service.client";
   declarations: [
     AppComponent,
     BoardComponent,
-    CachesetComponent
   ],
   imports: [
     BrowserModule,
