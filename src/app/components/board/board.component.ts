@@ -259,6 +259,7 @@ export class BoardComponent implements OnInit {
         this.fullhistory = cache.cacheHistory;
         this.fullhistory.splice(0, Math.max(this.fullhistory.length - 10, 0));
         this.history = this.fullhistory.reverse();
+        this.setOfCacheLines = cache.setOfCacheLines;
       });
   }
 
