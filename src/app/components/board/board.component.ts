@@ -46,7 +46,7 @@ export class BoardComponent implements OnInit {
     this.body = document.getElementsByTagName('body')[1];
     this.time = 0;
     this.initializedOnce = false;
-    this.getPid("" + Math.random() * 300);
+    this.getPid('' + Math.random() * 300);
   }
 
   /* Get user input for board number and use that to initialize and render the table */
@@ -147,8 +147,7 @@ export class BoardComponent implements OnInit {
       this.setOfCacheLines = cache.setOfCacheLines;
       this.policy = cache.policy;
       this.fullhistory = cache.cacheHistory;
-      this.history = cache.cacheHistory
-      // this.history = this.fullhistory.slice(Math.max(this.fullhistory.length - 5, 0));
+      this.history = cache.cacheHistory;
     });
 
 
@@ -251,6 +250,16 @@ export class BoardComponent implements OnInit {
     if (this.startedRefresh == false) {
       this.startRefresh();
     }
+    this.refreshCache();
+  }
+
+  refreshCache() {
+    this.cacheService.findCache(this.boardId)
+      .subscribe((cache: any) => {
+        this.fullhistory = cache.cacheHistory;
+        this.fullhistory.splice(0, Math.max(this.fullhistory.length - 10, 0));
+        this.history = this.fullhistory.reverse();
+      });
   }
 
   /**
