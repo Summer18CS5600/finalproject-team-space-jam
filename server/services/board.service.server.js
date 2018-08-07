@@ -118,11 +118,11 @@ module.exports = function(app){
       }
       if (didWeMiss) {
         cacheSet['cacheMisses'] = cacheSet['cacheMisses'] + 1;
-        // First Check is there open room in the cache. If so, it's a cold miss.
+        // First Check is there open room in the cache. If so, it's a compulsory miss.
         var firstEmptyPosition = cacheSet['setOfCacheLines'].length;
         if (firstEmptyPosition < 4) {
           cacheSet['setOfCacheLines'].push({lineId: cacheLine, tiles: tiles, age: cacheSet['totalOccurrences']});
-          cacheSet['cacheHistory'].push('Cache Line ' + cacheLine + ' caused a cold miss!')
+          cacheSet['cacheHistory'].push('Cache Line ' + cacheLine + ' caused a compulsory miss!')
         } else{
           // there's no more room in the cache, let's check for the LRU of the group, later we can make a flag for the
           if (policy == 'LRU') {
