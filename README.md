@@ -8,7 +8,11 @@ Summer 2018
 
 ## Instructions
 
+https://github.com/Summer18CS5600/finalproject-team-space-jam/blob/master/Cache_Simulator_Instructions.pdf
+
 ## Paper
+
+https://github.com/Summer18CS5600/finalproject-team-space-jam/blob/master/Cache_Simulator_Paper.pdf
 
 ## Video
 
