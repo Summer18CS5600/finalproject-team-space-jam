@@ -12,7 +12,7 @@ https://github.com/Summer18CS5600/finalproject-team-space-jam/blob/master/Cache_
 
 ## Paper
 
-https://github.com/Summer18CS5600/finalproject-team-space-jam/blob/master/Cache_Simulator_Paper.pdf
+https://github.com/Summer18CS5600/finalproject-team-space-jam/blob/master/Cache_Simulator_Paper_Full.pdf
 
 ## Video
 
