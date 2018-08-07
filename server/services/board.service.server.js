@@ -2,14 +2,14 @@ module.exports = function(app){
   var boardModel = require("../../model/board/board.model.server");
   var cacheSetModel = require("../../model/cacheset/cacheset.model.server");
 
-  console.log("Server started...");
+  console.log("Board Server started...");
 
   app.post("/api/cache/create/:boardId", createCacheSet);
   app.get("/api/game/:boardId",findGame);
   app.post("/api/game/:boardId", createBoard);
   app.post("/api/game/:boardId/accessMemory", accessMemory);
+
   function findGame(req, res) {
-   // console.log("looking for game in server side");
     boardModel.findBoard(req.params['boardId']).then(function (board) {
       res.json(board);
     });
@@ -17,7 +17,6 @@ module.exports = function(app){
 
   /* Look to see if the board is already in the database, else, create it */
   function createBoard(req, res) {
-   console.log("SERVER: creating board...");
     var nums = req.body.numbers;
     var bID = req.params['boardId'];
     const board = {
@@ -52,7 +51,6 @@ module.exports = function(app){
       // Find the cacheline for this specific number that was accessed.
       for (let i = 0; i < boardToBeUpdated.numbers.length; i++) {
         if (boardToBeUpdated.numbers[i].value == v) {
-       //   console.log("SERVER: number found: " + boardToBeUpdated.numbers[i].value + " in cacheLine " + boardToBeUpdated.numbers[i].cacheLine);
           theCLine = boardToBeUpdated.numbers[i].cacheLine;
           break;
         }
@@ -104,14 +102,12 @@ module.exports = function(app){
       // update the current age:
       cacheSet['totalOccurrences'] = cacheSet['totalOccurrences'] + 1;
       var policy = cacheSet['policy'];
-      console.log(cacheSet['policy']);
       // determines the current cacheLine to be evaluated against the current cache.
       var cacheLine = tiles[0]['cacheLine'];
       // bool to track if we hit or miss.
       var didWeMiss = true;
       // Find out if there's been a cacheHit
       for (let a = 0; a < cacheSet['setOfCacheLines'].length; a++) {
-        // console.log("Comparing: " + cacheLine + "with " + cacheSet['setOfCacheLines'][a]['lineId']);
         if (cacheSet['setOfCacheLines'][a]['lineId'] == cacheLine) {
           // the cacheHasBeenHit
           cacheSet['setOfCacheLines'][a]['age'] = cacheSet['totalOccurrences'];
@@ -147,7 +143,6 @@ module.exports = function(app){
           } else {
             // Policy equals random
             var index = Math.floor(Math.random() * 4);     // returns a random integer from 0 to 9
-            console.log('Index to replace is: ' + index);
             oldestLine = cacheSet['setOfCacheLines'][index]['lineId'];// has to equal the cacheLine that's getting evicted.
             cacheSet['cacheHistory'].push('CONFLICT MISS: The Cache Line #' + cacheSet['setOfCacheLines'][index]['lineId'] + ' was replaced by Cache Line #' + cacheLine);
             cacheSet['setOfCacheLines'][index] = {lineId: cacheLine, tiles: tiles, age: cacheSet['totalOccurrences']};
@@ -175,7 +170,6 @@ module.exports = function(app){
       for (let i = 0; i < boardToBeUpdated.numbers.length; i++) {
         if (boardToBeUpdated.numbers[i].cacheLine == cacheLineToHide) {
           boardToBeUpdated.numbers[i].hidden = true;
-          console.log(boardToBeUpdated.numbers[i]);
         }
       }
       // Update the board in the database and send back to client.
@@ -186,7 +180,6 @@ module.exports = function(app){
 
 
   function createCacheSet(req, res) {
-    console.log("SERVER: creating cacheSet...");
     cacheSetModel.findCacheSet(req.params['boardId']).then(function (cacheSet) {
       if (cacheSet != null) {
         res.json(cacheSet);
@@ -200,15 +193,11 @@ module.exports = function(app){
           policy: 'LRU'
         };
         cacheSetModel.createCacheSet(cacheSet).then(function (cacheSet) {
-          console.log('SERVER: cacheSet created, sending back to client...');
-          console.log('in server, should get exact same cacheset that was sent to the model above..');
-          console.log(cacheSet);
           res.json(cacheSet);
         })
       }
     })
   }
-
 
 
 };

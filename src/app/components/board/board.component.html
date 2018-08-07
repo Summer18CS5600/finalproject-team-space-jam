@@ -116,12 +116,13 @@
 
       <div class="row">
         <h6>The Current Cache:</h6>
-        <table border="1">
+        <table border="2">
           <div *ngFor="let cacheLine of setOfCacheLines">
             <tr>
-              <td width="200">
-                <strong>Line Number:</strong> {{cacheLine.lineId}},
-                <strong>Last Used:</strong> {{cacheLine.age}}
+              <td width="200" border="1">
+                <strong>Line Number:</strong> {{cacheLine.lineId}}
+                <br>
+                <strong>Last Used :</strong> {{cacheLine.age}}
               </td>
               <div *ngFor="let tile of cacheLine.tiles" style="display: inline">
                 <td background-color="black" height="40px" width="40px" border="4px" align="center" valign="middle">
@@ -144,12 +145,4 @@
   </div>
 
 </div>
-
-
-<!--<div class="container-fluid">-->
-<!--<div *ngIf="errorFlag"-->
-<!--class="alert alert-danger">-->
-<!--{{errorMessage}}-->
-<!--</div>-->
-<!--</div>-->
 

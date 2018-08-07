@@ -19,7 +19,6 @@ export class BoardComponent implements OnInit {
   boardId: any;
   gameNumbers: number[];
   exampleBoard: any;
-  data: any;
   interval: any;
   time: number;
   tbl: any;
@@ -53,11 +52,8 @@ export class BoardComponent implements OnInit {
   boardInput(num: number) {
     this.bNum = num;
     this.boardId = num;
-    console.log('NUM: ', num);
-    console.log('bNUm: ', this.bNum);
     this.initializeBoard(this.bNum);
     this.initializedOnce = true;
-    this.policy = 'NULL';
   }
 
   getPid(num: string) {
@@ -66,8 +62,6 @@ export class BoardComponent implements OnInit {
     this.processService.findProcessById(this.pid)
       .subscribe((process: any) => {
         this.processCache = process.processCache;
-        // console.log("INSIDE THE SUBSCRIBE ", process);
-        // console.log("PROCESS CACHE: ", this.processCache);
       });
   }
 
@@ -94,6 +88,7 @@ export class BoardComponent implements OnInit {
         this.renderTable();
       });
     this.refreshCache();
+    this.refreshHistory();
   }
 
   /**
@@ -105,7 +100,6 @@ export class BoardComponent implements OnInit {
       this.tbl.remove();
     }
     this.boardId = boardId;
-    console.log('initializing');
     // Make a board.
     const nums = [];
     let i = 0;
@@ -127,23 +121,14 @@ export class BoardComponent implements OnInit {
 
     // Initialize the board in the database/server.
     this.boardService.initializeBoard(boardId, this.exampleBoard).subscribe((game: any) => {
-      //console.log(game);
       this.gameNumbers = game.numbers; // This should get removed once we put in boardId (probably)
-      //console.log(this.gameNumbers);
       this.renderTable();
     });
 
-    //Initialize the cache in the database/server.
-    console.log('running initialize cache call from component');
+    // Initialize the cache in the database/server.
+    // Update the cache lines for visualizion.
     this.cacheService.initializeCache(boardId).subscribe((cache: any) => {
-      console.log('cache should be initalized. in the board component');
-      console.log(cache);
-      //this.cacheLines = cache.setOfCacheLines;
-      //console.log(this.cacheLines);
 
-      /**
-       * Update the cache lines for visualizion.
-       */
       this.setOfCacheLines = cache.setOfCacheLines;
       this.policy = cache.policy;
       this.fullhistory = cache.cacheHistory;
@@ -159,27 +144,11 @@ export class BoardComponent implements OnInit {
    * @returns the Value and Hidden Flag, may later expand to have it also include the cacheLine
    */
   findThisNumber(position) {
-    //console.log("entering find This number");
     for (var i = 0; i < this.gameNumbers.length; i++) {
       if (this.gameNumbers[i]['position'] === position) {
         return {value: this.gameNumbers[i]['value'], hidden: this.gameNumbers[i]['hidden']};
       }
     }
-  }
-
-  findBoard(boardId) {
-    this.boardId = boardId;
-    console.log('looking for a board');
-    this.boardService.findBoard(boardId).subscribe((board: any) => {
-      this.gameNumbers = board.numbers;
-      this.cacheService.findCache(this.boardId)
-        .subscribe((cache: any) => {
-          this.setOfCacheLines = cache.setOfCacheLines;
-          //this.tilesInCache = cache.setOfCacheLines.tiles;
-          console.log(this.setOfCacheLines);
-          //console.log(this.tilesInCache);
-        });
-    });
   }
 
   /**
@@ -200,7 +169,6 @@ export class BoardComponent implements OnInit {
     for (var i = 0; i < 10; i++) {
       var tr = document.createElement('tr');
       for (var j = 0; j < 10; j++) {
-        // console.log('J is now: ' + j);
         if (i === 10 && j === 10) {
           break;
         } else {
@@ -211,7 +179,7 @@ export class BoardComponent implements OnInit {
           } else {
             pos = i * 10 + j;
           }
-          // console.log('the pos ' + pos);
+
           // Currently a dict with {value: x, hidden: bool}
           var data = this.findThisNumber(pos);
           td.appendChild(document.createTextNode(data['value']));
@@ -222,23 +190,17 @@ export class BoardComponent implements OnInit {
             td.style.backgroundColor = 'white';
           }
           td.style.textAlign = 'center';
-          // td.style.height = '40x';
-          // td.style.width = '40px';
           td.style.webkitTextFillColor = '#000000';
-          td.addEventListener('click', this.tileClick);
           td.addEventListener('click', (e) => {
-            //console.log("WHAT IS e", e.target.toString());
             this.accessMemory(e);
             // var process = {};
             // for (let i = 0; i < this.processCache.length; ++i) {
-            //   console.log("INSIDE FOR LOOP");
             //   if(this.processCache[i]['value'] === e.target.valueOf()) {
             //     process = {value: this.processCache[i]['value'], found: 1};
             //     this.processCache.splice(i, 1, process);
             //     //this.processCache[i] = process;
             //   }
             // }
-            // console.log(this.processCache);
           });
           tr.appendChild(td);
         }
@@ -252,6 +214,10 @@ export class BoardComponent implements OnInit {
     }
   }
 
+
+  /**
+   * Refreshes the cache set visuals.
+   */
   refreshCache() {
     this.cacheService.findCache(this.boardId)
       .subscribe((cache: any) => {
@@ -259,39 +225,32 @@ export class BoardComponent implements OnInit {
         this.fullhistory.splice(0, Math.max(this.fullhistory.length - 10, 0));
         this.history = this.fullhistory.reverse();
         this.setOfCacheLines = cache.setOfCacheLines;
+        this.policy = cache.policy;
       });
   }
 
   /**
-   * Represents what happens when we click a tile. Currently used to highlight the tile by changing the background color.
-   * @param e represents the mouse event.
+   * Updates the policy for the cacheset.
+   * @param policy the policy used. e.g. LRU or RAN
    */
-  tileClick(e) {
-    // e.target.style.backgroundColor = 'white'; This shouldn't be necessary once we implement rendering every 'x' seconds.
-    console.log('You clicked on ' + e.target.textContent);
-    var currentNum = e.target.textContent;
-    //var currentCacheLine = this.findThisNumbersCacheLine(currentNum);
-    var currentCacheLine = null;
-  }
-
-
   updatePolicy(policy) {
     this.policy = policy;
-    console.log('CHANGING POLICY');
     if (this.initializedOnce) {
-      this.cacheService.updatePolicy(this.boardId, this.policy).subscribe((cache: any) => {
+      this.cacheService.updatePolicy(this.boardId, policy).subscribe((response: any) => {
         // Intentionally left blank.
       });
     }
   }
 
+  /**
+   * Accessing a piece of memory. Executed when a tile is clicked.
+   * @param e
+   */
   accessMemory(e) {
     var value = {value: e.target.textContent};
-    console.log('umm..' + value.value);
     var process = {};
     this.errorFlag = false;
     for (let i = 0; i < 10; i++) {
-      //console.log("INSIDE FOR LOOP", this.processCache[i]['value'] == e.target.textContent);
       if (this.processCache[i]['value'] == e.target.textContent) {
         if (i != 0) {
           if (this.processCache[i - 1]['found'] != 1) {
@@ -301,15 +260,11 @@ export class BoardComponent implements OnInit {
         }
         if (!this.errorFlag) {
           process = {value: this.processCache[i]['value'], found: 1};
-          //console.log(process);
           this.processService.updateProcess(this.pid, process)
             .subscribe((status: any) => {
-              //console.log(status);
               this.processService.findProcessById(this.pid)
                 .subscribe((process1: any) => {
-                  //console.log("RETURNED PROCESS ", process1);
                   this.processCache = process1.processCache;
-                  //console.log(this.processCache);
                 });
             });
           //this.processCache.splice(i, 1, process);
@@ -317,24 +272,20 @@ export class BoardComponent implements OnInit {
         }
       }
     }
-    //console.log(this.processCache);
+
     this.boardService.accessMemory(this.boardId, value).subscribe((board: any) => {
-      //this.gameNumbers = board.numbers; // This should get removed once we put in boardId (probably)
-      //console.log(this.gameNumbers)
-      this.cacheService.findCache(this.boardId)
-        .subscribe((cache: any) => {
-          this.setOfCacheLines = cache.setOfCacheLines;
-          //this.tilesInCache = cache.setOfCacheLines['tiles'];
-          console.log('EVERY CLICK', this.setOfCacheLines);
-          // console.log("TILES", this.tilesInCache);
-
-
-          this.fullhistory = cache.cacheHistory;
-          this.fullhistory.splice(0, Math.max(this.fullhistory.length - 10, 0));
-          this.history = this.fullhistory.reverse();
-        });
+      this.refreshHistory();
     });
 
+  }
+
+  refreshHistory() {
+    this.cacheService.findCache(this.boardId).subscribe((cache: any) => {
+      this.setOfCacheLines = cache.setOfCacheLines;
+      this.fullhistory = cache.cacheHistory;
+      this.fullhistory.splice(0, Math.max(this.fullhistory.length - 10, 0));
+      this.history = this.fullhistory.reverse();
+    });
   }
 
   // resetProcess() {
@@ -346,22 +297,13 @@ export class BoardComponent implements OnInit {
   //     if (this.processCache[i]['found'] == 1) {
   //       count1++;
   //       processToUpdate = {value: this.processCache[i]['value'], found: 0};
-  //       console.log(processToUpdate);
   //       this.processService.updateProcess(this.pid, processToUpdate)
   //         .subscribe((status: any) => {
   //           count2++;
-  //           console.log("HOW MANY TIMES", i);
-  //           console.log("STATUS", status);
   //           // if(status) {
   //           //   count++;
-  //           //   console.log("IN STATUS", count);
   //           // }
-  //           console.log(count1);
-  //           console.log(count2);
   //           if(count1 == count2) {
-  //             console.log(count1);
-  //             console.log(count2);
-  //             console.log("FINAL I", i);
   //             this.processService.findProcessById(this.pid)
   //               .subscribe((process: any) => {
   //                 this.processCache = process.processCache;
@@ -378,10 +320,8 @@ export class BoardComponent implements OnInit {
   //   //       this.processCache = process.processCache;
   //   //       //componentRefresh();
   //   //       //this.startRefresh();
-  //   //       console.log(this.processCache);
   //   //     });
   //   // }
-  //   //console.log(this.processCache);
   // }
 
 

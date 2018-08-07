@@ -20,17 +20,14 @@ function findProcessByPid(pid) {
 
 /* Update the process which matches the given ID to the new process */
 function updateProcess(pid, process) {
-  //console.log("IN UPDATE MODEL");
   var i = null;
   var ProcessCache = null;
   return ProcessModel.findProcessByPid(pid)
     .then(function (process1) {
-      //console.log(process1.processCache[0]);
       ProcessCache = process1.processCache;
       for(let j = 0; j < 10; j++) {
         if(ProcessCache[j].value == process['value']) {
           i = j;
-          //console.log("IIIIII", i);
         }
       }
       //process1.splice(i, 1, process);
