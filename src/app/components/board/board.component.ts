@@ -58,7 +58,6 @@ export class BoardComponent implements OnInit {
 
   getPid(num: string) {
     this.pid = num;
-    console.log('PID ', this.pid);
     this.processService.findProcessById(this.pid)
       .subscribe((process: any) => {
         this.processCache = process.processCache;
@@ -69,7 +68,6 @@ export class BoardComponent implements OnInit {
   startRefresh() {
     this.startedRefresh = true;
     if (this.boardId != null) {
-      console.log('INSIDE: ', this.boardId);
       this.interval = setInterval(() => {
         this.refresh();
       }, 1000);
@@ -81,7 +79,6 @@ export class BoardComponent implements OnInit {
     this.time = this.time + 5;
     this.boardService.findBoard(this.boardId)
       .subscribe((board: any) => {
-        // console.log("ARE WE GETTING A BOARD?!");
         this.gameNumbers = board.numbers;
         this.tbl.remove();
         // this.body.removeChild(this.tbl);
@@ -292,7 +289,6 @@ export class BoardComponent implements OnInit {
   //   var processToUpdate = {};
   //   var count1 = 0;
   //   var count2 = 0;
-  //   console.log('PROCESS LIST LEN', this.processCache.length);
   //   for (let i = 0; i < this.processCache.length; i++) {
   //     if (this.processCache[i]['found'] == 1) {
   //       count1++;
